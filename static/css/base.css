@@ -365,7 +365,7 @@ body {
 
 @media (min-width: 640px) {
   :root {
-    font-size: calc(100vw / 58); }
+    font-size: calc(100vw / 70); }
 }
 
 main > h1 {
@@ -392,6 +392,7 @@ section {
     section > .pop, section > pre, section > blockquote {
       width: 60%; } }
   section > img {
+    width: initial !important;
     display: block;
     margin-right: auto;
     margin-left: auto;
