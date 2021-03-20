@@ -1,0 +1,396 @@
+@use "sass:color";
+
+$blue: #3399ff;
+$lightblue: #66b3ff;
+$darkblue: #336699;
+$red: #dd3333;
+$green: #00a264;
+$purple: #6b3ea8;
+$color-body-light: hsl(0, 0%, 100%);
+$color-surface-light: hsl(0, 0%, 85%);
+$color-comment-light: hsl(0, 0%, 70%);
+$color-body-dark: rgb(24, 26, 27);
+$color-surface-dark: rgb(36, 37, 38);
+$color-comment-dark: rgb(58, 59, 60);
+
+// Breakpoint settings and methods
+
+$breakpoints: (
+    "mobile": 640px,
+    "tablet": 768px,
+    "screen": 1024px,
+    "omnivision": 1200px,
+);
+@mixin breakpoint($view) {
+    @if $view == mobile {
+        @media (max-width: map-get($breakpoints, "mobile")) {
+            @content;
+        }
+    } @else if $view == omnivision {
+        @media (min-width: map-get($breakpoints, "omnivision")) {
+            @content;
+        }
+    } @else {
+        @media (min-width: map-get($breakpoints, "mobile") + 1px) {
+            @content;
+        }
+    }
+}
+
+// Color theme
+
+@mixin theme($theme) {
+    @if $theme == dark {
+        @include theme(dark) {
+            @content;
+        }
+    } @else {
+        @media (prefers-color-scheme: light) {
+            @content;
+        }
+    }
+}
+
+// Spacing settings and methods
+
+$spacing-mobile: 1rem;
+$spacing-monitor: 3.5rem;
+
+@mixin spacing($prop) {
+    #{$prop}: $spacing-mobile;
+    @include breakpoint(screen) {
+        #{$prop}: $spacing-monitor;
+    }
+}
+
+// Top Level (Global)
+
+:root {
+    font: normal 100% sans-serif;
+    font-size: calc(100vw / 25);
+    @include breakpoint(screen) {
+        font-size: calc(100vw / 70);
+    }
+    @include breakpoint(omnivision) {
+        font-size: 17.1333px;
+    }
+    @include theme(dark) {
+        color: white;
+    }
+}
+
+:root {
+    font: normal 100% sans-serif;
+    font-size: calc(100vw / 25);
+}
+
+body {
+    padding: 1em 0;
+    @include theme(light) {
+        background-color: $color-body-light;
+    }
+    @include theme(dark) {
+        background-color: $color-body-dark;
+    }
+}
+
+main > h1 {
+    margin: 1em 0;
+    text-align: center;
+}
+
+section {
+    counter-reset: section;
+    line-height: 1.6;
+}
+section > *:not(.fullwidth) {
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+}
+@include breakpoint(mobile) {
+    section > *:not(.fullwidth) {
+        width: 60%;
+    }
+}
+@media (min-width: 330px) {
+    section > .pop,
+    section > pre,
+    section > blockquote {
+        width: 100%;
+    }
+}
+@include breakpoint(mobile) {
+    section > .pop,
+    section > pre,
+    section > blockquote {
+        width: 90%;
+    }
+}
+@include breakpoint(screen) {
+    section > .pop,
+    section > pre,
+    section > blockquote {
+        width: 60%;
+    }
+}
+section > img {
+    width: initial !important;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1em;
+}
+section > figure figcaption::before {
+    counter-increment: section;
+    content: "Figure " counter(section, decimal-leading-zero) ". ";
+    font-weight: bold;
+}
+section > blockquote {
+    padding: 0 0 0 5%;
+    position: relative;
+}
+section > blockquote:before {
+    display: block;
+    position: absolute;
+    left: -0.065em;
+    top: -0.2em;
+    content: "\201C";
+    font-size: 5em;
+    font-family: Georgia;
+    color: #7a7a7a;
+    line-height: 1;
+}
+section > blockquote p {
+    font-size: 1.4em;
+    font-style: italic;
+    font-family: serif;
+    letter-spacing: -0.015em;
+}
+section > blockquote footer {
+    color: #777;
+    font-size: 1.2em;
+    margin-top: -0.5em;
+}
+section > blockquote footer:before {
+    content: "\2014 \00A0";
+}
+section pre {
+    padding: 1em 5%;
+    overflow: auto;
+    background: #f7fafb;
+    counter-reset: linenumbers;
+    line-height: 1;
+}
+main + nav {
+    margin: 2em 1em;
+}
+main + nav > a:before {
+    content: "\21B5 \00A0";
+}
+
+section + section {
+    margin-top: 2em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    font-family: "Open Sans", sans-serif;
+    letter-spacing: -0.05em;
+    @include theme(light) {
+        color: #282828;
+    }
+    @include theme(dark) {
+        color: #d6d6d6;
+    }
+}
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: black;
+}
+
+h1 {
+    a {
+        text-decoration: none;
+    }
+}
+
+a {
+    color: #0037ff;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: #00b7ff;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul,
+ol {
+    padding-left: 1.5em;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+    padding-left: 3em;
+}
+
+figure > img,
+figure .figure {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+figure figcaption {
+    margin: 1em auto;
+    text-align: center;
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+@media (min-width: 330px) {
+    figure.flex {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    figure.flex > .figure,
+    figure.flex pre {
+        -webkit-box-flex: initial;
+        -webkit-flex: initial;
+        -ms-flex: initial;
+        flex: initial;
+        margin-left: auto;
+    }
+    figure.flex > figcaption {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        text-align: right;
+        padding-right: 1em;
+    }
+}
+
+code,
+tt {
+    font-family: Inconsolata, monospace, sans-serif;
+    font-size: 0.85em;
+    white-space: pre-wrap;
+    background-color: #ffcfd8;
+}
+
+pre code,
+tt {
+    font-size: 0.85em;
+    white-space: pre;
+    line-height: 1.2;
+    background: transparent;
+    border: none;
+    padding: 0.1em;
+}
+
+pre code:before,
+tt:before {
+    content: counter(linenumbers);
+    counter-increment: linenumbers;
+    left: -3ex;
+    position: absolute;
+    text-align: right;
+    width: 2.5ex;
+}
+
+kbd {
+    display: inline-block;
+    margin-bottom: 0.4em;
+    padding: 1px 8px;
+    border: #ccc 1px solid;
+    color: #666;
+    text-shadow: #fff 0 1px 0;
+    font-size: 0.9em;
+    font-weight: bold;
+    background: #f4f4f4;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
+}
+
+@include breakpoint(screen) {
+    .work h4 {
+        box-sizing: border-box;
+        width: 20%;
+        margin: 0.2em 0;
+        padding: 0 1em 0 2em;
+        float: left;
+        font-size: 1.2em;
+        text-align: right;
+    }
+    .work img {
+        max-width: 80%;
+        margin-left: 20%;
+    }
+}
+
+.mywork {
+    .work-items {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100vw !important;
+    }
+    .work-item {
+        width: 100%;
+    }
+    .work-item a {
+        display: block;
+        padding: 5vw;
+        text-decoration: none;
+        background-color: ghostwhite;
+    }
+    @include breakpoint(mobile) {
+        .work-item {
+            width: 40%;
+            margin-bottom: 1em;
+        }
+    }
+    .work-item a:hover {
+        background-color: azure;
+    }
+    .work-item h3 {
+        margin-top: 0;
+        text-decoration: underline;
+        color: #0037ff;
+        -webkit-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+    }
+    .work-item a:hover h3 {
+        color: #00b7ff;
+    }
+    .work-item a > h3 ~ * {
+        margin-bottom: 0;
+        color: black;
+        text-decoration: none;
+    }
+}

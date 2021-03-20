@@ -1,0 +1,24 @@
+{
+  "name": "mattberti",
+  "version": "1.0.0",
+  "description": "Matt Berti",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "latest",
+    "normalize.css": "^8.0.1",
+    "react": "latest",
+    "react-dom": "latest",
+    "sass": "^1.32.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dr-spaceman/Matt-Berti-Portfolio.git"
+  },
+  "author": "Matt Berti",
+  "homepage": "https://mattberti.com"
+}

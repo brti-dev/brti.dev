@@ -1,0 +1,22 @@
+dl.social {
+    box-sizing: border-box;
+}
+
+dl.social:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+dl.social dt {
+    float: left;
+}
+
+dl.social dd {
+    float: left;
+    margin: 0 0 0 1em;
+    padding: 0 0 0 1em;
+    border-width: 0 0 0 1px;
+    border-color: gray;
+    border-style: solid;
+}

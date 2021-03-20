@@ -1,0 +1,27 @@
+.header {
+    width: 100vw;
+    height: 20rem;
+    display: flex;
+}
+
+.header > img {
+    order: 1;
+}
+
+.header > h1 {}
+
+.header > nav {
+    position: relative;
+}
+
+.header > nav > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.heade > nav > ul > li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
