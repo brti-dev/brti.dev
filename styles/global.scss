@@ -1,47 +1,24 @@
-@use "sass:color";
+@use 'sass:color';
+@use 'breakpoint' as *;
 
-$blue: #3399ff;
-$lightblue: #66b3ff;
-$darkblue: #336699;
+$blue: hsl(210, 100%, 60%);
+$lightblue: hsl(210, 100%, 70%);
+$darkblue: hsl(210, 100%, 45%);
 $red: #dd3333;
 $green: #00a264;
 $purple: #6b3ea8;
-$color-body-light: hsl(0, 0%, 100%);
+$color-body-light: hsl(0, 0%, 98%);
 $color-surface-light: hsl(0, 0%, 85%);
 $color-comment-light: hsl(0, 0%, 70%);
 $color-body-dark: rgb(24, 26, 27);
 $color-surface-dark: rgb(36, 37, 38);
 $color-comment-dark: rgb(58, 59, 60);
 
-// Breakpoint settings and methods
-
-$breakpoints: (
-    "mobile": 640px,
-    "tablet": 768px,
-    "screen": 1024px,
-    "omnivision": 1200px,
-);
-@mixin breakpoint($view) {
-    @if $view == mobile {
-        @media (max-width: map-get($breakpoints, "mobile")) {
-            @content;
-        }
-    } @else if $view == omnivision {
-        @media (min-width: map-get($breakpoints, "omnivision")) {
-            @content;
-        }
-    } @else {
-        @media (min-width: map-get($breakpoints, "mobile") + 1px) {
-            @content;
-        }
-    }
-}
-
 // Color theme
 
 @mixin theme($theme) {
     @if $theme == dark {
-        @include theme(dark) {
+        @media (prefers-color-scheme: dark) {
             @content;
         }
     } @else {
@@ -63,29 +40,24 @@ $spacing-monitor: 3.5rem;
     }
 }
 
-// Top Level (Global)
+// Top Level
 
 :root {
     font: normal 100% sans-serif;
-    font-size: calc(100vw / 25);
+    font-size: calc(100vw / 30);
     @include breakpoint(screen) {
-        font-size: calc(100vw / 70);
+        font-size: calc(100vw / 50);
     }
     @include breakpoint(omnivision) {
-        font-size: 17.1333px;
+        // Computed size at 'omnivision'
+        font-size: 25.58px;
     }
     @include theme(dark) {
         color: white;
     }
 }
 
-:root {
-    font: normal 100% sans-serif;
-    font-size: calc(100vw / 25);
-}
-
 body {
-    padding: 1em 0;
     @include theme(light) {
         background-color: $color-body-light;
     }
@@ -94,104 +66,7 @@ body {
     }
 }
 
-main > h1 {
-    margin: 1em 0;
-    text-align: center;
-}
-
-section {
-    counter-reset: section;
-    line-height: 1.6;
-}
-section > *:not(.fullwidth) {
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-}
-@include breakpoint(mobile) {
-    section > *:not(.fullwidth) {
-        width: 60%;
-    }
-}
-@media (min-width: 330px) {
-    section > .pop,
-    section > pre,
-    section > blockquote {
-        width: 100%;
-    }
-}
-@include breakpoint(mobile) {
-    section > .pop,
-    section > pre,
-    section > blockquote {
-        width: 90%;
-    }
-}
-@include breakpoint(screen) {
-    section > .pop,
-    section > pre,
-    section > blockquote {
-        width: 60%;
-    }
-}
-section > img {
-    width: initial !important;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 1em;
-}
-section > figure figcaption::before {
-    counter-increment: section;
-    content: "Figure " counter(section, decimal-leading-zero) ". ";
-    font-weight: bold;
-}
-section > blockquote {
-    padding: 0 0 0 5%;
-    position: relative;
-}
-section > blockquote:before {
-    display: block;
-    position: absolute;
-    left: -0.065em;
-    top: -0.2em;
-    content: "\201C";
-    font-size: 5em;
-    font-family: Georgia;
-    color: #7a7a7a;
-    line-height: 1;
-}
-section > blockquote p {
-    font-size: 1.4em;
-    font-style: italic;
-    font-family: serif;
-    letter-spacing: -0.015em;
-}
-section > blockquote footer {
-    color: #777;
-    font-size: 1.2em;
-    margin-top: -0.5em;
-}
-section > blockquote footer:before {
-    content: "\2014 \00A0";
-}
-section pre {
-    padding: 1em 5%;
-    overflow: auto;
-    background: #f7fafb;
-    counter-reset: linenumbers;
-    line-height: 1;
-}
-main + nav {
-    margin: 2em 1em;
-}
-main + nav > a:before {
-    content: "\21B5 \00A0";
-}
-
-section + section {
-    margin-top: 2em;
-}
+// Global
 
 h1,
 h2,
@@ -209,14 +84,14 @@ h6 {
     @include theme(dark) {
         color: #d6d6d6;
     }
-}
-h1 a,
-h2 a,
-h3 a,
-h4 a,
-h5 a,
-h6 a {
-    color: black;
+    a {
+        @include theme(light) {
+            color: black;
+        }
+        @include theme(dark) {
+            color: white;
+        }
+    }
 }
 
 h1 {
@@ -225,17 +100,36 @@ h1 {
     }
 }
 
-a {
-    color: #0037ff;
-    -webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
-a:hover {
-    color: #00b7ff;
+a,
+.a {
+    color: $darkblue;
+    text-decoration: underline;
+    cursor: pointer;
+    &:active {
+        color: $purple;
+    }
+    &:hover {
+        color: $blue;
+        border-color: $blue;
+    }
+    @include theme(dark) {
+        color: $blue;
+        &:hover {
+            color: $lightblue;
+            border-color: $lightblue;
+        }
+    }
 }
 
 img {
     max-width: 100%;
+    @include theme(dark) {
+        // Recolorize photographic images in dark mode
+        // @see https://web.dev/prefers-color-scheme/#re-colorize-and-darken-photographic-images
+        &:not([src*=".svg"]) {
+            filter: grayscale(25%);
+        }
+    }
 }
 
 ul,
@@ -265,30 +159,16 @@ figure figcaption {
 
 @media (min-width: 330px) {
     figure.flex {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: -ms-flexbox;
         display: flex;
-        -webkit-box-pack: center;
-        -webkit-justify-content: center;
-        -ms-flex-pack: center;
         justify-content: center;
-        -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     }
     figure.flex > .figure,
     figure.flex pre {
-        -webkit-box-flex: initial;
-        -webkit-flex: initial;
-        -ms-flex: initial;
         flex: initial;
         margin-left: auto;
     }
     figure.flex > figcaption {
-        -webkit-box-flex: 1;
-        -webkit-flex: 1;
-        -ms-flex: 1;
         flex: 1;
         text-align: right;
         padding-right: 1em;
@@ -337,60 +217,116 @@ kbd {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
 }
 
-@include breakpoint(screen) {
-    .work h4 {
-        box-sizing: border-box;
-        width: 20%;
-        margin: 0.2em 0;
-        padding: 0 1em 0 2em;
-        float: left;
-        font-size: 1.2em;
-        text-align: right;
+button {
+    cursor: pointer;
+    border: 1px solid transparent;
+    background-color: transparent;
+    &:hover {
+        background-color: $color-surface-light;
     }
-    .work img {
-        max-width: 80%;
-        margin-left: 20%;
+    &:focus {
+        outline: none;
+    }
+    @include theme(dark) {
+        &:hover {
+            background-color: $color-surface-dark;
+        }
+    }
+
+    &[variant="icon"] {
+        padding: 0;
+        &:hover {
+            background-color: transparent;
+        }
     }
 }
 
-.mywork {
-    .work-items {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
-        width: 100vw !important;
+// Outline
+
+#__next {
+    > header,
+    > section,
+    > main,
+    > footer {
+        box-sizing: border-box;
+        max-width: 1280px;
+        margin: 0 auto;
+        @include spacing(padding-right);
+        @include spacing(padding-left);
     }
-    .work-item {
+
+    > header {
         width: 100%;
-    }
-    .work-item a {
-        display: block;
-        padding: 5vw;
-        text-decoration: none;
-        background-color: ghostwhite;
-    }
-    @include breakpoint(mobile) {
-        .work-item {
-            width: 40%;
-            margin-bottom: 1em;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+        > picture {
+            order: 1;
+        }
+        > h1 {
+            order: 2;
+            margin: 0;
+            padding: 0;
+            line-height: normal;
+        }
+        > nav {
+            order: 3;
+            position: relative;
+            > ul {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                > li {
+                    margin: 0;
+                    padding: 0;
+                    list-style-type: none;
+                }
+            }
         }
     }
-    .work-item a:hover {
-        background-color: azure;
+
+    > footer {
+        position: relative;
+        @include spacing(margin-top);
+        @include spacing(margin-bottom);
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            display: flex;
+            li {
+                margin: 0 1em 0 0;
+                padding: 0;
+                &:first-child {
+                    font-weight: bold;
+                }
+            }
+        }
     }
-    .work-item h3 {
-        margin-top: 0;
-        text-decoration: underline;
-        color: #0037ff;
-        -webkit-transition: color 0.3s ease;
-        transition: color 0.3s ease;
+}
+
+#scroll-top {
+    position: absolute;
+    top: -.25em;
+    right: $spacing-mobile;
+    transition: all 0.2s ease-in-out 0s;
+    &:hover {
+        transform: translateY(-10px);
     }
-    .work-item a:hover h3 {
-        color: #00b7ff;
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
     }
-    .work-item a > h3 ~ * {
-        margin-bottom: 0;
-        color: black;
-        text-decoration: none;
+
+    @include breakpoint(screen) {
+        right: unset;
+        left: 0;
+    }
+    @include theme(dark) {
+        svg {
+            color: white;
+        }
     }
 }

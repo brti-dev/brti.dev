@@ -1,0 +1,23 @@
+// Variable breakpoint sizes and mixin to wrap media query
+
+$breakpoints: (
+    "mobile": 640px,
+    "tablet": 768px,
+    "screen": 1024px,
+    "omnivision": 1280px,
+);
+@mixin breakpoint($view) {
+    @if $view == mobile {
+        @media (max-width: map-get($breakpoints, "mobile")) {
+            @content;
+        }
+    } @else if $view == omnivision {
+        @media (min-width: map-get($breakpoints, "omnivision")) {
+            @content;
+        }
+    } @else {
+        @media (min-width: map-get($breakpoints, "mobile") + 1px) {
+            @content;
+        }
+    }
+}
