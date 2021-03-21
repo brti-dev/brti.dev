@@ -9,10 +9,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@reach/tooltip": "^0.13.2",
     "next": "latest",
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "^4.2.0",
     "sass": "^1.32.8"
   },
   "repository": {
