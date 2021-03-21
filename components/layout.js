@@ -1,13 +1,32 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { BiArrowToTop as ArrowTopIcon } from 'react-icons/bi'
 
 import scrollToTop from '../lib/scroll-to-top'
 import IconButton from './IconButton'
 
+const PAGES = [
+    { link: 'developer', title: 'Web Developer' },
+    { link: 'teacher', title: 'Teacher' },
+    { link: 'gamer', title: 'Gamer' },
+    { link: 'china-expat', title: 'Expat in China' },
+    { link: 'traveler', title: 'Traveler' },
+    { link: 'history-buff', title: 'Amateur Historian' },
+]
+
+function asHref(link) {
+    return `/${link}`
+}
+
 export const siteTitle = 'Matt Berti'
 
-export default function Layout({ children, title, home = false }) {
+export default function Layout({ children, title }) {
+    const { pathname } = useRouter()
+
+    const isHome = pathname === '/'
+    const isCurrentPage = link => asHref(link) === pathname
+
     return (
         <>
             <Head>
@@ -30,21 +49,20 @@ export default function Layout({ children, title, home = false }) {
                 <h1>Matt Berti</h1>
                 <picture>
                     <source srcSet="/img/mattberti.webp" type="image/webp" />
-                    <img src="/img/mattberti.png" alt="Matt Berti" width={home ? 144 : 64} height={home ? 144 : 64} />
+                    <img src="/img/mattberti.png" alt="Matt Berti" width={isHome ? 144 : 64} height={isHome ? 144 : 64} />
                 </picture>
                 <nav>
                     <ul>
-                        <li><Link href="/developer">Web Developer</Link></li>
-                        <li><Link href="/teacher">Teacher</Link></li>
-                        <li><Link href="/gamer">Gamer</Link></li>
-                        <li><Link href="/china-expat">Expat in China</Link></li>
-                        <li><Link href="/traveler">Traveler</Link></li>
-                        <li><Link href="/history-buff">Amateur Historian</Link></li>
+                        {PAGES.map(({ link, title }) => (
+                            <li key={link} className={isCurrentPage(link) ? 'current' : ''}>
+                                <Link href={asHref(link)}>{title}</Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </header>
             <main>{children}</main>
-            {!home && (
+            {!isHome && (
                 <footer>
                     <ul>
                         <li><Link href="/">Matt Berti</Link></li>

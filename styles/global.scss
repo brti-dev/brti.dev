@@ -44,7 +44,7 @@ $spacing-monitor: 3.5rem;
 
 :root {
     font: normal 100% sans-serif;
-    font-size: calc(100vw / 30);
+    font-size: calc(100vw / 22);
     @include breakpoint(screen) {
         font-size: calc(100vw / 50);
     }
@@ -181,6 +181,9 @@ tt {
     font-size: 0.85em;
     white-space: pre-wrap;
     background-color: #ffcfd8;
+    @include theme(dark) {
+        color:rgb(24, 26, 27);
+    }
 }
 
 pre code,
@@ -188,7 +191,8 @@ tt {
     font-size: 0.85em;
     white-space: pre;
     line-height: 1.2;
-    background: transparent;
+    background: unset;
+    color: unset;
     border: none;
     padding: 0.1em;
 }
@@ -257,29 +261,46 @@ button {
 
     > header {
         width: 100%;
-        height: 5rem;
         display: flex;
         align-items: center;
+        @include spacing(margin-top);
+        @include spacing(margin-bottom);
+
         > picture {
             order: 1;
+            margin-left: -32px;
+            margin-right: $spacing-mobile;
+
+            @include breakpoint(screen) {
+                margin-left: unset;
+            }
         }
+
         > h1 {
             order: 2;
             margin: 0;
             padding: 0;
             line-height: normal;
         }
+
         > nav {
+            display: none;
             order: 3;
             position: relative;
+
             > ul {
                 margin: 0;
                 padding: 0;
                 list-style-type: none;
+
                 > li {
                     margin: 0;
                     padding: 0;
                     list-style-type: none;
+
+                    &.current {
+                        // Denotes current page
+                    }
                 }
             }
         }

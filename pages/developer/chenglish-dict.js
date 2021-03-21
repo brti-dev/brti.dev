@@ -1,4 +1,4 @@
-import Layout from '../../components/layout'
+import Layout from '../../components/Layout'
 import classes from '../../styles/article.module.scss'
 
 function ChenglishDict() {

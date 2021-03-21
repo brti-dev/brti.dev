@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
-import Layout from '../components/layout'
+import Layout from '../components/Layout'
 import classes from './index.module.css'
 
 function HomePage() {
     return (
-        <Layout home>
+        <Layout>
             <div style={{ display: 'none' }} itemScope itemType="http://schema.org/Person">
                 <span itemProp="name">Matt Berti</span>
                 <span itemProp="additionalName">Mathew Ryan Berti</span>

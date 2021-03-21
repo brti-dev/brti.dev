@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import Layout from '../../components/layout'
+import Layout from '../../components/Layout'
 import classes from './index.module.css'
 
 const WORKS = [
@@ -56,7 +56,10 @@ function Work() {
             <section>
                 <h2>Capabilities</h2>
                 <p>
-                    I am versatile, flexible, and see myself as a lifelong learner. I enjoy building delightful and accessible user interfaces that are simple and clean. I love working with data and have designed databases that scale to thousands of users. I believe the internet is the greatest tool in our arsenal for leraning, but we have a resposibility to ensure credibility.
+                    I am versatile, flexible, and see myself as a lifelong learner.{' '}
+                    I enjoy building delightful and accessible user interfaces that are simple and clean.{' '}
+                    I love working with data and have designed databases that scale to thousands of users.{' '}
+                    I believe the internet is the greatest tool in our arsenal for leraning, but we have a resposibility to ensure credibility.
                 </p>
             </section>
             <section className={classes.mywork}>
@@ -70,7 +73,7 @@ function Work() {
                                     {work.subheading && <strong>{work.subheading}</strong>}
                                     {work.description && <p>{work.description}</p>}
                                     <ul>
-                                        {work.tags.map(tag => <li>{tag}</li>)}
+                                        {work.tags.map(tag => <li key={tag}>{tag}</li>)}
                                     </ul>
                                 </a>
                             </Link>
