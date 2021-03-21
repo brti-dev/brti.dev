@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "@reach/tooltip": "^0.13.2",
+    "date-fns": "^2.19.0",
+    "gray-matter": "^4.0.2",
     "next": "latest",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.2.0",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1",
     "sass": "^1.32.8"
   },
   "repository": {
