@@ -1,42 +1,16 @@
 @use 'sass:color';
 @use 'breakpoint' as *;
-
-$blue: hsl(210, 100%, 60%);
-$lightblue: hsl(210, 100%, 70%);
-$darkblue: hsl(210, 100%, 45%);
-$red: #dd3333;
-$green: #00a264;
-$purple: #6b3ea8;
-$color-body-light: hsl(0, 0%, 98%);
-$color-surface-light: hsl(0, 0%, 85%);
-$color-comment-light: hsl(0, 0%, 70%);
-$color-body-dark: rgb(24, 26, 27);
-$color-surface-dark: rgb(36, 37, 38);
-$color-comment-dark: rgb(58, 59, 60);
-
-// Color theme
-
-@mixin theme($theme) {
-    @if $theme == dark {
-        @media (prefers-color-scheme: dark) {
-            @content;
-        }
-    } @else {
-        @media (prefers-color-scheme: light) {
-            @content;
-        }
-    }
-}
+@use 'theme' as *;
 
 // Spacing settings and methods
 
 $spacing-mobile: 1rem;
-$spacing-monitor: 3.5rem;
+$spacing-screen: 3.5rem;
 
 @mixin spacing($prop) {
     #{$prop}: $spacing-mobile;
     @include breakpoint(screen) {
-        #{$prop}: $spacing-monitor;
+        #{$prop}: $spacing-screen;
     }
 }
 
@@ -306,10 +280,15 @@ button {
         }
     }
 
+    > main {
+        line-height: 1.6;
+    }
+
     > footer {
         position: relative;
-        @include spacing(margin-top);
-        @include spacing(margin-bottom);
+        margin-top: $spacing-screen;
+        margin-bottom: $spacing-screen;
+        line-height: 1.6;
 
         ul {
             margin: 0;
@@ -324,12 +303,23 @@ button {
                 }
             }
         }
+
+        a.sourcecode {
+            text-decoration: none;
+            span {
+                display: none;
+                @extend .a;
+                @include breakpoint(screen) {
+                    display: unset;
+                }
+            }
+        }
     }
 }
 
 #scroll-top {
     position: absolute;
-    top: -.25em;
+    top: 0;
     right: $spacing-mobile;
     transition: all 0.2s ease-in-out 0s;
     &:hover {
@@ -341,7 +331,7 @@ button {
         height: 1.5em;
     }
 
-    @include breakpoint(screen) {
+    @include breakpoint(omnivision) {
         right: unset;
         left: 0;
     }

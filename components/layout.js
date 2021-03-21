@@ -1,3 +1,4 @@
+/* eslint-disable prefer-template */
 import Link from 'next/link'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
@@ -15,6 +16,12 @@ const PAGES = [
     { link: 'history-buff', title: 'Amateur Historian' },
 ]
 
+// pathname-alias for source code link (@github)
+const ALIASES = {
+    '/developer': '/developer/index.js',
+    '/blog': '/blog/index.js',
+}
+
 function asHref(link) {
     return `/${link}`
 }
@@ -26,6 +33,7 @@ export default function Layout({ children, title }) {
 
     const isHome = pathname === '/'
     const isCurrentPage = link => asHref(link) === pathname
+    const sourceLink = 'https://github.com/dr-spaceman/mattberti.com/tree/master/pages' + (ALIASES[pathname] ?? pathname + '.js')
 
     return (
         <>
@@ -66,9 +74,19 @@ export default function Layout({ children, title }) {
                 <footer>
                     <ul>
                         <li><Link href="/">Matt Berti</Link></li>
-                        <li><Link href="/developer" title="Matt Berti, Web Developer">My Work</Link></li>
+                        <li><Link href="/developer" title="Matt Berti, Web Developer">Work</Link></li>
                         <li><Link href="/blog" title="Matt Berti Blog">Blog</Link></li>
-                        <li><Link href="mailto:me@mattberti.com">E-mail</Link></li>
+                        <li><Link href="mailto:me@mattberti.com">Email</Link></li>
+                        <li>
+                            <a
+                                href={sourceLink}
+                                title="View or edit the source code for this page"
+                                className="sourcecode"
+                            >
+                                🔎
+                                <span>source code</span>
+                            </a>
+                        </li>
                     </ul>
                     <IconButton id="scroll-top" onClick={scrollToTop}>
                         <ArrowTopIcon />

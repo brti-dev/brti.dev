@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 import Layout from '../../components/Layout'
-import classes from './index.module.css'
+import classes from './index.module.scss'
 
 const WORKS = [
     {

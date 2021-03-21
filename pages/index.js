@@ -17,8 +17,8 @@ function HomePage() {
             <section>
                 <p>
                     Hi I&apos;m Matt, a <Link href="/developer">full stack web developer</Link>.{' '}
-                    I live in <a href="/china-expat">China</a> where I <Link href="/teacher">teach</Link> high school kids.{' '}
-                    I&apos;m passionate about <Link href="/gamer">videogames</Link>, <Link href="/traveler">traveling</Link>, and <Link href="/history">history</Link>.{' '}
+                    I live in <a href="/china-expat">China</a> where I <Link href="/teacher">teach</Link> high school kids by day and code by night.{' '}
+                    I&apos;m passionate about <Link href="/gamer">videogames</Link>, <Link href="/history">history</Link>, and <a href="https://en.wikipedia.org/wiki/Serial_comma">the Oxford Comma</a>.{' '}
                     Occasionally I <Link href="/blog">write</Link> about the aforementioned topics.{' '}
                 </p>
                 <dl className={classes.social}>
@@ -27,6 +27,7 @@ function HomePage() {
                     <dd><a href="https://www.linkedin.com/in/mrberti/">Linkedin</a></dd>
                     <dd><a href="https://github.com/dr-spaceman">Github</a></dd>
                     <dd><a href="https://steamcommunity.com/id/bahamatt/">Steam</a></dd>
+                    <dd><a href="https://letterboxd.com/dr_spaceman/">Letterboxd</a></dd>
                 </dl>
             </section>
         </Layout>

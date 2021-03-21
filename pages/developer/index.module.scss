@@ -1,0 +1,57 @@
+@use '../../styles/breakpoint' as *;
+@use '../../styles/theme' as *;
+
+.workItems {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.workItem {
+    width: 100%;
+
+    @include breakpoint(screen) {
+        width: 48%;
+        margin-bottom: 1em;
+    }
+
+    a {
+        display: block;
+        padding: 5vw;
+        text-decoration: none;
+        background-color: $color-surface-light;
+        transition: background-color 0.3s ease;
+
+
+        &:hover {
+            background-color: $color-comment-light;
+        }
+
+        @include theme(dark) {
+            background-color: $color-surface-dark;
+
+            &:hover {
+                background-color: $color-comment-dark;
+            }
+        }
+    }
+
+    h3 {
+        margin-top: 0;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+        color: unset;
+
+        ~ * {
+            margin-bottom: 0;
+            text-decoration: none;
+            color: black;
+        
+            @include theme(dark) {
+                color: white;
+            }
+        }
+    }
+}
+
+
