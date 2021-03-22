@@ -1,7 +1,21 @@
 @use 'breakpoint' as *;
+@use 'theme' as *;
+@use 'extensions' as *;
+
+%p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 
 .root {
     counter-reset: article;
+
+    p {
+        @extend %p;
+    }
 
     > img {
         width: initial !important;
@@ -55,5 +69,34 @@
 
     section + section {
         margin-top: 2em;
+    }
+}
+
+.description,
+.preface {
+    @extend %p;
+}
+
+.preface {
+    @extend %surface;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li + li {
+            margin-top: .75em;
+        }
+
+        @include breakpoint(screen) {
+            display: flex;
+
+            li + li {
+                margin: 0 0 0 .75em;
+                padding: 0 0 0 .75em;
+                border-left: 2px solid rgba(0, 0, 0, 0.15);
+            }
+        }
     }
 }

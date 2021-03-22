@@ -69,15 +69,13 @@ h6 {
 }
 
 h1 {
-    a {
-        text-decoration: none;
-    }
+    font-size: 2.5em;
 }
 
 a,
 .a {
     color: $darkblue;
-    text-decoration: underline;
+    text-decoration: none;
     cursor: pointer;
     &:active {
         color: $purple;

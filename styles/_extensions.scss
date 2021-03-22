@@ -1,0 +1,10 @@
+@use 'theme' as *;
+
+%surface {
+    padding: 1.5em;
+    background-color: $color-surface-light;
+
+    @include theme(dark) {
+        background-color: $color-surface-dark;
+    }
+}

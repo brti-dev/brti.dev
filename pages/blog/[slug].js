@@ -1,9 +1,8 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head'
 import Layout from '../../components/Layout'
-import Date from '../../components/Date'
+import Article from '../../components/Article'
 import { getPostSlugs, getPost } from '../../lib/posts'
-import classes from '../../styles/article.module.scss'
 
 export default function Post({ post }) {
     return (
@@ -12,13 +11,12 @@ export default function Post({ post }) {
                 <title>{post.title} - Matt Berti Blog</title>
                 {post.image && <meta name="og:image" content={post.image} />}
             </Head>
-            <article className={classes.root}>
-                <header>
-                    <Date dateString={post.date} />
-                    <h1>{post.title}</h1>
-                </header>
+            <Article
+                title={post.title}
+                dateString={post.date}
+            >
                 <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-            </article>
+            </Article>
         </Layout>
     )
 }
