@@ -28,7 +28,7 @@ const WORKS = [
         slug: 'chenglish-dict',
         heading: 'Chenglish Dictionary',
         description: 'A Chinese-English dictionary and flash cards app for Chinese language learners.',
-        tags: ['Mobile-first', 'Responsive design', 'PHP', 'MySQL', 'Javascript and jQuery'],
+        tags: ['Test-Driven Development', 'Mobile-first', 'PHP', 'MySQL', 'Javascript and jQuery'],
     }, {
         label: 'Web Portal',
         slug: 'videogamin',

@@ -29,6 +29,7 @@ function ChenglishDict() {
                     <li>A <a href="https://github.com/dr-spaceman/chenglish-dictionary/blob/master/src/User.php">User class</a> to manage the activity of guests and registered members</li>
                     <li>A <a href="https://github.com/dr-spaceman/chenglish-dictionary/blob/master/src/Vocab.php">Vocab class</a> to manage and render personal vocabulary lists compililed by users</li>
                 </ol>
+                <p>The class objects are all covered by <a href="https://github.com/dr-spaceman/chenglish-dictionary/tree/master/tests">unit tests</a>, which were written in conjunction with the classes themselves.</p>
                 <p>On the front end, I designed the app to be mobile-first since I mostly practice using my phone. The <a href="https://github.com/dr-spaceman/chenglish-dictionary/blob/master/public/assets/css/screen.css">CSS</a> is also designed to be fully responsive for users to use on any screen.</p>
             </Article>
         </Layout>
