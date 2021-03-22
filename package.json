@@ -1,8 +1,9 @@
 {
-  "name": "mattberti",
-  "version": "1.0.0",
-  "description": "Matt Berti",
-  "main": "index.js",
+  "name": "mattberti.com",
+  "version": "2.0.0",
+  "description": "A personal web site, portfolio, and blog",
+  "license": "ISC",
+  "main": "pages/_app.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
