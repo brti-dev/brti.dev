@@ -154,7 +154,7 @@ tt {
     white-space: pre-wrap;
     background-color: #ffcfd8;
     @include theme(dark) {
-        color:rgb(24, 26, 27);
+        background-color: $color-surface-dark;
     }
 }
 

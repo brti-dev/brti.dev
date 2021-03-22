@@ -30,12 +30,6 @@ const WORKS = [
         description: 'A Chinese-English dictionary and flash cards app for Chinese language learners.',
         tags: ['Mobile-first', 'Responsive design', 'PHP', 'MySQL', 'Javascript and jQuery'],
     }, {
-        label: 'Blog',
-        slug: 'matt-berti-blog',
-        heading: 'Matt Berti Blog',
-        description: 'A weblog about learning Node.js and CSS3.',
-        tags: ['Node', 'Express', 'HTML5', 'Responsive design', 'SASS', 'Travis CI', 'Heroku'],
-    }, {
         label: 'Web Portal',
         slug: 'videogamin',
         heading: 'Videogam.in',
@@ -68,11 +62,11 @@ function Work() {
                     {WORKS.map(work => (
                         <div className={classes.workItem} key={work.slug}>
                             <Link href={`/developer/${work.slug}`}>
-                                <a>
+                                <a title={work.heading}>
                                     <h3>{work.heading}</h3>
                                     {work.subheading && <strong>{work.subheading}</strong>}
                                     {work.description && <p>{work.description}</p>}
-                                    <ul>
+                                    <ul className={classes.tags}>
                                         {work.tags.map(tag => <li key={tag}>{tag}</li>)}
                                     </ul>
                                 </a>

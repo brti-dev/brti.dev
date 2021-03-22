@@ -1,5 +1,6 @@
 @use '../../styles/breakpoint' as *;
 @use '../../styles/theme' as *;
+@use 'sass:color' as color;
 
 .workItems {
     display: flex;
@@ -21,19 +22,16 @@
         text-decoration: none;
         background-color: $color-surface-light;
         transition: background-color 0.3s ease;
-
-
         &:hover {
-            background-color: $color-comment-light;
+            background-color: color.scale($color-surface-light, $lightness: 30%);
         }
-
         @include theme(dark) {
             background-color: $color-surface-dark;
-
             &:hover {
-                background-color: $color-comment-dark;
+                background-color: color.scale($color-surface-dark, $lightness: -10%);
             }
         }
+
     }
 
     h3 {
@@ -54,4 +52,16 @@
     }
 }
 
+ul.tags {
+    padding: 0;
+    list-style-type: none;
 
+    li {
+        margin: 0;
+        padding: 0;
+        opacity: 0.6;
+        &::before {
+            content: "#";
+        }
+    }
+}

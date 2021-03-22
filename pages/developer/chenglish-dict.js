@@ -1,13 +1,23 @@
+import Head from 'next/head'
 import Layout from '../../components/Layout'
-import classes from '../../styles/article.module.scss'
+import Article from '../../components/Article'
 
 function ChenglishDict() {
     return (
         <Layout>
-            <article className={classes.root}>
-                <h3>Chenglish Dictionary</h3>
-                <p>A Chinese-English dictionary and flash cards app for Chinese language learners.</p>
-                <p>In production at <a href="http://chenglishdict.com/">chenglishdict.com</a> | Code at <a href="https://github.com/dr-spaceman/chenglish-dictionary/">Github</a></p>
+            <Head>
+                <title>Chenglish Dictionary - Project by Matt Berti</title>
+            </Head>
+            <Article
+                title="Chenglish Dictionary"
+                description="A Chinese-English dictionary and flash cards app for Chinese language learners."
+                preface={(
+                    <ul>
+                        <li>In production at <a href="http://chenglishdict.com/">chenglishdict.com</a></li>
+                        <li>Code at <a href="https://github.com/dr-spaceman/chenglish-dictionary/">Github</a></li>
+                    </ul>
+                )}
+            >
                 <p>As any learner of Chinese soon discovers, there are <i>a lot</i> of characters to learn. <a href="https://lingua.mtsu.edu/academic/dajun-4thtech.pdf">A 2004 study conducted by Jun Da</a>, a linguist at Middle Tennessee State University, found that there are an astounding 258,852,642 unique Chinese characters in use in classical and modern texts. Luckily for learners of the modern language, only about 8,000 are generally known by fluent speakers; Even better, Jun estimates only 3,500 characters are commonly used in modern texts like newspapers and novels.</p>
                 <p>Still, the path to literacy in Chinese is a daunting task. As I myself discovered, learning 3,500 characters is time-consuming and nerve-wracking, especially after your weary eyes have come across that same character a hundred times and you still can&apos;t seem to get it saved in your memory bank.</p>
                 <p>But the benefits of overcoming this hurdle and achieving bilingualism are huge, impacting life span and personal wealth. A landmark study published in the journal <i>Neurology</i> in 2013 found that <a href="https://n.neurology.org/content/81/22/1938">bilingualism delays the onset of dementia</a>. In 2014, The Economist used economic studies and the principle of compound interest to argue that <a href="https://www.economist.com/prospero/2014/03/11/johnson-what-is-a-foreign-language-worth">learning a second language can potentially add $128,000 to your retirement account</a>.</p>
@@ -20,7 +30,7 @@ function ChenglishDict() {
                     <li>A <a href="https://github.com/dr-spaceman/chenglish-dictionary/blob/master/src/Vocab.php">Vocab class</a> to manage and render personal vocabulary lists compililed by users</li>
                 </ol>
                 <p>On the front end, I designed the app to be mobile-first since I mostly practice using my phone. The <a href="https://github.com/dr-spaceman/chenglish-dictionary/blob/master/public/assets/css/screen.css">CSS</a> is also designed to be fully responsive for users to use on any screen.</p>
-            </article>
+            </Article>
         </Layout>
     )
 }
