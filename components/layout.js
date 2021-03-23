@@ -37,6 +37,15 @@ function asHref(link) {
 
 export const siteTitle = 'Matt Berti'
 
+/**
+ * Wrapper component to render header, footer, and other layout components
+ *
+ * @param {Object} props
+ * @param {string=} props.title Page title
+ * @param {JSX.Element[]} props.children Main content
+ *
+ * @returns {JSX.Element}
+ */
 export default function Layout({ children, title }) {
     const { pathname, query } = useRouter()
 
@@ -83,8 +92,8 @@ export default function Layout({ children, title }) {
                 <footer>
                     <ul>
                         <li><Link href="/">Matt Berti</Link></li>
-                        <li><Link href="/developer" title="Matt Berti, Web Developer">Work</Link></li>
-                        <li><Link href="/blog" title="Matt Berti Blog">Blog</Link></li>
+                        <li><Link href="/developer"><a title="Matt Berti, Web Developer">Work</a></Link></li>
+                        <li><Link href="/blog"><a title="Matt Berti Blog">Blog</a></Link></li>
                         <li><Link href="mailto:me@mattberti.com">Email</Link></li>
                         <li>
                             <a

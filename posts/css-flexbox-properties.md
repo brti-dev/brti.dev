@@ -44,7 +44,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 :  Sets the default alignment for all of the flex container’s items. This value can be overwidden on each individual flex item with `align-self`.
 
 <figure>
-  <img alt="align-items" src="/images/flex-align.svg">
+  <img alt="align-items" src="/img/posts/flex-align.svg">
   <figcaption>An illustration of the five align-items keywords and their effects on a flex container with four colored items.</figcaption>
 </figure>
 
@@ -53,7 +53,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 :  Horizontally aligns content __after__ any flexible lengths and any auto margins have been resolved; Helps distribute extra free space.
 
 <figure>
-  <img alt="justify-content" src="/images/justify-content.svg">
+  <img alt="justify-content" src="/img/posts/justify-content.svg">
   <figcaption>An illustration of the five justify-content keywords and their effects on a flex container with three colored items.</figcaption>
 </figure>
 
@@ -62,7 +62,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 :  Vertical (cross-axis) alignment for milti-line (more than one row of flex items) flex containers
 
 <figure>
-  <img alt="align-content" src="/images/align-content.svg">
+  <img alt="align-content" src="/img/posts/align-content.svg">
   <figcaption>An illustration of the align-content keywords and their effects on a multi-line flex container.</figcaption>
 </figure>
 
@@ -149,7 +149,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 :   The initial main size of the flex item.
 
 <figure>
-  <img src="/images/rel-vs-abs-flex.svg">
+  <img src="/img/posts/rel-vs-abs-flex.svg">
   <figcaption>A diagram showing the difference between "absolute" flex (starting from a basis of zero) and "relative" flex (starting from a basis of the item’s content size). The three items have flex factors of `1`, `1`, and `2`, respectively: notice that the item with a flex factor of `2` grows twice as fast as the others.</figcaption>
 </figure>
 

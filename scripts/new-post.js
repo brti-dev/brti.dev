@@ -1,3 +1,9 @@
+/**
+ * This script can be used to create a new blog post starter.
+ *
+ * @use npm run newpost
+ */
+
 /* eslint-disable no-restricted-syntax */
 const { accessSync, constants, writeFile } = require('fs')
 const readline = require('readline').createInterface({

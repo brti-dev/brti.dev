@@ -10,6 +10,13 @@ function IconButton({ children, ...rest }) {
     );
 }
 
+/**
+ * Icon button with optional tooltip
+ *
+ * @param {Object} props
+ * @param {string=} props.tooltip
+ * @param {...Object=} props.rest
+ */
 function CustomIconButton({ tooltip, ...rest }) {
     return (
         <>

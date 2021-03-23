@@ -7,11 +7,11 @@ tags:
 ---
 CSS hacks...
 
-<img alt="#sick of your shit" src="/images/sickofyourshit-daenerys.gif" style="width:400px; max-height:calc(272px*(4/5));">
+<img alt="#sick of your shit" src="/img/posts/sickofyourshit-daenerys.gif" style="width:400px; max-height:calc(272px*(4/5));">
 
 CSS3 FTW!
 
-<img alt="applause for css3" src="/images/applause-renly.gif" style="width:400px; max-height:calc(272px*(4/5)); object-fit:cover; object-position:0 10%;">
+<img alt="applause for css3" src="/img/posts/applause-renly.gif" style="width:400px; max-height:calc(272px*(4/5)); object-fit:cover; object-position:0 10%;">
 
 &nbsp;<!-- more:CSS3 properties -->
 
@@ -72,11 +72,11 @@ Properties for objects: __images__, __videos__, and __embeds__.
 
 `object-fit`
 :  Determines how objects fit within their defined with/height or container.
-:  `fill` (default): fill the entire space, ignore aspect ratio<div class="demo-css3--object object-fit--fill"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
-:  `contain`: expand or contract the image, maintaining aspect ratio.<div class="demo-css3--object object-fit--contain"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
-:  `cover`: expand or contract until it covers the width and hight while maintaining aspect ratio<div class="demo-css3--object object-fit--cover"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
-:  `none`: ignore the box width and hight<div class="demo-css3--object object-fit--none"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
-:  `scale-down`: Scale the image until it either fits within the box size (`contain`) or reaches its original size (`none`)...<div class="demo-css3--object object-fit--scale-down"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/images/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
+:  `fill` (default): fill the entire space, ignore aspect ratio<div class="demo-css3--object object-fit--fill"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
+:  `contain`: expand or contract the image, maintaining aspect ratio.<div class="demo-css3--object object-fit--contain"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
+:  `cover`: expand or contract until it covers the width and hight while maintaining aspect ratio<div class="demo-css3--object object-fit--cover"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
+:  `none`: ignore the box width and hight<div class="demo-css3--object object-fit--none"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
+:  `scale-down`: Scale the image until it either fits within the box size (`contain`) or reaches its original size (`none`)...<div class="demo-css3--object object-fit--scale-down"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
 
 `object-position`
 :  Position the object within the box
@@ -84,8 +84,8 @@ Properties for objects: __images__, __videos__, and __embeds__.
 
 <figure class="demo-css3--crop-cover">
   <figcaption>Using `object-fit:cover` to nicely crop and awkwardly-sized image.<br>(Via <a href="https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87">Chris Nager</a>; "joffrey" &copy; <a href="http://lamwin.deviantart.com/art/joffrey-316381780">lamwin@deviantart</a>)</figcaption>
-    <img src="/images/joffrey.jpg" alt="Joffrey">
-    <img src="/images/joffrey.jpg" alt="Joffrey">
+    <img src="/img/posts/joffrey.jpg" alt="Joffrey">
+    <img src="/img/posts/joffrey.jpg" alt="Joffrey">
 </figure>
 
 

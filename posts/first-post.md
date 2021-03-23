@@ -4,7 +4,7 @@ date: '2014-07-19'
 tags:
   - blog
 ---
-![victory](/images/crono.gif "victory")
+![victory](/img/posts/crono.gif "victory")
 
 Hello 世界!<!-- more-About this blog -->
 
