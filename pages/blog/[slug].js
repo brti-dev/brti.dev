@@ -14,9 +14,8 @@ export default function Post({ post }) {
             <Article
                 title={post.title}
                 dateString={post.date}
-            >
-                <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-            </Article>
+                content={post.contentHtml}
+            />
         </Layout>
     )
 }
