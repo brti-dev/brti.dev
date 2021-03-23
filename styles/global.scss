@@ -149,10 +149,12 @@ figure figcaption {
 
 code,
 tt {
-    font-family: Inconsolata, monospace, sans-serif;
-    font-size: 0.85em;
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: $pink;
+    border-radius: 6px;
     white-space: pre-wrap;
-    background-color: #ffcfd8;
     @include theme(dark) {
         background-color: $color-surface-dark;
     }
@@ -161,6 +163,7 @@ tt {
 pre code,
 tt {
     font-size: 0.85em;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     white-space: pre;
     line-height: 1.2;
     background: unset;
