@@ -18,6 +18,10 @@ To get this app running on your local machine:
 3. Run the development server: `npm run dev`
 4. Build for deployment: `npm run build`
 
+## Blog
+
+Posts within the `posts` directory are automatically generated as blog posts. To add a new post, manually create a new markdown file, or use the shortcut script: `npm run newpost`.
+
 ## Contributing
 
 Feel free to file a PR if you want to help improve this project. :)
