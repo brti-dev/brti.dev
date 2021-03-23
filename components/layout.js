@@ -21,6 +21,16 @@ const ALIASES = {
     '/blog': '/blog/index.js',
 }
 
+const REPOSITORY_ROOT = 'https://github.com/dr-spaceman/mattberti.com/tree/master';
+
+function getSource(pathname, query) {
+    if (pathname === '/blog/[slug]') {
+        return `${REPOSITORY_ROOT}/posts/${query.slug}.md`
+    }
+
+    return `${REPOSITORY_ROOT}/pages` + (ALIASES[pathname] ?? `${pathname}.js`)
+}
+
 function asHref(link) {
     return `/${link}`
 }
@@ -28,11 +38,11 @@ function asHref(link) {
 export const siteTitle = 'Matt Berti'
 
 export default function Layout({ children, title }) {
-    const { pathname } = useRouter()
+    const { pathname, query } = useRouter()
 
     const isHome = pathname === '/'
     const isCurrentPage = link => asHref(link) === pathname
-    const sourceLink = 'https://github.com/dr-spaceman/mattberti.com/tree/master/pages' + (ALIASES[pathname] ?? pathname + '.js')
+    const sourceLink = getSource(pathname, query)
 
     return (
         <>
