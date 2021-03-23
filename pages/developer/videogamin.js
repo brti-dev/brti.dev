@@ -6,10 +6,10 @@ function SquareHaven() {
     return (
         <Layout>
             <Head>
-                <title>Square Haven - Project by Matt Berti</title>
+                <title>Videogam.in - Project by Matt Berti</title>
             </Head>
             <Article
-                title="Square Haven"
+                title="Videogam.in"
                 description="An app to show off your videogame collection."
                 preface={(
                     <ul>

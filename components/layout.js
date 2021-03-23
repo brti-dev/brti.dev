@@ -1,9 +1,8 @@
 /* eslint-disable prefer-template */
-import Link from 'next/link'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { BiArrowToTop as ArrowTopIcon } from 'react-icons/bi'
-
 import scrollToTop from '../lib/scroll-to-top'
 import IconButton from './IconButton'
 
@@ -61,9 +60,9 @@ export default function Layout({ children, title }) {
                 </picture>
                 <nav>
                     <ul>
-                        {PAGES.map(({ link, title }) => (
+                        {PAGES.map(({ link, title: pageTitle }) => (
                             <li key={link} className={isCurrentPage(link) ? 'current' : ''}>
-                                <Link href={asHref(link)}>{title}</Link>
+                                <Link href={asHref(link)}>{pageTitle}</Link>
                             </li>
                         ))}
                     </ul>
