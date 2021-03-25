@@ -21,7 +21,7 @@ export default function Post({ post }) {
 }
 
 // Return a list of possible route match values for [slug]
-// Determined at build time: Added posts must rebuild
+// Determined at build time; Added posts must rebuild
 export async function getStaticPaths() {
     const paths = getPostSlugs()
 
@@ -38,9 +38,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
     const post = await getPost(slug)
 
-    return {
+    return ({
         props: {
             post,
         },
-    }
+    })
 }
