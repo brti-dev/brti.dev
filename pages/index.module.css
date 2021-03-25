@@ -1,22 +1,15 @@
 dl.social {
-    box-sizing: border-box;
-}
-
-dl.social:after {
-    content: "";
-    display: table;
-    clear: both;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 dl.social dt {
-    float: left;
+    font-weight: bold;
+    margin: 0 1em 0 0;
+    padding: 0;
 }
 
 dl.social dd {
-    float: left;
-    margin: 0 0 0 1em;
-    padding: 0 0 0 1em;
-    border-width: 0 0 0 1px;
-    border-color: gray;
-    border-style: solid;
+    margin: 0 1em 0 0;
+    padding: 0;
 }

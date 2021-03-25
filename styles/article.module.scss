@@ -18,17 +18,19 @@
     }
 
     > img {
-        width: initial !important;
+        width: initial;
         display: block;
         margin-right: auto;
         margin-left: auto;
         margin-top: 1em;
     }
+
     > figure figcaption::before {
         counter-increment: article;
         content: "Figure " counter(article, decimal-leading-zero) ". ";
         font-weight: bold;
     }
+
     > blockquote {
         padding: 0 0 0 5%;
         position: relative;
@@ -62,9 +64,12 @@
     pre {
         padding: 1em 5%;
         overflow: auto;
-        background: #f7fafb;
+        background: $color-surface-light;
         counter-reset: linenumbers;
         line-height: 1;
+        @include theme(dark) {
+            background: $color-surface-dark;
+        }
     }
 
     section + section {

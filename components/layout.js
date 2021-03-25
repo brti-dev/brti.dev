@@ -42,7 +42,7 @@ export const siteTitle = 'Matt Berti'
  *
  * @param {Object} props
  * @param {string=} props.title Page title
- * @param {JSX.Element[]} props.children Main content
+ * @param {JSX.Element|JSX.Element[]} props.children Main content
  *
  * @returns {JSX.Element}
  */

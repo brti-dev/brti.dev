@@ -7,7 +7,7 @@ tags:
 ---
 Redis is pretty great! Here are some examples of the data types in action. <!-- more -->If you're new to Redis check out [Try Redis](http://try.redis.io).
 
-##Command Line
+## Command Line
 
 Start the server
 
@@ -45,7 +45,7 @@ Get all keys
 
 On to the data types!
 
-##Key-String
+## Key-String
 
 The most basic data type.
 
@@ -87,7 +87,7 @@ $ exists counter // nope
   0
 ````
 
-##List
+## List
 A list is a series of ordered values
 
 ````bash
@@ -106,7 +106,7 @@ $ lpush mylist a b c
   3) a
 ````
 
-##Set
+## Set
 An unordered collections of unique strings. Sets have useful functions like intersection, union and difference to compare multiple sets.
 
 ````bash
@@ -159,7 +159,7 @@ $ srandmember // get a random item without removing it
   OK
 ````
 
-##Sorted Set
+## Sorted Set
 
 Similar to a regular set, but now each value has an associated _score_ which is used to sort the elements
 
@@ -217,7 +217,7 @@ $ zcount scores -infinity 1 // with scores between negative infinity and 1
 $ zRevRangeByScore scores +infinity (1 withscores //show all (withschores) above 1
 ````
 
-##Hashes
+## Hashes
 Finally, hashes are maps between string fields and string values, so they are the perfect data type to represent objects (ie: A User with a number of fields)
 
 ````bash

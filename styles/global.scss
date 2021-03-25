@@ -83,6 +83,7 @@ a,
     &:hover {
         color: $blue;
         border-color: $blue;
+        text-decoration: underline;
     }
     @include theme(dark) {
         color: $blue;

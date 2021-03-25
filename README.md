@@ -18,6 +18,8 @@ To get this app running on your local machine:
 3. Run the development server: `npm run dev`
 4. Build for deployment: `npm run build`
 
+**Note** the current build setting utilizes [Next.js static export](https://nextjs.org/docs/advanced-features/static-html-export). To run this app on a server, use `next build`.
+
 ## Blog
 
 Posts within the `posts` directory are automatically generated as blog posts. To add a new post, manually create a new markdown file, or use the shortcut script: `npm run newpost`.

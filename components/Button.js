@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Button({
-    color, size, type = 'button', variant = 'text', children, ...props
+    color, size, type = 'button', variant = 'text', children, ...rest
 }) {
     return (
         // eslint-disable-next-line react/button-has-type
-        <button type={type} variant={variant} color={color} size={size} {...props}>
+        <button type={type} variant={variant} color={color} size={size} {...rest}>
             {children}
         </button>
     );
