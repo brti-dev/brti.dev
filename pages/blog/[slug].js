@@ -1,21 +1,25 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head'
 import Layout from '../../components/Layout'
-import Article from '../../components/Article'
+import Article, { ArticleContent } from '../../components/Article'
 import { getPostSlugs, getPost } from '../../lib/posts'
 
 export default function Post({ post }) {
+    console.log(post)
     return (
         <Layout>
             <Head>
                 <title>{post.title} - Matt Berti Blog</title>
                 {post.image && <meta name="og:image" content={post.image} />}
+                {post.customCss && <link href={post.customCss} rel="stylesheet" />}
             </Head>
             <Article
                 title={post.title}
                 dateString={post.date}
-                content={post.contentHtml}
-            />
+            >
+                {post.header && <header dangerouslySetInnerHTML={{ __html: post.header }} />}
+                <ArticleContent htmlContent={post.contentHtml} />
+            </Article>
         </Layout>
     )
 }

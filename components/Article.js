@@ -7,39 +7,31 @@ import Date from './Date'
  * Render an article. A header will be built based on props passed, or include a custom header in
  * the content.
  *
- * @param {Object} props
+ * @param {object} props
  * @param {string=} props.title Title of the article
  * @param {string=} props.description Description of the article
  * @param {string|JSX.Element=} props.preface A string or JSX compoent with preface information
  * @param {string=} props.dateString Date of the article
- * @param {JSX.Element=} props.header Header, built automatically if not given
- * @param {string=} props.content Article body to dangerously set; Replaces children
- * @param {JSX.Element[]=} props.children Article body
- * @param {...Object=} props.rest Other props to pass to the root element
+ * @param {JSX.Element|JSX.Element[]} props.children Article body
+ * @param {...object=} props.rest Other props to pass to the root element
  *
  * @returns Rendered article
- *
- * @note This component poses a series of challenges because React cannot render the HTML article
- * inside a fragment; An HTML element is needed to dangerouslySetInnerHTML, while the <article>
- * element and CSS require the article to be in the root element. Once we can dangerouslySet.. to
- * a fragment, this code can be cleaned up and most props can be removed in favor of children.
  */
 export default function Article({
     title,
     description,
     preface,
     dateString,
-    header,
-    content,
     children,
     ...rest
 }) {
-    let hasHeader = !!header
+    let header
+    let hasHeader = false
 
     if (children) {
         // Check for <header> in children
         React.Children.forEach(children, child => {
-            if (child.type === 'header') {
+            if (child && child.type === 'header') {
                 hasHeader = true
             }
         })
@@ -57,16 +49,6 @@ export default function Article({
         )
     }
 
-    if (content) {
-        return (
-            <article
-                className={classes.root}
-                {...rest}
-                dangerouslySetInnerHTML={{ __html: renderToStaticMarkup(header) + content }}
-            />
-        )
-    }
-
     return (
         <article
             className={classes.root}
@@ -76,4 +58,28 @@ export default function Article({
             {children}
         </article>
     )
+}
+
+/**
+ * Helper component to render the content of an article. Userful for rendering static HTML, eg.
+ * from parsed Markdown.
+ *
+ * @param {Object} props
+ * @param {string=} props.htmlContent Static HTML to set as article content; Uses React's
+ * `dangerouslySetInnerHTML` inside an additional <div> element
+ * @param {JSX.Element|JSX.Element[]} [props.children] Article body
+ *
+ * @returns {JSX.Element}
+ *
+ * @note This component is merely a solution to render static HTML in React. Once we can
+ * dangerouslySetInnerHTML to a fragment, this component can be removed or updated.
+ * @see https://github.com/facebook/react/issues/12014
+ * @see https://github.com/reactjs/rfcs/pull/129
+ */
+export function ArticleContent({ htmlContent, children }) {
+    if (htmlContent) {
+        return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
+    }
+
+    return children
 }

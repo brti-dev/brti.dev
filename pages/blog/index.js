@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { getSortedPosts } from '../../lib/posts'
 import Layout from '../../components/Layout'
-import Article from '../../components/Article'
+import Article, { ArticleContent } from '../../components/Article'
 import Date from '../../components/Date'
 
 export default function Blog({ posts }) {
@@ -10,16 +10,13 @@ export default function Blog({ posts }) {
         <Layout>
             <section>
                 {posts.map(post => (
-                    <Article
-                        key={post.slug}
-                        header={(
-                            <header>
-                                <Date dateString={post.date} />
-                                <h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
-                            </header>
-                        )}
-                        content={post.leadIn ?? post.contentHtml}
-                    />
+                    <Article key={post.slug}>
+                        <header>
+                            <Date dateString={post.date} />
+                            <h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
+                        </header>
+                        <ArticleContent htmlContent={post.lede ?? post.contentHtml} />
+                    </Article>
                 ))}
             </section>
         </Layout>

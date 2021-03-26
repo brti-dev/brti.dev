@@ -5,7 +5,7 @@ date: '2020-06-27'
 
 Recently I had the urge to test out some of the amazing stuff I was learning in [React](https://reactjs.org) on some real data from a [side-project](http://videogamin.squarehaven.com "Videogame Site"). I wanted to use [hooks](https://reactjs.org/docs/hooks-intro.html) and [JSX](https://reactjs.org/docs/introducing-jsx.html), and I just wanted to load the React engine via `<script>` tags in the browser, then have the browser compile the JavaScript and JSX. This is obviously purely for development purposes, since the expense to compile is totally unsuitable for production.
 
-To get __React with hooks and JSX up quickly and easily__, do the following:
+To get __React with hooks and JSX up quickly and easily__, <!--more-do the following-->do the following:
 
 1. Include the React, React-DOM, and Babel scripts in your HTML `<head>`:
 ```html

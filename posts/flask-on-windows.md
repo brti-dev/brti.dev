@@ -7,7 +7,7 @@ tags:
   - Windows
 ---
 
-This is, I think, the best way to get [Flask](https://flask.palletsprojects.com/) up and running on a Windows machine.
+This is, I think, the best way to get [Flask](https://flask.palletsprojects.com/) up and running on a Windows machine. <!--more-->
 
 ## Install the Windows Subsystem for Linux
 

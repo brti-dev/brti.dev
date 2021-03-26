@@ -5,7 +5,7 @@ tags:
   - css
   - flexbox
   - responsive design
-customHeading: <h1><a href="/blog/css-flexbox-properties" class="width-flush demo-cfp--flexcontainer demo-cfp--flexcontainer-wrap demo-cfp--styled"><span>C</span><span>S</span><span>S</span> <span>flexbox</span> <span>properties</span></a></h1>
+header: <time datetime="2015-07-28">July 28, 2015</time><h1><span class="width-flush demo-cfp--flexcontainer demo-cfp--flexcontainer-wrap demo-cfp--styled"><span>C</span><span>S</span><span>S</span> <span>flexbox</span> <span>properties</span></span></h1>
 
 ---
 I've gotten so used to using CSS hacks like positioning and [floating](http://css.maxdesign.com.au/floatutorial/) and [clearfixing](http://nicolasgallagher.com/micro-clearfix-hack/) over the years that it was at first hard for me to wrap my head around the magnificent simplicity of [CSS Flexboxes](https://drafts.csswg.org/css-flexbox-1). Here are my notes -- the properties listed and explained along with some examples that helped me understand.<!--more-->
@@ -88,7 +88,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
       <div>foo</div>
       <div>bar</div>
       <div>fuuu</div>
-      <div>baaa</div>
+      <div>buzz</div>
     </div>
   </div>
   <div class="demo-cfp--figure">
@@ -96,7 +96,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
       <div>foo</div>
       <div>bar</div>
       <div>fuuu</div>
-      <div>baaa</div>
+      <div>buzz</div>
     </div>
   </div>
 
@@ -105,14 +105,14 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
   <div>foo</div>
   <div>bar</div>
   <div>fuuu</div>
-  <div>baaa</div>
+  <div>buzz</div>
 </div>
 <div class="flex-container
   flex-auto">
   <div>foo</div>
   <div>bar</div>
   <div>fuuu</div>
-  <div>baaa</div>
+  <div>buzz</div>
 </div>
 ```
 ```css
@@ -166,10 +166,10 @@ One use of auto margins in the main axis is to separate flex items into distinct
 <figure class="pop">
   <div class="demo-cfp--figure" style="width:100%;">
     <ul class="demo-cfp--flexcontainer demo-cfp--nav-styled">
-      <li><a href=/about>About</a>
-      <li><a href=/projects>Projects</a>
-      <li><a href=/interact>Interact</a>
-      <li id="login"><a href=/login>Login</a>
+      <li>About</li>
+      <li>Projects</li>
+      <li>Interact</li>
+      <li id="login">Login</li>
     </ul>
   </div>
   <div>
@@ -177,10 +177,10 @@ One use of auto margins in the main axis is to separate flex items into distinct
 ```html
 <nav>
   <ul>
-    <li><a href=/about>About</a></li>
-    <li><a href=/projects>Projects</a></li>
-    <li><a href=/interact>Interact</a></li>
-    <li id="login"><a href=/login>Login</a></li>
+    <li>About</li>
+    <li>Projects</li>
+    <li>Interact</li>
+    <li id="login">Login</li>
   </ul>
 </nav>
 ```
