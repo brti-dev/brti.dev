@@ -20,6 +20,7 @@ function HomePage() {
                     I live in <a href="/china-expat">China</a> where I <Link href="/teacher">teach</Link> high school kids by day and code by night.{' '}
                     I&apos;m passionate about <Link href="/gamer">videogames</Link>, <Link href="/history">history</Link>, and <a href="https://en.wikipedia.org/wiki/Serial_comma">the Oxford Comma</a>.{' '}
                     Occasionally I <Link href="/blog">write</Link> about the aforementioned topics.{' '}
+                    This website is <a href="https://github.com/dr-spaceman/mattberti.com">🔎open source</a>.
                 </p>
                 <dl className={classes.social}>
                     <dt>Find Me</dt>
@@ -28,6 +29,7 @@ function HomePage() {
                     <dd><a href="https://github.com/dr-spaceman">Github</a></dd>
                     <dd><a href="https://steamcommunity.com/id/bahamatt/">Steam</a></dd>
                     <dd><a href="https://letterboxd.com/dr_spaceman/">Letterboxd</a></dd>
+                    <dd><a href="mailto:me@mattberti.com">me@mattberti.com</a></dd>
                 </dl>
             </section>
         </Layout>
