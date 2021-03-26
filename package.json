@@ -21,6 +21,8 @@
     "react-dom": "latest",
     "react-icons": "^4.2.0",
     "remark": "^13.0.0",
+    "remark-deflist": "^0.3.0",
+    "remark-footnotes": "^3.0.0",
     "remark-html": "^13.0.1",
     "sass": "^1.32.8"
   },

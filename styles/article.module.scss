@@ -10,28 +10,39 @@
     margin-inline-end: 0px;
 }
 
+// <article>
 .root {
     counter-reset: article;
+
+    & + article {
+        margin-top: 3em;
+    }
+
+    > header {
+        time {
+            font-size: 0.8em;
+            opacity: 0.65;
+        }
+        h2 {
+            margin-top: 0.1em;
+        }
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
 
     p {
         @extend %p;
     }
 
-    > img {
-        width: initial;
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 1em;
-    }
-
-    > figure figcaption::before {
+    figcaption::before {
         counter-increment: article;
         content: "Figure " counter(article, decimal-leading-zero) ". ";
         font-weight: bold;
     }
 
-    > blockquote {
+    blockquote {
         padding: 0 0 0 5%;
         position: relative;
         &:before {
@@ -70,6 +81,10 @@
         @include theme(dark) {
             background: $color-surface-dark;
         }
+    }
+
+    dl dd,dl dt {
+        margin-top: .4em
     }
 
     section + section {

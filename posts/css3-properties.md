@@ -37,6 +37,7 @@ html {
 </figure>
 
 `width: *-content`
+
 :  `max-content`: The element width grows with the width of the content similar to an inline element like &lt;span&gt;
 :   `min-content`: The width of the element contracts to the narrowest possible width the content allows
 :  `fit-content`: The larger of: <sup>1</sup>the intrinsic minimum width, and <sup>2</sup>the smaller of the intrinsic preferred width and the available width
@@ -71,6 +72,7 @@ html {
 Properties for objects: __images__, __videos__, and __embeds__.
 
 `object-fit`
+
 :  Determines how objects fit within their defined with/height or container.
 :  `fill` (default): fill the entire space, ignore aspect ratio<div class="demo-css3--object object-fit--fill"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
 :  `contain`: expand or contract the image, maintaining aspect ratio.<div class="demo-css3--object object-fit--contain"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
@@ -79,6 +81,7 @@ Properties for objects: __images__, __videos__, and __embeds__.
 :  `scale-down`: Scale the image until it either fits within the box size (`contain`) or reaches its original size (`none`)...<div class="demo-css3--object object-fit--scale-down"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/8inchesofsnow.jpg" alt="8-9 inches of snow"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"><img src="/img/posts/doesntmatter-sm.jpg" alt="Doesn't matter"></div>
 
 `object-position`
+
 :  Position the object within the box
 :  Accepts a [`<position>`](https://developer.mozilla.org/en-US/docs/Web/CSS/position_value) coordinate like `top`, `bottom right`, `10px 20px`, `50% 10%`, etc. The initial `object-position` is `50% 50%`.
 
@@ -93,6 +96,7 @@ Properties for objects: __images__, __videos__, and __embeds__.
 ## Values and Units
 
 [`calc()`](http://www.w3.org/TR/css3-values/#calc)
+
 :  Mathematical expressions with addition, subtraction, multiplication, and division
 
 <figure class="flex pop">
@@ -106,6 +110,7 @@ Properties for objects: __images__, __videos__, and __embeds__.
 </figure>
 
 [`toggle()`](http://www.w3.org/TR/css3-values/#toggle)
+
 :  Allows descendant elements to cycle over a list of values instead of inheriting the same value.
 
 <figure class="flex pop">
@@ -130,6 +135,7 @@ ul ul {
 </figure>
 
 [~~`attr( attribute-name <type-or-unit>? [, <fallback> ]? )`~~]()
+
 :  Applies the value of an HTML or XML attribute such as [data-*](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Using_data_attributes).
 :  ლ(ಠ益ಠლ) Meager browser support ([polyfill](http://codepen.io/FWeinb/pen/Dsdkr))
 

@@ -8,6 +8,7 @@ tags:
 header: <time datetime="2015-07-28">July 28, 2015</time><h1><span class="width-flush demo-cfp--flexcontainer demo-cfp--flexcontainer-wrap demo-cfp--styled"><span>C</span><span>S</span><span>S</span> <span>flexbox</span> <span>properties</span></span></h1>
 
 ---
+
 I've gotten so used to using CSS hacks like positioning and [floating](http://css.maxdesign.com.au/floatutorial/) and [clearfixing](http://nicolasgallagher.com/micro-clearfix-hack/) over the years that it was at first hard for me to wrap my head around the magnificent simplicity of [CSS Flexboxes](https://drafts.csswg.org/css-flexbox-1). Here are my notes -- the properties listed and explained along with some examples that helped me understand.<!--more-->
 
 <figure class="pop flex">
@@ -29,17 +30,21 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 ## Container properties
 
 [`flex-flow`](https://drafts.csswg.org/css-flexbox-1/#flex-flow-property)
+
 :  `<flex-direction> || <flex-wrap>`
 :  Shorthand for setting the flex-direction and flex-wrap properties described below.
 
 [`flex-direction`](https://drafts.csswg.org/css-flexbox-1/#flex-direction-property)
+
 :  `row | row-reverse | column | column-reverse`
 
 [`flex-wrap`](https://drafts.csswg.org/css-flexbox-1/#flex-wrap-property)
+
 :  `nowrap | wrap | wrap-reverse`
 :  Controls whether the flex container is single-line or multi-line, and the direction of the [cross-axis](https://drafts.csswg.org/css-flexbox-1/#cross-axis), which determines the direction new lines are stacked in.
 
 `align-items`
+
 :  `flex-start | flex-end | center | baseline | stretch`
 :  Sets the default alignment for all of the flex container’s items. This value can be overwidden on each individual flex item with `align-self`.
 
@@ -49,6 +54,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 </figure>
 
 [`justify-content`](https://drafts.csswg.org/css-flexbox-1/#justify-content-property)
+
 :  `flex-start | flex-end | center | space-between | space-around`
 :  Horizontally aligns content __after__ any flexible lengths and any auto margins have been resolved; Helps distribute extra free space.
 
@@ -58,6 +64,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 </figure>
 
 [`align-content`](https://drafts.csswg.org/css-flexbox-1/#align-content-property)
+
 :  `flex-start | flex-end | center | space-between | space-around | stretch`
 :  Vertical (cross-axis) alignment for milti-line (more than one row of flex items) flex containers
 
@@ -69,9 +76,11 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 ## Flex Item (children) properties
 
 [`order`](https://drafts.csswg.org/css-flexbox-1/#order-property)
+
 :  `<integer>`
 
 [`flex`](https://drafts.csswg.org/css-flexbox-1/#flex-property)
+
 :  `initial | auto | none | [ <‘flex-grow’> <‘flex-shrink’>? || <‘flex-basis’> ]`
 :  Default: `0 1 auto`
 :  `initial` &rArr; `0 1 auto` -- Sizes the item based on the width/height properties. 
@@ -79,7 +88,9 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 :  `none` &rArr; `0 0 auto` -- sizes the item according to the width/height properties, but makes the flex item fully inflexible. This is similar to initial, except that flex items are not allowed to shrink, even in overflow situations.
 :  Specifies the components of a flexible length.
 :  When a box is a flex item, `flex` is consulted instead of the main size property to determine the main size of the box.
-:  Authors are encouraged to control flexibility using the `flex` shorthand rather than with its longhand properties directly (below), as the shorthand correctly resets any unspecified components to accommodate common uses^[[W3C Editor's Draft: CC Flexbox Module](https://drafts.csswg.org/css-flexbox-1/#flex-components)]
+:  Authors are encouraged to control flexibility using the `flex` shorthand rather than with its longhand properties directly (below), as the shorthand correctly resets any unspecified components to accommodate common uses[^1]
+
+[^1]: [W3C Editor's Draft: CC Flexbox Module](https://drafts.csswg.org/css-flexbox-1/#flex-components)
 
 <figure class="pop">
   <figcaption>Milti-line flex containers with `flex: initial` and `flex: auto`.</figcaption>
@@ -134,17 +145,20 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 </figure>
 
 `flex-grow`
+
 :  `<number>`
 :  Default: `1`
 :  Determines how much the flex item will grow relative to the rest of the flex items in the flex container.
 
 `flex-shrink`
+
 :  `<number>`
 :  Default: `1`
 :  Determines how much the flex item will shrink relative to the rest of the flex items in the flex container when negative free space is distributed.
 :  By default, flex items won’t shrink below their minimum content size (the length of the longest word or fixed-size element). To change this, set the `min-width` or `min-height` property.
 
 `flex-basis`
+
 :  `auto | content | <width>`
 :   The initial main size of the flex item.
 
@@ -154,6 +168,7 @@ I've gotten so used to using CSS hacks like positioning and [floating](http://cs
 </figure>
 
 `align-self`
+
 :  `auto | flex-start | flex-end | center | baseline | stretch`
 :  Individual flex item property that overrides the default value set by the flex container's `align-items` property.
 
