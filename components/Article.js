@@ -1,5 +1,4 @@
 import React from 'react'
-import { renderToStaticMarkup } from 'react-dom/server'
 import classes from '../styles/article.module.scss'
 import Date from './Date'
 

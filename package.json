@@ -14,6 +14,10 @@
     "@reach/tooltip": "^0.13.2",
     "date-fns": "^2.19.0",
     "gray-matter": "^4.0.2",
+    "highlight.js": "^10.7.1",
+    "markdown-it": "^12.0.4",
+    "markdown-it-deflist": "^2.1.0",
+    "markdown-it-footnote": "^3.0.2",
     "next": "latest",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
@@ -24,7 +28,10 @@
     "remark-deflist": "^0.3.0",
     "remark-footnotes": "^3.0.0",
     "remark-html": "^13.0.1",
-    "sass": "^1.32.8"
+    "remark-parse": "^9.0.0",
+    "remark-react": "^8.0.0",
+    "sass": "^1.32.8",
+    "unified": "^9.2.1"
   },
   "repository": {
     "type": "git",
