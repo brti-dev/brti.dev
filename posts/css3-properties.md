@@ -86,7 +86,7 @@ Properties for objects: __images__, __videos__, and __embeds__.
 :  Accepts a [`<position>`](https://developer.mozilla.org/en-US/docs/Web/CSS/position_value) coordinate like `top`, `bottom right`, `10px 20px`, `50% 10%`, etc. The initial `object-position` is `50% 50%`.
 
 <figure class="demo-css3--crop-cover">
-  <figcaption>Using `object-fit:cover` to nicely crop and awkwardly-sized image.<br>(Via <a href="https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87">Chris Nager</a>; "joffrey" &copy; <a href="http://lamwin.deviantart.com/art/joffrey-316381780">lamwin@deviantart</a>)</figcaption>
+  <figcaption>Using `object-fit:cover` to nicely crop an awkwardly-sized image.<br>(Via <a href="https://medium.com/@chrisnager/center-and-crop-images-with-a-single-line-of-css-ad140d5b4a87">Chris Nager</a>; "joffrey" &copy; <a href="http://lamwin.deviantart.com/art/joffrey-316381780">lamwin@deviantart</a>)</figcaption>
     <img src="/img/posts/joffrey.jpg" alt="Joffrey">
     <img src="/img/posts/joffrey.jpg" alt="Joffrey">
 </figure>

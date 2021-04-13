@@ -8,6 +8,8 @@
     "dev": "next dev",
     "build": "next build && next export",
     "start": "next start",
+    "#clean": "Clean up dist files generated on dev, old builds, etc; Optimally done before new builds",
+    "clean": "npx rimraf .next out",
     "newpost": "node ./scripts/new-post.js"
   },
   "dependencies": {
