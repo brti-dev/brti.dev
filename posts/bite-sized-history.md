@@ -5,9 +5,9 @@ tags:
   - history
   - teaching
 ---
-As histories and humanities teachers, we are the generals in the vanguard. The battle is against disinformation.
+As history teachers, we are the generals in the vanguard. The students are on the front line. The battle is against disinformation.
 
-Students in many countries have been taught a history that has been revised several times over, and in some places state control of all media makes it even more challenging to take a critical approach to the curriculum they've been fed their entire academic lives. Is this history, or is it propaganda? There are some things we can do to endow our young troops with the weapons to make it easier for them to distinguish between the two. <!-- more -->
+Students in many countries have been taught a history that has been revised several times over, and state control of media can make it even more challenging to take a critical approach to the curriculum students have been fed their entire academic lives. There is all too often a thin line between history and propaganda, a difficult line for impressionable young minds to distinguish. There are some things we can do to endow our young troops with the weapons to make it easier for them to make the distinction. <!-- more -->
 
 [This Tweet](https://twitter.com/GoughTeaches/status/1377055283999039489) from a teacher of U.S. History is an imperfect example of how we might present history.
 
@@ -19,6 +19,6 @@ Here we could critique the incomplete historical narrative of the Monroe Doctrin
 
 To put it into English: **Students should examine historical developments from multiple perspectives**. It’s easy to frame the Monroe Doctrine from the point of view of a 20th century imperialist or cold warrior simply because the US was strong and assertive in those periods, just as it is now. It wouldn't be a huge leap for students to see the Monroe Doctrine as a pretext for an expansionist United States to intervene in the affairs of its weaker neighbors.
 
-Those are compelling ideas consistent with much of the rest of US History, but it's incomplete. If, in addition, we can get them to look at the Monroe Doctrine from the perspective of those who issued it -- leaders of a puny, upstart republic, fueled by nationalism, eking out a living among a multitude of menacing, domineering monarchies -- it might give them a broader, better understanding of the historical context of that period, rather than the context of our own. This, I think, is the kind of critical approach students will later need to tackle the challenges of fake news and disinformation.
+Those are compelling ideas consistent with much of the rest of US History, but it's incomplete. If, in addition, we can get them to look at the Monroe Doctrine from the perspective of those who issued it -- leaders of a puny, upstart republic, fueled by nationalism, eking out a living among a multitude of menacing, domineering monarchies -- it might give students a broader, better understanding of the historical context of that period, rather than the context of our own time. This, I think, is the kind of critical approach students will later need to tackle the challenges of fake news and disinformation.
 
 That's it. That's the tweet. If you want to know more about the complex problems policymakers like John Quincy Adams took into consideration in the 19th century, a good source is [*The American Union and the Problem of Neighborhood*](https://books.google.gm/books/about/The_American_Union_and_the_Problem_of_Ne.html?id=PM--AQAACAAJ&hl=en&output=html_text) by James E. Lewis.
