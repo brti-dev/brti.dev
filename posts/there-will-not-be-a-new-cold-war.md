@@ -1,0 +1,16 @@
+---
+title: There will not be a new Cold War
+date: 2021-03-29
+tags:
+  - politics
+---
+Here in China, perceptions of the United States are at the lowest since I first came here almost 20 years ago. More recently, the reputation of the US and the democratic order it presides over has been tarnished by the legitimate election of a dangerous leader to national office and the massive failure of the Covid-19 response, reviving the old questions of the [Thucydides Trap](https://en.wikipedia.org/wiki/Thucydides_Trap), [clash of civilizations](https://en.wikipedia.org/wiki/Clash_of_Civilizations), and a [Second Cold War](https://foreignpolicy.com/2019/01/07/a-new-cold-war-has-begun/). <!--more-->
+
+The [latest issue of *Foreign Affairs* "VOLUME 100, NUMBER 2, March/April 2021"](https://www.foreignaffairs.com/issues/2021/100/2) examines US decline, with the cover posing the question , "Can America Ever Lead Again?". It's noteworthy, however, that much of the interior is dedicated to China's rise. One such article by Thomas Christensen, a professor of international and public affairs at Columbia University, argues [There Will Not Be a New Cold War](https://www.foreignaffairs.com/articles/united-states/2021-03-24/there-will-not-be-new-cold-war). Here are three points I found to be the most interesting and persuasive.
+
+- US strategy in the 1950s and 60s was containment. To wit, disengage with USSR and prevent others from engaging with it economically and politically. However, since 1978 it has been US policy to engage and encourage China to be a responsible stakeholder within the prevailing world order.
+    > No actor other than the Chinese people themselves has done more to assist China’s broad economic development than the United States. Open U.S. markets for Chinese exports, large-scale U.S. investment in Chinese industry, and hundreds of thousands of Chinese students in American universities were all essential to China’s fast-paced growth and technological modernization.
+- China isn't an existential threat to the US or the international order because there's little effort to export an ideological model akin to Stalin- and Mao-era attempts to stoke Communist revolutions abroad. In fact, up until very recently, it was the US that was the standard-bearer of ideological democratization and pro-reform "Color Revolutions" in North Africa, the Middle East, central Europe, and Central Asia.
+    > A former Chinese diplomat stationed in Russia, Shi Ze, summed up the difference between Moscow and Beijing this way: “China and Russia have different attitudes. Russia wants to break the current international order….Russia thinks it is the victim of the current international system, in which its economy and its society do not develop. But China benefits from the current international system. We want to improve and modify it, not to break it.”
+- There is nothing akin to the competing alliance systems that developed in the decade following World War II.
+    > The greatest competitive advantage the United States holds over China [is] alliances and security partnerships with over 60 countries, many of which are the most technologically advanced states in the world. Compare this with China’s rogues’ gallery of partners: North Korea, Iran, Pakistan, Sudan, and Zimbabwe come to mind.
