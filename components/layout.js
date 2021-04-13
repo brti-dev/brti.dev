@@ -23,7 +23,7 @@ const ALIASES = {
 
 const REPOSITORY_ROOT = 'https://github.com/dr-spaceman/mattberti.com/tree/master';
 
-function getSource(pathname, query) {
+function getSourceLink(pathname, query) {
     if (pathname === '/blog/[slug]') {
         return `${REPOSITORY_ROOT}/posts/${query.slug}.md`
     }
@@ -51,7 +51,7 @@ export default function Layout({ children, title }) {
 
     const isHome = pathname === '/'
     const isCurrentPage = link => asHref(link) === pathname
-    const sourceLink = getSource(pathname, query)
+    const sourceLink = getSourceLink(pathname, query)
 
     return (
         <>

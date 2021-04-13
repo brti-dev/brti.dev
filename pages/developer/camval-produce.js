@@ -13,7 +13,7 @@ function Camval() {
                 description="A responsive e-commerce app for a small produce delivery buisiness in San Diego."
                 preface={(
                     <ul>
-                        <li>In development at <a href="https://www.sandiegoproduce.shop">sandiegoproduce.shop</a></li>
+                        <li>In development at <a href="https://camval.customerdirect.net">camval.customerdirect.net</a></li>
                     </ul>
                 )}
             >
