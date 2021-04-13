@@ -24,14 +24,7 @@
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.2.0",
-    "remark": "^13.0.0",
-    "remark-deflist": "^0.3.0",
-    "remark-footnotes": "^3.0.0",
-    "remark-html": "^13.0.1",
-    "remark-parse": "^9.0.0",
-    "remark-react": "^8.0.0",
-    "sass": "^1.32.8",
-    "unified": "^9.2.1"
+    "sass": "^1.32.8"
   },
   "repository": {
     "type": "git",
