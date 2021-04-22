@@ -2,19 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Button({
-    color, size, type = 'button', variant = 'text', children, ...rest
+    type = 'button',
+    variant = 'text',
+    color = 'default',
+    size = 'medium',
+    children,
+    ...rest
 }) {
     return (
         // eslint-disable-next-line react/button-has-type
-        <button type={type} variant={variant} color={color} size={size} {...rest}>
+        <button type={type} className={`variant-${variant} color-${color} size-${size}`} {...rest}>
             {children}
         </button>
     );
 }
 Button.propTypes = {
-    color: PropTypes.oneOf(['default', 'primary', 'red', 'green', 'dark', 'light']),
+    color: PropTypes.oneOf(['default', 'primary', 'secondary', 'red', 'green', 'dark', 'light']),
     size: PropTypes.oneOf(['small', 'medium', 'large']),
-    type: PropTypes.oneOf(['button', 'submit', 'reset']),
+    type: PropTypes.oneOf(['submit', 'reset', 'button']),
     variant: PropTypes.oneOf(['text', 'contained', 'outlined', 'link', 'icon', 'close']),
     children: PropTypes.node,
 };

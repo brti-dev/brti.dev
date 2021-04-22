@@ -5,7 +5,7 @@
 // Spacing settings and methods
 
 $spacing-mobile: 1rem;
-$spacing-screen: 3.5rem;
+$spacing-screen: 6rem;
 
 @mixin spacing($prop) {
     #{$prop}: $spacing-mobile;
@@ -76,22 +76,22 @@ h2 {
 
 a,
 .a {
-    color: get-color("primary", "light");
+    color: $color-primary-light;
     text-decoration: none;
     cursor: pointer;
     &:active {
         color: $purple;
     }
     &:hover {
-        color: get-color("primary-hover", "light");
-        border-color: get-color("primary-hover", "light");
+        color: $color-primary-hover-light;
+        border-color: $color-primary-hover-light;
         text-decoration: underline;
     }
     @include theme(dark) {
-        color: get-color("primary", "dark");
+        color: $color-primary-dark;
         &:hover {
-            color: get-color("primary-hover", "dark");
-            border-color: get-color("primary-hover", "dark");
+            color: $color-primary-hover-dark;
+            border-color: $color-primary-hover-dark;
         }
     }
 }
@@ -199,26 +199,81 @@ kbd {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 0 #fff inset;
 }
 
-button {
-    cursor: pointer;
-    border: 1px solid transparent;
-    background-color: transparent;
+input,
+button,
+.input {
+    outline: none;
+    line-height: 1.5;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    color: $color-body-dark;
+    border: 0;
+    border-radius: .25rem;
+    background-color: $color-surface-light;
+    transition: box-shadow .15s ease-in-out;
     &:hover {
-        background-color: $color-surface-light;
+        box-shadow: $color-comment-light 0px 0px 0px 1px;
     }
     &:focus {
-        outline: none;
+        box-shadow: $color-comment-light 0px 0px 0px 3px;
     }
     @include theme(dark) {
+        background-color: $color-surface-dark;
+        color: $color-body-light;
         &:hover {
-            background-color: $color-surface-dark;
+            box-shadow: $color-comment-dark 0px 0px 0px 1px;
+        }
+        &:focus {
+            box-shadow: $color-comment-dark 0px 0px 0px 3px;
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+
+    &.size-small {
+        font-size: 80%;
+    }
+    &.size-large {
+        font-size: 120%;
+    }
+
+    &.variant-text, &.variant-contained, &.variant-outlined, &.variant-link {
+        &:hover {
+            background-color: $color-surface-light;
+        }
+        @include theme(dark) {
+            &:hover {
+                background-color: $color-surface-dark;
+            }
         }
     }
 
-    &[variant="icon"] {
+    &.variant-icon {
         padding: 0;
-        &:hover {
-            background-color: transparent;
+        box-shadow: none !important;
+    }
+
+    &.variant-contained {
+        &.color-primary {
+            background-color: get-color(primary, light);
+            color: white;
+            &:hover {
+                background-color: get-color(primary-hover, light);
+            }
+        }
+        &.color-secondary {
+            background-color: get-color(secondary, light);
+            color: white;
+            &:hover {
+                background-color: get-color(secondary-hover, light);
+            }
         }
     }
 }

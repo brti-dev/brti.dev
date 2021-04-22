@@ -23,12 +23,12 @@
         background-color: $color-surface-light;
         transition: background-color 0.3s ease;
         &:hover {
-            background-color: color.scale($color-surface-light, $lightness: 30%);
+            background-color: $color-surface-hover-light;
         }
         @include theme(dark) {
             background-color: $color-surface-dark;
             &:hover {
-                background-color: color.scale($color-surface-dark, $lightness: -10%);
+                background-color: $color-surface-hover-dark;
             }
         }
 
