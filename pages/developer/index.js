@@ -22,7 +22,7 @@ const WORKS = [
         slug: 'axrn',
         heading: 'AXRN Animal Crossing Right Now',
         description: <>A web app for players of the Nintendo Switch game <i>Animal Crossing: New Horizons</i> to inform them what critters are available right now.</>,
-        tags: ['Mobile-first', 'Responsive design', 'Web Scraping', 'Python/Flask', 'CSS Grid', 'Javascript and jQuery'],
+        tags: ['Mobile-first', 'Responsive design', 'Web Scraping', 'Python/Flask', 'CSS Grid'],
     }, {
         label: 'Web App',
         slug: 'chenglish-dict',

@@ -42,7 +42,7 @@
         font-weight: bold;
     }
 
-    blockquote {
+    blockquote:not([class~=unstyled]) {
         padding: 0 0 0 5%;
         position: relative;
         &:before {

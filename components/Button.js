@@ -6,12 +6,13 @@ function Button({
     variant = 'text',
     color = 'default',
     size = 'medium',
+    className,
     children,
     ...rest
 }) {
     return (
         // eslint-disable-next-line react/button-has-type
-        <button type={type} className={`variant-${variant} color-${color} size-${size}`} {...rest}>
+        <button type={type} className={`variant-${variant} color-${color} size-${size} ${className}`} {...rest}>
             {children}
         </button>
     );

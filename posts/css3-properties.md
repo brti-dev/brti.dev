@@ -62,8 +62,8 @@ html {
   width: min-content;
 }
 ```
-<blockquote class="demo-css3--widthmaxcontent">A girl gives a man his own name?</blockquote>
-<blockquote class="demo-css3--widthmincontent">The Lannisters send their regards.</blockquote>
+<blockquote class="demo-css3--widthmaxcontent unstyled">A girl gives a man his own name?</blockquote>
+<blockquote class="demo-css3--widthmincontent unstyled">The Lannisters send their regards.</blockquote>
   </div>
 </figure>
 
