@@ -1,18 +1,30 @@
 /* eslint-disable prefer-template */
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { BiArrowToTop as ArrowTopIcon } from 'react-icons/bi'
+import { BiArrowToTop as ArrowTopIcon, BiChevronDown as ArrowDownIcon } from 'react-icons/bi'
+import { BsChevronExpand as ExpandIcon } from 'react-icons/bs'
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
+import '@reach/skip-nav/styles.css'
+import {
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+} from '@reach/disclosure'
+import VisuallyHidden from '@reach/visually-hidden'
+
 import scrollToTop from '../lib/scroll-to-top'
 import IconButton from './IconButton'
+import Button from './Button'
+
+export const siteTitle = 'Matt Berti'
 
 const PAGES = [
-    { link: 'developer', title: 'Web Developer' },
-    { link: 'teacher', title: 'Teacher' },
-    { link: 'gamer', title: 'Gamer' },
-    { link: 'china-expat', title: 'Expat in China' },
-    { link: 'traveler', title: 'Traveler' },
-    { link: 'history-buff', title: 'Amateur Historian' },
+    { link: '/', title: 'someone' },
+    { link: '/developer', title: 'web developer' },
+    { link: '/teacher', title: 'teacher' },
+    { link: '/blog', title: 'blogger' },
 ]
 
 // pathname-alias for source code link (@github)
@@ -21,7 +33,7 @@ const ALIASES = {
     '/blog': '/blog/index.js',
 }
 
-const REPOSITORY_ROOT = 'https://github.com/dr-spaceman/mattberti.com/tree/master';
+const REPOSITORY_ROOT = 'https://github.com/dr-spaceman/mattberti.com/tree/master'
 
 function getSourceLink(pathname, query) {
     if (pathname === '/blog/[slug]') {
@@ -30,12 +42,12 @@ function getSourceLink(pathname, query) {
 
     return `${REPOSITORY_ROOT}/pages` + (ALIASES[pathname] ?? `${pathname}.js`)
 }
+function getPageTitle(pathname) {
+    const foundPage = PAGES.find(page => page.link === pathname)
+    if (!foundPage || !foundPage.title) return '[unknown page]'
 
-function asHref(link) {
-    return `/${link}`
+    return foundPage.title
 }
-
-export const siteTitle = 'Matt Berti'
 
 /**
  * Wrapper component to render header, footer, and other layout components
@@ -48,9 +60,14 @@ export const siteTitle = 'Matt Berti'
  */
 export default function Layout({ children, title }) {
     const { pathname, query } = useRouter()
+    const pathnameRoot = pathname.split('/', 2).join('/')
 
+    const [nav, setNav] = useState({ opened: false })
+    const toggleNav = () => setNav({ opened: !nav.opened })
+
+    const currentPageIndex = PAGES.findIndex(page => page.link === pathnameRoot)
     const isHome = pathname === '/'
-    const isCurrentPage = link => asHref(link) === pathname
+    const isCurrentPage = link => link === pathnameRoot
     const sourceLink = getSourceLink(pathname, query)
 
     return (
@@ -71,23 +88,46 @@ export default function Layout({ children, title }) {
                 <meta name="og:title" content={siteTitle} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
+            <SkipNavLink />
             <header id="top">
                 <h1>Matt Berti</h1>
+                <nav
+                    id="header-nav"
+                    data-opened={nav.opened}
+                    style={{ '--t': `calc(2.3rem * -${currentPageIndex})` }}
+                >
+                    <Button variant="contained" className="nav-item" onClick={toggleNav}>
+                        {getPageTitle(pathnameRoot)}
+                        <ExpandIcon className="arrow" />
+                    </Button>
+                    <div className="container" hidden={!nav.opened}>
+                        <ul>
+                            {PAGES.map(({ link, title: pageTitle }) => (
+                                <li key={link}>
+                                    {isCurrentPage(link)
+                                        ? (
+                                            <Button className="nav-item" onClick={toggleNav}>
+                                                {pageTitle}
+                                                <ExpandIcon className="arrow" />
+                                            </Button>
+                                        ) : (
+                                            <Link href={link}>
+                                                <a className="nav-item unstyled">{pageTitle}</a>
+                                            </Link>
+                                        )
+                                    }
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </nav>
                 <picture>
                     <source srcSet="/img/mattberti.webp" type="image/webp" />
                     <img src="/img/mattberti.png" alt="Matt Berti" width={isHome ? 144 : 64} height={isHome ? 144 : 64} />
                 </picture>
-                <nav>
-                    <ul>
-                        {PAGES.map(({ link, title: pageTitle }) => (
-                            <li key={link} className={isCurrentPage(link) ? 'current' : ''}>
-                                <Link href={asHref(link)}>{pageTitle}</Link>
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
             </header>
-            <main>{children}</main>
+            <SkipNavContent />
+            <main>{children}<Button>Fuuuuuu</Button></main>
             {!isHome && (
                 <footer>
                     <ul>

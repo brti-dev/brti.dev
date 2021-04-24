@@ -2,7 +2,7 @@
 @use 'breakpoint' as *;
 @use 'theme' as *;
 
-// Spacing settings and methods
+// Spacing for outline margins
 
 $spacing-mobile: 1rem;
 $spacing-screen: 6rem;
@@ -27,7 +27,7 @@ $spacing-screen: 6rem;
         font-size: 25.58px;
     }
     @include theme(dark) {
-        color: white;
+        color: $color-font-dark;
     }
 }
 
@@ -45,32 +45,34 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.h {
     text-rendering: optimizeLegibility;
     line-height: 1;
     font-family: "Open Sans", sans-serif;
     letter-spacing: -0.05em;
-    @include theme(light) {
-        color: #282828;
-    }
+    color: #282828;
+    
     @include theme(dark) {
         color: #d6d6d6;
     }
+
     a {
-        @include theme(light) {
-            color: black;
-        }
+        color: $color-font-light;
+
         @include theme(dark) {
-            color: white;
+            color: $color-font-dark;
         }
     }
 }
 
-h1 {
+h1,
+.h1 {
     font-size: 2.5em;
 }
 
-h2 {
+h2,
+.h2 {
     font-size: 1.9em;
 }
 
@@ -79,14 +81,17 @@ a,
     color: $color-primary-light;
     text-decoration: none;
     cursor: pointer;
+
     &:active {
         color: $purple;
     }
+
     &:hover {
         color: $color-primary-hover-light;
         border-color: $color-primary-hover-light;
         text-decoration: underline;
     }
+
     @include theme(dark) {
         color: $color-primary-dark;
         &:hover {
@@ -94,10 +99,20 @@ a,
             border-color: $color-primary-hover-dark;
         }
     }
+
+    &.unstyled {
+        color: $color-font-light !important;
+        text-decoration: none !important;
+
+        @include theme(dark) {
+            color: $color-font-dark !important;
+        }
+    }
 }
 
 img {
     max-width: 100%;
+
     @include theme(dark) {
         // Recolorize photographic images in dark mode
         // @see https://web.dev/prefers-color-scheme/#re-colorize-and-darken-photographic-images
@@ -201,10 +216,11 @@ kbd {
 
 input,
 button,
-.input {
+.input,
+.button {
     outline: none;
     line-height: 1.5;
-    padding: .375rem .75rem;
+    padding: 0 .75rem;
     font-size: 1rem;
     color: $color-body-dark;
     border: 0;
@@ -229,7 +245,8 @@ button,
     }
 }
 
-button {
+button,
+.button {
     cursor: pointer;
     background-color: transparent;
 
@@ -261,18 +278,35 @@ button {
     }
 
     &.variant-contained {
-        &.color-primary {
-            background-color: get-color(primary, light);
-            color: white;
+
+        &.color-default {
+            background-color: $color-surface-light;
             &:hover {
-                background-color: get-color(primary-hover, light);
+                background-color: $color-surface-hover-light;
+            }
+
+            @include theme(dark) {
+                background-color: $color-surface-dark;
+                &:hover {
+                    background-color: $color-surface-hover-dark;
+                }
             }
         }
-        &.color-secondary {
-            background-color: get-color(secondary, light);
+
+
+        &.color-primary {
+            background-color: $color-primary-light;
             color: white;
             &:hover {
-                background-color: get-color(secondary-hover, light);
+                background-color: $color-primary-hover-light;
+            }
+        }
+
+        &.color-secondary {
+            background-color: $color-secondary;
+            color: white;
+            &:hover {
+                background-color: $color-secondary-hover;
             }
         }
     }
@@ -314,27 +348,84 @@ button {
             margin: 0;
             padding: 0;
             line-height: normal;
+            &::after {
+                content: ',';
+                opacity: 0.3;
+            }
         }
 
-        > nav {
-            display: none;
+        nav {
             order: 3;
+            margin: 0 0 0 0.5em;
             position: relative;
+            z-index: 1;
 
-            > ul {
+            & * {
+                @extend .h;
+                @extend .h2;
                 margin: 0;
                 padding: 0;
-                list-style-type: none;
+                font-weight: 500;
+                font-size: 1.6rem;
+                line-height: 1.2;
+                text-decoration: none;
+            }
 
-                > li {
-                    margin: 0;
-                    padding: 0;
-                    list-style-type: none;
+            > button {
+                position: relative;
+                z-index: 2;
+            }
 
-                    &.current {
-                        // Denotes current page
-                    }
+            .arrow {
+                transition: transform 0.5s ease;
+                width: 1rem;
+                height: 1rem;
+                margin-left: 0.5rem;
+            }
+
+            &[data-opened=true] .arrow {
+                transform: rotate(0.75turn);
+            }
+
+            .container {
+                width: 100%;
+                height: auto;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                padding: 0;
+                z-index: 1;
+                display: block;
+                border-radius: 2em;
+                opacity: 1;
+                transition: opacity 0.2s ease-in-out;
+
+                &[hidden] {
+                    opacity: 0;
+                    height: 0;
+                    overflow: hidden;
                 }
+            }
+
+            // hidden spacer h2, list item a
+            .nav-item {
+                display: flex;
+                padding: 0 0.8em;
+                white-space: nowrap;
+                height: 2.3rem;
+                align-items: center;
+            }
+
+            ul {
+                list-style: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                transform: translateY(var(--t));
+                transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             }
         }
     }
@@ -372,6 +463,35 @@ button {
                     display: unset;
                 }
             }
+        }
+    }
+}
+
+.popover,
+[data-reach-popover] {
+    margin-top: 1em;
+    padding: 1em;
+    border: 0;
+    border-radius: 3px;
+    background-color: $color-surface-light;
+    box-shadow: 0 0 5px $color-surface-light !important;
+    outline: none !important;
+
+    .current-nav,
+    [data-current-nav] {
+        background-color:$color-comment-light;
+        color: black;
+    }
+
+    @include theme(dark) {
+        background-color: $color-surface-dark;
+        box-shadow: 0 0 5px $color-body-dark !important;
+        cursor: pointer;
+
+        .current-nav,
+        [data-current-nav] {
+            background-color:$color-comment-dark;
+            color: white;
         }
     }
 }
