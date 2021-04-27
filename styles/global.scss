@@ -17,6 +17,13 @@ $spacing-large: 6rem;
 // Top Level
 
 :root {
+    --color-font: #{$color-font-light};
+    --color-primary: #{$color-primary-light};
+    --color-primary-hover: #{$color-primary-hover-light};
+    --color-surface: #{$color-surface-light};
+    --color-surface-hover: #{$color-surface-hover-light};
+    --color-comment: #{$color-comment-light};
+
     font: normal 100% sans-serif;
     font-size: calc(100vw / 22);
     @include breakpoint(screen) {
@@ -27,15 +34,25 @@ $spacing-large: 6rem;
         font-size: 25.58px;
     }
     @include theme(dark) {
-        color: $color-font-dark;
+        --color-font: #{$color-font-dark};
+        --color-primary: #{$color-primary-dark};
+        --color-primary-hover: #{$color-primary-hover-dark};
+        --color-surface: #{$color-surface-dark};
+        --color-surface-hover: #{$color-surface-hover-dark};
+        --color-comment: #{$color-comment-dark};
+
+        color: var(--color-font);
     }
 }
 
 body {
-    background-color: $color-body-light;
+    --color-body: #{$color-body-light};
+
     @include theme(dark) {
-        background-color: $color-body-dark;
+        --color-body: #{$color-body-dark};
     }
+
+    background-color: var(--color-body);
 }
 
 // Global
@@ -58,11 +75,7 @@ h6,
     }
 
     a {
-        color: $color-font-light;
-
-        @include theme(dark) {
-            color: $color-font-dark;
-        }
+        color: var(--color-font);
     }
 }
 
@@ -78,7 +91,7 @@ h2,
 
 a,
 .a {
-    color: $color-primary-light;
+    color: var(--color-primary);
     text-decoration: none;
     cursor: pointer;
 
@@ -87,26 +100,14 @@ a,
     }
 
     &:hover {
-        color: $color-primary-hover-light;
-        border-color: $color-primary-hover-light;
+        color: var(--color-primary-hover);
+        border-color: var(--color-primary-hover);
         text-decoration: underline;
     }
 
-    @include theme(dark) {
-        color: $color-primary-dark;
-        &:hover {
-            color: $color-primary-hover-dark;
-            border-color: $color-primary-hover-dark;
-        }
-    }
-
     &.unstyled {
-        color: $color-font-light !important;
+        color: var(--color-font) !important;
         text-decoration: none !important;
-
-        @include theme(dark) {
-            color: $color-font-dark !important;
-        }
     }
 }
 
@@ -222,26 +223,16 @@ button,
     line-height: 1.5;
     padding: 0 .75rem;
     font-size: 1rem;
-    color: $color-body-dark;
+    color: var(--color-font);
     border: 0;
     border-radius: .25rem;
-    background-color: $color-surface-light;
+    background-color: var(--color-surface);
     transition: box-shadow .15s ease-in-out;
     &:hover {
-        box-shadow: $color-comment-light 0px 0px 0px 1px;
+        box-shadow: var(--color-comment) 0px 0px 0px 1px;
     }
     &:focus {
-        box-shadow: $color-comment-light 0px 0px 0px 3px;
-    }
-    @include theme(dark) {
-        background-color: $color-surface-dark;
-        color: $color-body-light;
-        &:hover {
-            box-shadow: $color-comment-dark 0px 0px 0px 1px;
-        }
-        &:focus {
-            box-shadow: $color-comment-dark 0px 0px 0px 3px;
-        }
+        box-shadow: var(--color-comment) 0px 0px 0px 3px;
     }
 }
 
@@ -263,12 +254,7 @@ button,
 
     &.variant-text, &.variant-contained, &.variant-outlined, &.variant-link {
         &:hover {
-            background-color: $color-surface-light;
-        }
-        @include theme(dark) {
-            &:hover {
-                background-color: $color-surface-dark;
-            }
+            background-color: var(--color-surface);
         }
     }
 
@@ -280,16 +266,9 @@ button,
     &.variant-contained {
 
         &.color-default {
-            background-color: $color-surface-light;
+            background-color: var(--color-surface);
             &:hover {
-                background-color: $color-surface-hover-light;
-            }
-
-            @include theme(dark) {
-                background-color: $color-surface-dark;
-                &:hover {
-                    background-color: $color-surface-hover-dark;
-                }
+                background-color: var(--color-surface-hover);
             }
         }
 
@@ -378,6 +357,7 @@ button,
         nav {
             --nav-item-height: 2.55rem;
             /** @var --current-index ul > li element index of the current page. Needed to translate Y axis of nav list. Set by React on render. */
+            
             order: 3;
             position: relative;
             margin: $spacing-small 0 0 $spacing-small;
@@ -409,12 +389,12 @@ button,
             }
 
             .arrow {
-                margin-left: 0.5rem;
-                transition: transform 0.5s ease;
-                
                 --r: 45deg;
                 --o: .4;
                 --t: rotate(var(--r)) scale(0.75);
+
+                margin-left: 0.5rem;
+                transition: transform 0.5s ease;
 
                 &:before, &:after {
                     content: "";
@@ -422,13 +402,9 @@ button,
                     height: 0.35em;
                     opacity: var(--o);
                     display: block;
-                    border-color: $color-font-light;
+                    border-color: var(--color-font);
                     border-style: solid;
                     transition: transform 0.3s ease;
-
-                    @include theme(dark) {
-                        border-color: $color-font-dark;
-                    }
                 }
                 &:before {
                     transform: var(--t) translate(0.1em, 0.1em);
@@ -550,33 +526,21 @@ button,
     padding: 1em;
     border: 0;
     border-radius: 3px;
-    background-color: $color-surface-light;
-    box-shadow: 0 0 5px $color-surface-light !important;
+    background-color: var(--color-surface);
+    box-shadow: 0 0 5px var(--color-surface) !important;
     outline: none !important;
 
     .current-nav,
     [data-current-nav] {
-        background-color:$color-comment-light;
-        color: black;
-    }
-
-    @include theme(dark) {
-        background-color: $color-surface-dark;
-        box-shadow: 0 0 5px $color-body-dark !important;
-        cursor: pointer;
-
-        .current-nav,
-        [data-current-nav] {
-            background-color:$color-comment-dark;
-            color: white;
-        }
+        background-color: $color-comment-light;
+        color: var(--color-font);
     }
 }
 
 #scroll-top {
     position: absolute;
     top: 0;
-    right: $spacing-small;
+    @include spacing(right);
     transition: all 0.2s ease-in-out 0s;
     &:hover {
         transform: translateY(-10px);
@@ -589,7 +553,7 @@ button,
 
     @include breakpoint(omnivision) {
         right: unset;
-        left: 0;
+        left: $spacing-large / 2;
     }
     @include theme(dark) {
         svg {
