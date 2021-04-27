@@ -17,14 +17,14 @@ function HomePage() {
             <section>
                 <p>
                     Hi I&apos;m Matt, a <Link href="/developer">full stack web developer</Link>.{' '}
-                    I live in <a href="/china-expat">China</a> where I <Link href="/teacher">teach</Link> high school kids by day and code by night.{' '}
-                    I&apos;m passionate about <Link href="/gamer">videogames</Link>, <Link href="/history">history</Link>, and <a href="https://en.wikipedia.org/wiki/Serial_comma">the Oxford Comma</a>.{' '}
+                    I live in 🀄China where I <Link href="/teacher">teach</Link> high school kids by day and code by night.{' '}
+                    I&apos;m passionate about <strong>videogames</strong>, <strong>history</strong>, and the Oxford Comma.{' '}
                     Occasionally I <Link href="/blog">write</Link> about the aforementioned topics.{' '}
                     This website is <a href="https://github.com/dr-spaceman/mattberti.com">🔎open source</a>.
                 </p>
                 <dl className={classes.social}>
                     <dt>Find Me</dt>
-                    <dd><a href="https://twitter.com/bahamatt64">@bahamatt64</a></dd>
+                    {/* <dd><a href="https://twitter.com/bahamatt64">@bahamatt64</a></dd> */}
                     <dd><a href="https://www.linkedin.com/in/mrberti/">Linkedin</a></dd>
                     <dd><a href="https://github.com/dr-spaceman">Github</a></dd>
                     <dd><a href="https://steamcommunity.com/id/bahamatt/">Steam</a></dd>
