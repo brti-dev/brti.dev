@@ -92,6 +92,15 @@
         margin-top: 2em;
     }
 
+    table {
+        th,
+        td {
+            border-width: 1px;
+            border-style: solid;
+            padding: 0.2em 0.5em;
+        }
+    }
+
     :global {
         /*!
         * StackOverflow.com light style
