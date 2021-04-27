@@ -84,11 +84,15 @@ export default function Layout({ children, title }) {
             </Head>
             <SkipNavLink />
             <header id="top">
+                <picture>
+                    <source srcSet="/img/mattberti.webp" type="image/webp" />
+                    <img src="/img/mattberti.png" alt="Matt Berti" width={136} height={136} />
+                </picture>
                 <h1>Matt Berti</h1>
                 <nav
                     id="header-nav"
                     data-opened={nav.opened}
-                    style={{ '--t': `calc(2.3rem * -${currentPageIndex})` }}
+                    style={{ '--current-index': currentPageIndex }}
                 >
                     <Button variant="contained" className="nav-item" onClick={toggleNav}>
                         {getPageTitle(pathnameRoot)}
@@ -97,28 +101,15 @@ export default function Layout({ children, title }) {
                     <div className="container" hidden={!nav.opened}>
                         <ul>
                             {PAGES.map(({ link, title: pageTitle }) => (
-                                <li key={link}>
-                                    {isCurrentPage(link)
-                                        ? (
-                                            <Button className="nav-item" onClick={toggleNav}>
-                                                {pageTitle}
-                                                <div className="arrow" />
-                                            </Button>
-                                        ) : (
-                                            <Link href={link}>
-                                                <a className="nav-item unstyled">{pageTitle}</a>
-                                            </Link>
-                                        )
-                                    }
+                                <li key={link} className={isCurrentPage(link) && 'current'}>
+                                    <Link href={link}>
+                                        <a className="nav-item unstyled">{pageTitle}</a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 </nav>
-                <picture>
-                    <source srcSet="/img/mattberti.webp" type="image/webp" />
-                    <img src="/img/mattberti.png" alt="Matt Berti" width={isHome ? 144 : 64} height={isHome ? 144 : 64} />
-                </picture>
                 <Overlay opened={nav.opened} onClose={toggleNav} />
             </header>
             <SkipNavContent />

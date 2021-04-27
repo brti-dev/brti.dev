@@ -4,13 +4,13 @@
 
 // Spacing for outline margins
 
-$spacing-mobile: 1rem;
-$spacing-screen: 6rem;
+$spacing-small: 1rem;
+$spacing-large: 6rem;
 
 @mixin spacing($prop) {
-    #{$prop}: $spacing-mobile;
+    #{$prop}: $spacing-small;
     @include breakpoint(screen) {
-        #{$prop}: $spacing-screen;
+        #{$prop}: $spacing-large;
     }
 }
 
@@ -328,10 +328,17 @@ button,
 
     > header {
         width: 100%;
-        display: flex;
-        align-items: center;
+        max-height: 144px;
         @include spacing(margin-top);
         @include spacing(margin-bottom);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+        @include breakpoint(screen) {
+            flex-direction: row;
+            align-items: center;
+        }
 
         > * {
             z-index: 3;
@@ -347,17 +354,19 @@ button,
 
         > picture {
             order: 1;
-            margin-left: -32px;
-            margin-right: $spacing-mobile;
+            flex: 1 0 100px;
+            margin-left: -36px;
+            margin-top: -11px;
 
             @include breakpoint(screen) {
-                margin-left: unset;
+                margin: unset;
+                flex: unset;
             }
         }
 
         > h1 {
             order: 2;
-            margin: 0;
+            margin: 0 0 0 $spacing-small;
             padding: 0;
             line-height: normal;
             &::after {
@@ -367,9 +376,15 @@ button,
         }
 
         nav {
+            --nav-item-height: 2.55rem;
+            /** @var --current-index ul > li element index of the current page. Needed to translate Y axis of nav list. Set by React on render. */
             order: 3;
-            margin: 0 0 0 0.5em;
             position: relative;
+            margin: $spacing-small 0 0 $spacing-small;
+
+            @include breakpoint(screen) {
+                margin-top: unset;
+            }
 
             & * {
                 @extend .h;
@@ -455,7 +470,7 @@ button,
                 display: flex;
                 padding: 0 0.8em;
                 white-space: nowrap;
-                height: 2.3rem;
+                height: var(--nav-item-height);
                 align-items: center;
             }
 
@@ -465,8 +480,18 @@ button,
                 left: 0;
                 top: 0;
                 right: 0;
-                transform: translateY(var(--t));
+                transform: translateY(var(--nav-item-height));
                 transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+                
+                @include breakpoint(screen) {
+                    transform: translateY(calc(var(--nav-item-height) * var(--current-index) * -1));
+                }
+
+                @include breakpoint(mobile) {
+                    .current {
+                        display: none;
+                    }
+                }
 
                 .nav-item {
                     opacity: 0.6;
@@ -486,8 +511,8 @@ button,
 
     > footer {
         position: relative;
-        margin-top: $spacing-screen;
-        margin-bottom: $spacing-screen;
+        margin-top: $spacing-large;
+        margin-bottom: $spacing-large;
         line-height: 1.6;
 
         ul {
@@ -495,9 +520,11 @@ button,
             padding: 0;
             list-style-type: none;
             display: flex;
+
             li {
                 margin: 0 1em 0 0;
                 padding: 0;
+                
                 &:first-child {
                     font-weight: bold;
                 }
@@ -549,7 +576,7 @@ button,
 #scroll-top {
     position: absolute;
     top: 0;
-    right: $spacing-mobile;
+    right: $spacing-small;
     transition: all 0.2s ease-in-out 0s;
     &:hover {
         transform: translateY(-10px);
@@ -579,7 +606,7 @@ button,
     width: 100vw;
     height: 100vh;
     background-color: #000;
-    opacity: 0.8;
+    opacity: 0.95;
     transition: opacity .15s linear;
 
     &[hidden] {
