@@ -333,6 +333,18 @@ button,
         @include spacing(margin-top);
         @include spacing(margin-bottom);
 
+        > * {
+            z-index: 3;
+        }
+
+        .overlay {
+            z-index: 2;
+
+            @include theme(light) {
+                background-color: #eee;
+            }
+        }
+
         > picture {
             order: 1;
             margin-left: -32px;
@@ -358,7 +370,6 @@ button,
             order: 3;
             margin: 0 0 0 0.5em;
             position: relative;
-            z-index: 1;
 
             & * {
                 @extend .h;
@@ -374,13 +385,44 @@ button,
             > button {
                 position: relative;
                 z-index: 2;
+
+                &:hover .arrow {
+                    &:before, &:after {
+                        transform: var(--t) translate(0, 0);
+                    }
+                }
             }
 
             .arrow {
-                transition: transform 0.5s ease;
-                width: 1rem;
-                height: 1rem;
                 margin-left: 0.5rem;
+                transition: transform 0.5s ease;
+                
+                --r: 45deg;
+                --o: .4;
+                --t: rotate(var(--r)) scale(0.75);
+
+                &:before, &:after {
+                    content: "";
+                    width: 0.35em;
+                    height: 0.35em;
+                    opacity: var(--o);
+                    display: block;
+                    border-color: $color-font-light;
+                    border-style: solid;
+                    transition: transform 0.3s ease;
+
+                    @include theme(dark) {
+                        border-color: $color-font-dark;
+                    }
+                }
+                &:before {
+                    transform: var(--t) translate(0.1em, 0.1em);
+                    border-width: 2px 0 0 2px;
+                }
+                &:after {
+                    transform: var(--t) translate(-0.1em, -0.1em);
+                    border-width: 0 2px 2px 0;
+                }
             }
 
             &[data-opened=true] .arrow {
@@ -398,7 +440,6 @@ button,
                 padding: 0;
                 z-index: 1;
                 display: block;
-                border-radius: 2em;
                 opacity: 1;
                 transition: opacity 0.2s ease-in-out;
 
@@ -426,6 +467,15 @@ button,
                 right: 0;
                 transform: translateY(var(--t));
                 transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+
+                .nav-item {
+                    opacity: 0.6;
+                    transition: opacity 0.3s ease;
+
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
             }
         }
     }
@@ -518,5 +568,23 @@ button,
         svg {
             color: white;
         }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.8;
+    transition: opacity .15s linear;
+
+    &[hidden] {
+        opacity: 0;
+        height: 0;
+        overflow: hidden;
     }
 }

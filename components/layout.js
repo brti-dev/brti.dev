@@ -3,20 +3,14 @@ import React, { useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { BiArrowToTop as ArrowTopIcon, BiChevronDown as ArrowDownIcon } from 'react-icons/bi'
-import { BsChevronExpand as ExpandIcon } from 'react-icons/bs'
+import { BiArrowToTop as ArrowTopIcon } from 'react-icons/bi'
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
-import {
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
-} from '@reach/disclosure'
-import VisuallyHidden from '@reach/visually-hidden'
 
 import scrollToTop from '../lib/scroll-to-top'
 import IconButton from './IconButton'
 import Button from './Button'
+import Overlay from './Overlay'
 
 export const siteTitle = 'Matt Berti'
 
@@ -98,7 +92,7 @@ export default function Layout({ children, title }) {
                 >
                     <Button variant="contained" className="nav-item" onClick={toggleNav}>
                         {getPageTitle(pathnameRoot)}
-                        <ExpandIcon className="arrow" />
+                        <div className="arrow" />
                     </Button>
                     <div className="container" hidden={!nav.opened}>
                         <ul>
@@ -108,7 +102,7 @@ export default function Layout({ children, title }) {
                                         ? (
                                             <Button className="nav-item" onClick={toggleNav}>
                                                 {pageTitle}
-                                                <ExpandIcon className="arrow" />
+                                                <div className="arrow" />
                                             </Button>
                                         ) : (
                                             <Link href={link}>
@@ -125,9 +119,10 @@ export default function Layout({ children, title }) {
                     <source srcSet="/img/mattberti.webp" type="image/webp" />
                     <img src="/img/mattberti.png" alt="Matt Berti" width={isHome ? 144 : 64} height={isHome ? 144 : 64} />
                 </picture>
+                <Overlay opened={nav.opened} onClose={toggleNav} />
             </header>
             <SkipNavContent />
-            <main>{children}<Button>Fuuuuuu</Button></main>
+            <main>{children}</main>
             {!isHome && (
                 <footer>
                     <ul>
