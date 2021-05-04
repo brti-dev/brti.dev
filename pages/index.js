@@ -17,7 +17,7 @@ function HomePage() {
             <section>
                 <p>
                     Hi I&apos;m Matt, a <Link href="/developer">full stack web developer</Link>.{' '}
-                    I live in 🀄China where I <Link href="/teacher">teach</Link> high school kids by day and code by night.{' '}
+                    I currently live in China where I <Link href="/teacher">teach</Link> high school kids by day and code by night.{' '}
                     I&apos;m passionate about <strong>videogames</strong>, <strong>history</strong>, and the Oxford Comma.{' '}
                     Occasionally I <Link href="/blog">write</Link> about the aforementioned topics.{' '}
                     This website is <a href="https://github.com/dr-spaceman/mattberti.com">🔎open source</a>.
