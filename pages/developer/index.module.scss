@@ -10,45 +10,55 @@
 
 .workItem {
     width: 100%;
+    --p: 5vw;
 
-    @include breakpoint(screen) {
-        width: 48%;
-        margin-bottom: 1em;
+    & + [class*=workItem] {
+        margin-top: 2em;
     }
 
     a {
-        display: block;
-        padding: 5vw;
+        display: flex;
+        overflow: hidden;
+        flex-direction: column;
+        padding: var(--p);
         text-decoration: none;
-        background-color: $color-surface-light;
+        background-color: var(--color-surface);
         transition: background-color 0.3s ease;
-        &:hover {
-            background-color: $color-surface-hover-light;
-        }
-        @include theme(dark) {
-            background-color: $color-surface-dark;
-            &:hover {
-                background-color: $color-surface-hover-dark;
-            }
+
+        & > * {
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
         }
 
+        &:hover {
+            background-color: var(--color-surface-hover);
+            picture {
+                transform: translateY(calc(var(--p) + 0vw));
+            }
+        }
+    }
+    
+    small, p, strong {
+        margin-bottom: 0;
+        text-decoration: none;
+    }
+    p, strong {
+        color: var(--color-font);
     }
 
     h3 {
-        margin-top: 0;
         text-decoration: underline;
         transition: color 0.3s ease;
         color: unset;
 
-        ~ * {
-            margin-bottom: 0;
-            text-decoration: none;
-            color: black;
-        
-            @include theme(dark) {
-                color: white;
-            }
-        }
+    }
+
+    picture {
+        margin: -1em auto;
+        transform: translateY(calc(var(--p) + 2vw));
+        transition: transform 0.3s ease;
     }
 }
 

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import Article from '../../components/Article'
 
@@ -16,6 +17,7 @@ function SquareHaven() {
                         <li>Preserved at <a href="http://squarehaven.com/">squarehaven.com</a></li>
                     </ul>
                 )}
+                nextArticle={<Link href="/developer/camval-produce">Camval Produce</Link>}
             >
                 <p>I cut my digital teeth on Square Haven. I learned digital technologies to express my interest in the videogames of the great RPG publisher, Squaresoft, creator of the <i>Final Fantasy</i> series. It was my goal to create an online community for friends with the same passion.</p>
                 

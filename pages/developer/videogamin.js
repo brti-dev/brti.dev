@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import Article from '../../components/Article'
 
@@ -16,6 +17,7 @@ function SquareHaven() {
                         <li>In development at <a href="http://videogamin.squarehaven.com/">videogamin.squarehaven.com</a></li>
                     </ul>
                 )}
+                nextArticle={<Link href="/developer/square-haven">Square Haven</Link>}
             >
                 <h2>Design</h2>
                 <p>This app was designed with the general goal of being a place for gamers to read and contribute information about their favorite games. Because the app was highly dependent on user-generated content, the interfaces had to be easy to use and understand. The result of the user's contribution must be immediate and visually appealing, so I configured a CMS that was open to all registered users but was manageable by administrators.</p>

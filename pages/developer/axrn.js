@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import Article from '../../components/Article'
 
@@ -17,6 +18,7 @@ function Axrn() {
                         <li>Code at <a href="https://github.com/dr-spaceman/axnh">Github</a></li>
                     </ul>
                 )}
+                nextArticle={<Link href="/developer/chenglish-dict">Chenglish Dictionary</Link>}
             >
                 <p>In what can only be described as exceptionally timely, Nintendo released the latest installment of the <a href="https://nookipedia.com/wiki/Animal_Crossing_(series)">Animal Crossing videogame series</a> right at the start of the 2020 Coronavirus lockdown. In the newest installment, <i><a href="https://animal-crossing.com/new-horizons/">New Horizons</a></i>, players inhabit a tropical island full of endemic wildlife, specifically bugs, fish, and anthropomorphic animal inhabitants. With the latter you build relationships (or rivalries) with, while the bugs and fish can be caught and put on display in a delightfully atmospheric little town museum.</p>
                 <p>These critters, however, are only available at certain times of the day or months of the year. I had the idea of a web app that can notify the player which critters are available at the time of playing to help them build up their museums.</p>

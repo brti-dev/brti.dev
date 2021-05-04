@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import Article from '../../components/Article'
 
@@ -17,6 +18,7 @@ function ChenglishDict() {
                         <li>Code at <a href="https://github.com/dr-spaceman/chenglish-dictionary/">Github</a></li>
                     </ul>
                 )}
+                nextArticle={<Link href="/developer/videogamin">Videogam.in</Link>}
             >
                 <p>As any learner of Chinese soon discovers, there are <i>a lot</i> of characters to learn. <a href="https://lingua.mtsu.edu/academic/dajun-4thtech.pdf">A 2004 study conducted by Jun Da</a>, a linguist at Middle Tennessee State University, found that there are an astounding 258,852,642 unique Chinese characters in use in classical and modern texts. Luckily for learners of the modern language, only about 8,000 are generally known by fluent speakers; Even better, Jun estimates only 3,500 characters are commonly used in modern texts like newspapers and novels.</p>
                 <p>Still, the path to literacy in Chinese is a daunting task. As I myself discovered, learning 3,500 characters is time-consuming and nerve-wracking, especially after your weary eyes have come across that same character a hundred times and you still can&apos;t seem to get it saved in your memory bank.</p>

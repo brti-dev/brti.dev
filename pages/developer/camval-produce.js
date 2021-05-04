@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import Article from '../../components/Article'
 
@@ -16,6 +17,7 @@ function Camval() {
                         <li>In development at <a href="https://camval.customerdirect.net">camval.customerdirect.net</a></li>
                     </ul>
                 )}
+                nextArticle={<Link href="/developer/mern-tracker">MERN Issue Tracker</Link>}
             >
                 <p>I was excited to receive a contract to build this app because its scale was perfect for a single-page web app, which I had never built before. I prepared by diving into the <abbr title="MongoDB, Express.js, React, Node.js">MERN stack</abbr> and built <a href="./mern-tracker">Mern Issue Tracker</a> on top of several microservices, then used the technical understanding and boilerplate to develop this e-commerce app.</p>
 

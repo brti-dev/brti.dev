@@ -7,27 +7,23 @@
 $spacing-small: 1rem;
 $spacing-large: 6rem;
 
-@mixin spacing($prop) {
-    #{$prop}: $spacing-small;
-    @include breakpoint(screen) {
-        #{$prop}: $spacing-large;
-    }
-}
-
 // Top Level
 
 :root {
     --color-font: #{$color-font-light};
+    --color-font-gray: #737373;
     --color-primary: #{$color-primary-light};
     --color-primary-hover: #{$color-primary-hover-light};
     --color-surface: #{$color-surface-light};
     --color-surface-hover: #{$color-surface-hover-light};
     --color-comment: #{$color-comment-light};
+    --spacing: #{$spacing-small};
 
     font: normal 100% sans-serif;
     font-size: calc(100vw / 22);
     @include breakpoint(screen) {
         font-size: calc(100vw / 50);
+        --spacing: #{$spacing-large};
     }
     @include breakpoint(omnivision) {
         // Computed size at 'omnivision'
@@ -221,13 +217,13 @@ button,
 .button {
     outline: none;
     line-height: 1.5;
-    padding: 0 .75rem;
+    padding: 0 0.75rem;
     font-size: 1rem;
     color: var(--color-font);
     border: 0;
-    border-radius: .25rem;
+    border-radius: 0.13rem;
     background-color: var(--color-surface);
-    transition: box-shadow .15s ease-in-out;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
     &:hover {
         box-shadow: var(--color-comment) 0px 0px 0px 1px;
     }
@@ -238,8 +234,15 @@ button,
 
 button,
 .button {
+    display: inline-flex;
+    vertical-align: middle;
+    align-items: center;
     cursor: pointer;
     background-color: transparent;
+
+    svg {
+        margin-right: 0.5em;
+    }
 
     &[disabled] {
         cursor: not-allowed;
@@ -264,14 +267,12 @@ button,
     }
 
     &.variant-contained {
-
         &.color-default {
             background-color: var(--color-surface);
             &:hover {
                 background-color: var(--color-surface-hover);
             }
         }
-
 
         &.color-primary {
             background-color: $color-primary-light;
@@ -289,6 +290,10 @@ button,
             }
         }
     }
+
+    &.variant-outlined {
+        box-shadow: var(--color-comment) 0px 0px 0px 1px;
+    }
 }
 
 // Outline
@@ -301,15 +306,15 @@ button,
         box-sizing: border-box;
         max-width: 1280px;
         margin: 0 auto;
-        @include spacing(padding-right);
-        @include spacing(padding-left);
+        padding-right: var(--spacing);
+        padding-left: var(--spacing);
     }
 
     > header {
         width: 100%;
         max-height: 144px;
-        @include spacing(margin-top);
-        @include spacing(margin-bottom);
+        margin-top: var(--spacing);
+        margin-bottom: var(--spacing);
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
@@ -540,7 +545,7 @@ button,
 #scroll-top {
     position: absolute;
     top: 0;
-    @include spacing(right);
+    right: var(--spacing);
     transition: all 0.2s ease-in-out 0s;
     &:hover {
         transform: translateY(-10px);
@@ -578,4 +583,12 @@ button,
         height: 0;
         overflow: hidden;
     }
+}
+
+.text-label {
+    color: var(--color-font-gray);
+    text-transform: uppercase;
+    font-size: 0.65em;
+    letter-spacing: 0.08em;
+    font-weight: 300;
 }

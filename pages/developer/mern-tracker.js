@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import Layout from '../../components/Layout'
 import Article from '../../components/Article'
 
@@ -16,6 +17,7 @@ function MernTracker() {
                         <li>Code on <a href="https://github.com/dr-spaceman/mern-issue-tracker">Github</a></li>
                     </ul>
                 )}
+                nextArticle={<Link href="/developer/axrn">AXRN Animal Crossing Right Now</Link>}
             >
                 <p>I previously started to learn React and wanted to enhance my understanding of it while learning other modern frameworks. I used Subramanian&#39;s <a href="https://www.apress.com/in/book/9781484243909">&quot;Pro MERN Stack&quot;</a> as a primary reference, but also consulted other sources to make the modifications I desired. Essential sources include <a href="https://reactjs.org/docs/hooks-intro.html">React Hooks documentation</a>, <a href="https://reactrouter.com/web/guides/quick-start">React Router documentation</a>, <a href="https://material-ui.com/getting-started/usage/">Material UI documentation</a>, <a href="https://docs.mongodb.com/">MongoDB documentation</a>, and, of course, Stack Overflow.</p>
 
