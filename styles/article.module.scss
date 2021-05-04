@@ -272,3 +272,35 @@
         }
     }
 }
+
+.next {
+    display: flex;
+    justify-content: flex-end;
+
+    a {
+        text-decoration: none;
+        padding: 0.5em 0;
+        margin: 0.5em 0;
+        
+        small {
+            display: block;
+        }
+    
+        big {
+            display: flex;
+            align-items: center;
+        }
+    
+        [class~=arrow] {
+            width: 1.5em;
+            height: 1.5em;
+            transition: transform 0.2s ease;
+        }
+
+        &:hover {
+            [class~=arrow] {
+                transform: translateX(10px) scale(1.2);
+            }
+        }
+    }
+}

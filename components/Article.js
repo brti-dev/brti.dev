@@ -1,4 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
+import { BiRightArrowAlt as ArrowRightIcon } from 'react-icons/bi'
+
 import classes from '../styles/article.module.scss'
 import Date from './Date'
 
@@ -11,6 +14,7 @@ import Date from './Date'
  * @param {string=} props.description Description of the article
  * @param {string|JSX.Element=} props.preface A string or JSX compoent with preface information
  * @param {string=} props.dateString Date of the article
+ * @param {string|JSX.Element=} props.nextArticle A link to the next article in a series
  * @param {JSX.Element|JSX.Element[]} props.children Article body
  * @param {...object=} props.rest Other props to pass to the root element
  *
@@ -21,11 +25,30 @@ export default function Article({
     description,
     preface,
     dateString,
+    nextArticle,
     children,
     ...rest
 }) {
     let header
     let hasHeader = false
+    let next
+
+    if (nextArticle) {
+        // Dissect given <Link> or <a> component and rebuild it using original props
+        next = (
+            <section className={classes.next}>
+                <Link href={nextArticle.props.href}>
+                    <a {...nextArticle.props}>
+                        <small className="text-label">Up Next</small>
+                        <big>
+                            <strong>{nextArticle.props.children}</strong>
+                            <ArrowRightIcon className="arrow"/>
+                        </big>
+                    </a>
+                </Link>
+            </section>
+        )
+    }
 
     if (children) {
         // Check for <header> in children
@@ -55,6 +78,7 @@ export default function Article({
         >
             {header}
             {children}
+            {next}
         </article>
     )
 }
