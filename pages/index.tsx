@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import Layout from '../components/Layout'
+import Layout from '@/components/Layout'
 
 export default function Home() {
     return (
@@ -14,6 +14,7 @@ export default function Home() {
                 <h1>Hello World</h1>
                 <p>Voluptate proident ea aliquip laborum dolor aliqua. Lorem anim commodo cillum et nulla ex labore ea ex reprehenderit voluptate. Eiusmod ex incididunt cillum dolor cupidatat cillum adipisicing.</p>
             </main>
+            <div style={{display:'flex'}}><div>A</div><div>B</div><div style={{marginLeft:'auto'}}>C</div></div>
         </Layout>
     )
 }

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { BiRightArrowAlt as ArrowRightIcon } from 'react-icons/bi'
 
-import classes from '../styles/article.module.scss'
-import Date from './Date'
+import classes from '@/styles/article.module.scss'
+import Date from '@/components/Date'
 
 /**
  * Render an article. A header will be built based on props passed, or include a custom header in
