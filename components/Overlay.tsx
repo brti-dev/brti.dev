@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
+
+type CloseFunction = (a: MouseEventHandler<HTMLDivElement>) => void
+export type OverlayProps = {
+    opened: boolean
+    onClose: CloseFunction
+} & React.HTMLAttributes<HTMLDivElement>
 
 function Overlay({
     opened = false,
-    onClose = null,
-}) {
+    onClose,
+}: OverlayProps) {
     return (
         <div
             className="overlay"

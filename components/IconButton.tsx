@@ -1,8 +1,14 @@
 import Tooltip from '@reach/tooltip'
 import '@reach/tooltip/styles.css'
-import Button from './Button'
+import { ReactHTMLElement } from 'react';
 
-function IconButton({ children, ...rest }) {
+import Button, { ButtonProps } from './Button'
+
+export type IconButtonProps = ButtonProps & {
+    tooltip?: string
+}
+
+function IconButton({ children, ...rest }: any) {
     return (
         <Button variant="icon" {...rest}>
             {children}
@@ -10,24 +16,15 @@ function IconButton({ children, ...rest }) {
     );
 }
 
-/**
- * Icon button with optional tooltip
- *
- * @param {Object} props
- * @param {string=} props.tooltip
- * @param {...Object=} props.rest
- */
-function CustomIconButton({ tooltip, ...rest }) {
-    return (
-        <>
-            {tooltip
-                ? (
-                    <Tooltip title={tooltip}>
-                        <IconButton aria-label={tooltip} {...rest} />
-                    </Tooltip>
-                )
-                : <IconButton {...rest} />}
-        </>
-    )
+function CustomIconButton({ tooltip, ...rest }: IconButtonProps) {
+    return (<>
+        {tooltip
+            ? (
+                <Tooltip label={tooltip}>
+                    <IconButton aria-label={tooltip} {...rest} />
+                </Tooltip>
+            )
+            : <IconButton {...rest} />}
+    </>)
 }
 export default CustomIconButton

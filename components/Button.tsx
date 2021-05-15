@@ -1,20 +1,15 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-const propTypes = {
-    color: PropTypes.oneOf(['default', 'primary', 'secondary', 'red', 'green', 'dark', 'light']),
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
-    type: PropTypes.oneOf([
-        'button',
-        'reset',
-        'submit',
-    ]),
-    variant: PropTypes.oneOf(['text', 'contained', 'outlined', 'link', 'icon', 'close']),
-    className: PropTypes.string,
-    to: PropTypes.string,
-    children: PropTypes.node,
-}
+export type ButtonProps = {
+    type?: 'button' | 'reset' | 'submit'
+    variant?: 'text' | 'contained' | 'outlined' | 'link' | 'icon' | 'close'
+    color?: 'default' | 'primary' | 'secondary' | 'red' | 'green' | 'dark' | 'light'
+    size?: 'small' | 'medium' | 'large'
+    className?: string
+    to?: string
+    children: React.ReactNode
+} & React.HTMLAttributes<HTMLButtonElement>
 
 function Button({
     type = 'button',
@@ -25,7 +20,7 @@ function Button({
     to,
     children,
     ...rest
-}) {
+}: ButtonProps) {
     if (to) {
         return (
             <Link href={to}>
@@ -49,7 +44,5 @@ function Button({
         </button>
     )
 }
-
-Button.propTypes = propTypes
 
 export default Button

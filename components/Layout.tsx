@@ -18,13 +18,6 @@ const PAGES = [
     { link: '/bar', title: 'Bar' },
 ]
 
-function getPageTitle(pathname: string) {
-    const foundPage = PAGES.find(page => page.link === pathname)
-    if (!foundPage || !foundPage.title) return '[unknown page]'
-
-    return foundPage.title
-}
-
 export default function Layout({ title = SITE_TITLE, children }) {
     const { pathname, query } = useRouter()
     const pathnameRoot = pathname.split('/', 2).join('/')
@@ -52,7 +45,7 @@ export default function Layout({ title = SITE_TITLE, children }) {
                 <h1>{SITE_TITLE}</h1>
                 <nav
                     id="header-nav"
-                    style={{ '--current-index': currentPageIndex }}
+                    style={{ '--current-index': currentPageIndex } as React.CSSProperties}
                 >
                     <ul>
                         {PAGES.map(({ link, title: pageTitle }) => (
