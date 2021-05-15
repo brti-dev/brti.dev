@@ -11,10 +11,9 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                <h1>Hello World</h1>
+                <h2>Hello World</h2>
                 <p>Voluptate proident ea aliquip laborum dolor aliqua. Lorem anim commodo cillum et nulla ex labore ea ex reprehenderit voluptate. Eiusmod ex incididunt cillum dolor cupidatat cillum adipisicing.</p>
             </main>
-            <div style={{display:'flex'}}><div>A</div><div>B</div><div style={{marginLeft:'auto'}}>C</div></div>
         </Layout>
     )
 }
