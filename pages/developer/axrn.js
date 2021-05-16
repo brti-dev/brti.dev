@@ -14,7 +14,7 @@ function Axrn() {
                 description={<>A web app for players of the Nintendo Switch game <i>Animal Crossing: New Horizons</i> to inform them what critters are available right now.</>}
                 preface={(
                     <ul>
-                        <li>In production at <a href="http://www.axrn.me/">axrn.me</a> and <a href="https://axnh.herokuapp.com/">axnh.herokuapp.com</a></li>
+                        <li>In production at <a href="https://axnh.herokuapp.com/">axnh.herokuapp.com</a></li>
                         <li>Code at <a href="https://github.com/dr-spaceman/axnh">Github</a></li>
                     </ul>
                 )}

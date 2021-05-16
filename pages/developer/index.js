@@ -12,13 +12,13 @@ const WORKS = [
         slug: 'camval-produce',
         heading: 'Camval Produce',
         subheading: 'Project Lead',
-        description: 'An e-commerce app for a small produce delivery buisiness in San Diego.',
+        description: 'An e-commerce app for a produce delivery business in San Diego.',
         tags: ['Single Page App', 'Node and Express', 'MongoDB', 'GraphQL', 'React', 'Material UI', 'Webpack'],
     }, {
         label: 'Single-Page App',
         slug: 'mern-tracker',
         heading: 'MERN Issue Tracker',
-        description: 'A single-page app built to learn how to make single-page apps',
+        description: 'A single-page app built to learn how to make single-page apps.',
         tags: ['Single Page App', 'Node and Express', 'MongoDB', 'GraphQL', 'React', 'Material UI', 'Webpack'],
     }, {
         heading: 'AXRN Animal Crossing Right Now',
@@ -28,32 +28,32 @@ const WORKS = [
         tags: ['Mobile-first', 'Responsive design', 'Web Scraping', 'Python/Flask', 'CSS Grid'],
         image: (
             <picture>
-                <source srcSet="img/axrn.webp" type="image/webp" />
-                <img src="img/axrn.png" alt="AXRN Animal Crossing Right Now screenshots" />
+                <source srcSet="/img/axrn.webp" type="image/webp" />
+                <img src="/img/axrn.png" alt="AXRN Animal Crossing Right Now screenshots" />
             </picture>
         ),
     }, {
         label: 'Web App',
         slug: 'chenglish-dict',
         heading: 'Chenglish Dictionary',
-        description: 'A Chinese-English dictionary and flash cards app for Chinese language learners.',
+        description: 'Learn Chinese characters and phrases.',
         tags: ['Test-Driven Development', 'Mobile-first', 'PHP', 'MySQL', 'Javascript and jQuery'],
         image: (
             <picture>
-                <source srcSet="img/chenglishdict_work.webp" type="image/webp" />
-                <img src="img/chenglishdict_work.png" alt="Chenglish Dictionary screenshots" />
+                <source srcSet="/img/chenglishdict_work.webp" type="image/webp" />
+                <img src="/img/chenglishdict_work.png" alt="Chenglish Dictionary screenshots" />
             </picture>
         ),
     }, {
         label: 'Web Portal',
         slug: 'videogamin',
         heading: 'Videogam.in',
-        description: 'An app to show off your videogame collection.',
+        description: 'Show off your videogame collection.',
         tags: ['Custom CMS', 'PHP', 'MySQL', 'jQuery', 'Photoshop'],
         image: (
             <picture>
-                <source srcSet="img/videogamin_shel_sm.webp" type="image/webp" />
-                <img src="img/videogamin_shel_sm.png" alt="Videogam.in game shelf mock" />
+                <source srcSet="/img/videogamin_shel_sm.webp" type="image/webp" />
+                <img src="/img/videogamin_shel_sm.png" alt="Videogam.in game shelf mock" />
             </picture>
         ),
     }, {
@@ -62,12 +62,6 @@ const WORKS = [
         heading: 'Square Haven',
         description: 'A community for fans of the videogame publisher Square Enix.',
         tags: ['Community-Building', 'PHP', 'MySQL'],
-        image: (
-            <picture>
-                <source srcSet="img/squarehaven_gamepage_sm.webp" type="image/webp" />
-                <img src="img/squarehaven_gamepage_sm.png" alt="Square Haven game page mock" />
-            </picture>
-        ),
     },
 ];
 
@@ -75,21 +69,14 @@ function Work() {
     return (
         <Layout>
             <section>
-                <h2>Capabilities</h2>
-                <p>
-                    I am versatile, flexible, and see myself as a lifelong learner.{' '}
-                    I enjoy building delightful and accessible user interfaces that are simple and clean.{' '}
-                    I love working with data and have designed databases that scale to thousands of users.
-                </p>
-                <p>
-                    <Button
-                        to="https://www.dropbox.com/s/5z4xkdnf27tdimb/MathewBerti_resume_webdeveloper.pdf"
-                        variant="outlined"
-                    >
-                        <DownloadIcon />
-                        Download Résumé
-                    </Button>
-                </p>
+                <p>Full stack web developer focused on responsive, accessible design on top of clean code, React, and GraphQL. I love building apps that help people learn and stay informed. I am looking for a company that will allow me to express my creativity and utilize my experience as a teacher to mentor and learn from others.</p>
+                <Button
+                    to="https://www.dropbox.com/s/5z4xkdnf27tdimb/MathewBerti_resume_webdeveloper.pdf"
+                    variant="outlined"
+                >
+                    <DownloadIcon />
+                    Download Résumé
+                </Button>
             </section>
             <section className={classes.mywork}>
                 <h2>My Work</h2>

@@ -1,9 +1,9 @@
 import Link from 'next/link'
 
-import { getSortedPosts } from '../lib/posts'
-import Layout from '../components/Layout'
-import Article, { ArticleContent } from '../components/Article'
-import Date from '../components/Date'
+import { getSortedPosts } from '../../lib/posts'
+import Layout from '../../components/Layout'
+import Article, { ArticleContent } from '../../components/Article'
+import Date from '../../components/Date'
 
 export default function Blog({ posts }) {
     return (
