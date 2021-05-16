@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use 'breakpoint' as *;
 @use 'theme' as *;
+@use 'extensions' as *;
 
 // Spacing for outline margins
 
@@ -91,7 +92,7 @@ a,
     text-decoration: none;
     cursor: pointer;
 
-    &:active {
+    &:focus {
         color: $purple;
     }
 
@@ -261,6 +262,12 @@ button,
         }
     }
 
+    &.variant-text {
+        &:hover {
+            box-shadow: none;
+        }
+    }
+
     &.variant-icon {
         padding: 0;
         box-shadow: none !important;
@@ -381,7 +388,7 @@ button,
     position: absolute;
     top: 0;
     right: var(--spacing);
-    transition: all 0.2s ease-in-out 0s;
+    transition: transform 0.2s ease-in-out 0s;
     &:hover {
         transform: translateY(-10px);
     }
@@ -397,16 +404,16 @@ button,
     }
 }
 
-.overlay {
+.overlay,
+[data-reach-dialog-overlay] {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1040;
     width: 100vw;
     height: 100vh;
-    background-color: #000;
-    opacity: 0.95;
-    transition: opacity .15s linear;
+    overflow: auto;
+    background: hsla(0, 0%, 0%, 0.33);
+    @extend .fade-in;
 
     &[hidden] {
         opacity: 0;
@@ -415,10 +422,33 @@ button,
     }
 }
 
+.modal,
+[data-reach-dialog-content] {
+    width: 50vw;
+    margin: 10vh auto;
+    background: var(--color-comment);
+    padding: 2rem;
+    outline: none;
+}
+
 .text-label {
     color: var(--color-font-gray);
     text-transform: uppercase;
     font-size: 0.65em;
     letter-spacing: 0.08em;
     font-weight: 300;
+}
+
+// Animations
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.fade-in {
+    animation: fade-in 0.5s ease;
 }

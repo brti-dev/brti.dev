@@ -7,14 +7,17 @@
   "main": "pages/_app.js",
   "scripts": {
     "dev": "next dev",
+    "#build": "`next export` uses static export; Use only `next build` for other deploy options.",
     "build": "next build && next export",
     "start": "next start",
     "#clean": "Clean up dist files generated on dev, old builds, etc; Optimally done before new builds",
     "clean": "npx rimraf .next out"
   },
   "dependencies": {
+    "@reach/dialog": "^0.15.0",
     "@reach/skip-nav": "^0.15.0",
     "@reach/tooltip": "^0.13.2",
+    "@reach/visually-hidden": "^0.15.0",
     "date-fns": "^2.19.0",
     "next": "10.2.0",
     "normalize.css": "^8.0.1",
