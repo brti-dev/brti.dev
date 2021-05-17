@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import VisuallyHidden from '@reach/visually-hidden'
-import { Dialog, DialogOverlay, DialogContent } from '@reach/dialog'
+import { Dialog } from '@reach/dialog'
 import Button from '../components/Button'
 import Layout from '../components/Layout'
 

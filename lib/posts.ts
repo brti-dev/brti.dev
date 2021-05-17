@@ -65,7 +65,11 @@ export async function getPost(slug: string): Promise<PostType> {
         lede,
         contentHtml,
         customCss,
-        ...meta,
+        title: meta.title,
+        date: meta.date,
+        tags: meta.tags ?? null,
+        header: meta.header ?? null,
+        image: meta.image ?? null,
     }
 }
 

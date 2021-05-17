@@ -9,7 +9,7 @@ export type ButtonProps = {
     className?: string
     to?: string
     children: React.ReactNode
-} & React.HTMLAttributes<HTMLButtonElement>
+} & React.HTMLAttributes<HTMLButtonElement> & React.HTMLAttributes<HTMLAnchorElement>
 
 function Button({
     type = 'button',

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-import { getSortedPosts, Post } from '@/lib/posts'
+import { getSortedPosts, PostType } from '@/lib/posts'
 import Layout from '@/components/Layout'
 import Article, { ArticleContent } from '@/components/Article'
 import Date from '@/components/Date'
@@ -9,7 +9,7 @@ export default function Blog({ posts }) {
     return (
         <Layout>
             <section>
-                {posts.map((post: Post) => (
+                {posts.map((post: PostType) => (
                     <Article key={post.slug}>
                         <header>
                             <Date date={post.date} />

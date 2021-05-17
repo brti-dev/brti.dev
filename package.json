@@ -1,6 +1,6 @@
 {
   "name": "mattberti.com",
-  "version": "2.0.0",
+  "version": "2.1.1",
   "description": "A personal web site, portfolio, and blog",
   "license": "ISC",
   "main": "pages/_app.js",
@@ -13,25 +13,26 @@
     "newpost": "node ./scripts/new-post.js"
   },
   "dependencies": {
+    "@reach/dialog": "^0.15.0",
     "@reach/disclosure": "^0.15.0",
     "@reach/listbox": "^0.15.0",
     "@reach/skip-nav": "^0.15.0",
     "@reach/tooltip": "^0.13.2",
     "@reach/visually-hidden": "^0.15.0",
-    "date-fns": "^2.19.0",
-    "gray-matter": "^4.0.2",
-    "highlight.js": "^10.7.1",
-    "markdown-it": "^12.0.4",
+    "date-fns": "^2.21.3",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^10.7.2",
+    "markdown-it": "^12.0.6",
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-footnote": "^3.0.2",
-    "next": "latest",
+    "next": "^10.2.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
-    "react": "latest",
-    "react-dom": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-visibility-sensor": "^5.1.1",
-    "sass": "^1.32.8",
+    "sass": "^1.32.13",
     "vertical-timeline-component-for-react": "^1.0.7"
   },
   "repository": {
@@ -43,14 +44,14 @@
   "devDependencies": {
     "@types/node": "^15.3.0",
     "@types/react": "^17.0.5",
-    "eslint": "^7.22.0",
+    "eslint": "^7.26.0",
     "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-import": "^2.23.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-promise": "^4.3.1",
-    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "open": "^8.0.4",
+    "open": "^8.0.9",
     "typescript": "^4.2.4"
   }
 }
