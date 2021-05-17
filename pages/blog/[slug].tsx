@@ -1,10 +1,10 @@
 /* eslint-disable react/no-danger */
 import Head from 'next/head'
-import Layout from '../../components/Layout'
-import Article, { ArticleContent } from '../../components/Article'
-import { getPostSlugs, getPost } from '../../lib/posts'
+import Layout from '@/components/Layout'
+import Article, { ArticleContent } from '@/components/Article'
+import { getPostSlugs, getPost, PostType } from '@/lib/posts'
 
-export default function Post({ post }) {
+export default function Post({ post }: { post: PostType }) {
     return (
         <Layout>
             <Head>
@@ -14,7 +14,7 @@ export default function Post({ post }) {
             </Head>
             <Article
                 title={post.title}
-                dateString={post.date}
+                date={post.date}
             >
                 {post.header && <header dangerouslySetInnerHTML={{ __html: post.header }} />}
                 <ArticleContent htmlContent={post.contentHtml} />

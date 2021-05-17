@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Layout from '../../components/Layout'
-import Article from '../../components/Article'
+import Layout from '@/components/Layout'
+import Article from '@/components/Article'
 
 function Camval() {
     return (
@@ -11,7 +11,7 @@ function Camval() {
             </Head>
             <Article
                 title="Camval Produce"
-                description="A responsive e-commerce app for a small produce delivery buisiness in San Diego."
+                description="A responsive e-commerce app for a small produce delivery business in San Diego."
                 preface={(
                     <ul>
                         <li>In development at <a href="https://camval.customerdirect.net">camval.customerdirect.net</a></li>

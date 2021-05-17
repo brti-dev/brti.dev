@@ -1,18 +1,18 @@
 import Link from 'next/link'
 
-import { getSortedPosts } from '../../lib/posts'
-import Layout from '../../components/Layout'
-import Article, { ArticleContent } from '../../components/Article'
-import Date from '../../components/Date'
+import { getSortedPosts, Post } from '@/lib/posts'
+import Layout from '@/components/Layout'
+import Article, { ArticleContent } from '@/components/Article'
+import Date from '@/components/Date'
 
 export default function Blog({ posts }) {
     return (
         <Layout>
             <section>
-                {posts.map(post => (
+                {posts.map((post: Post) => (
                     <Article key={post.slug}>
                         <header>
-                            <Date dateString={post.date} />
+                            <Date date={post.date} />
                             <h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
                         </header>
                         <ArticleContent htmlContent={post.lede ?? post.contentHtml} />

@@ -2,8 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import { FiDownload as DownloadIcon } from 'react-icons/fi'
 
-import Layout from '../../components/Layout'
-import Button from '../../components/Button'
+import Layout from '@/components/Layout'
+import Button from '@/components/Button'
 import classes from './index.module.scss'
 
 const WORKS = [

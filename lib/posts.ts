@@ -12,20 +12,32 @@ const CSS_DIR = path.join(process.cwd(), 'public/css/posts')
 // <!-- more[-custom] -->
 const LEDE_TEST = /<!--\s*more[-:| ]*(.*)\s*-->/
 
-function parseLeadIn(content) {
+/**
+ * @returns An array of the raw lede and anchor words
+ */
+function parseLede(content: string): [string, string]|null {
     const matches = content.match(LEDE_TEST)
     if (matches) {
-        const ledeLinkWords = matches[1] ? matches[1].trim() : 'Keep reading'
-        return [content.substr(0, matches.index), ledeLinkWords]
+        const ledeAnchorWords = matches[1] ? matches[1].trim() : 'Keep reading'
+        return [content.substr(0, matches.index), ledeAnchorWords]
     }
 
     return null
 }
 
-/**
- * @param {string} slug
- */
-export async function getPost(slug) {
+export type PostType = {
+    slug: string
+    lede: string
+    contentHtml: string
+    customCss?: string
+    title: string
+    date: string|Date
+    tags: string[]
+    header?: string
+    image?: string
+}
+
+export async function getPost(slug: string): Promise<PostType> {
     const fullPath = path.join(POSTS_DIR, `${slug}.md`)
     const fileContents = readFileSync(fullPath, 'utf8')
 
@@ -37,11 +49,11 @@ export async function getPost(slug) {
     }
 
     const contentHtml = await markdownToHtml(contentMd)
-    const leads = parseLeadIn(contentHtml)
-    let lede = null
-    if (leads) {
-        const [ledeRaw, ledeLinkWords] = leads
-        lede = `${ledeRaw} <a href="/blog/${slug}" title="${meta.title}" class="more">${ledeLinkWords} &rarr;</a>`
+    let lede: null|string = null
+    const parsedLede = parseLede(contentHtml)
+    if (parsedLede) {
+        const [ledeRaw, ledeAnchorWords] = parsedLede
+        lede = `${ledeRaw} <a href="/blog/${slug}" title="${meta.title}" class="more">${ledeAnchorWords} &rarr;</a>`
     }
 
     // Check for custom stylesheet
@@ -62,7 +74,7 @@ export async function getSortedPosts() {
     const promises = fileNames.map(fileName => {
         const slug = fileName.replace(/\.md$/, '')
         return getPost(slug)
-    });
+    })
     const allPostsData = await Promise.all(promises)
 
     return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))

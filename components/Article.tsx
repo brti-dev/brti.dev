@@ -2,36 +2,34 @@ import Link from 'next/link'
 import React from 'react'
 import { BiRightArrowAlt as ArrowRightIcon } from 'react-icons/bi'
 
-import classes from '../styles/article.module.scss'
-import Date from './Date'
+import classes from '@/styles/article.module.scss'
+import Date from '@/components/Date'
+
+type ArticleProps = {
+    title?: string
+    description?: string | React.ReactElement
+    preface?: string | React.ReactElement
+    date?: string | Date
+    nextArticle?: React.ReactElement
+    children: React.ReactElement | React.ReactElement[]
+}
 
 /**
  * Render an article. A header will be built based on props passed, or include a custom header in
  * the content.
- *
- * @param {object} props
- * @param {string=} props.title Title of the article
- * @param {string=} props.description Description of the article
- * @param {string|JSX.Element=} props.preface A string or JSX compoent with preface information
- * @param {string=} props.dateString Date of the article
- * @param {string|JSX.Element=} props.nextArticle A link to the next article in a series
- * @param {JSX.Element|JSX.Element[]} props.children Article body
- * @param {...object=} props.rest Other props to pass to the root element
- *
- * @returns Rendered article
  */
 export default function Article({
     title,
     description,
     preface,
-    dateString,
+    date,
     nextArticle,
     children,
     ...rest
-}) {
-    let header
+}: ArticleProps) {
+    let header: React.ReactElement
     let hasHeader = false
-    let next
+    let next: React.ReactElement
 
     if (nextArticle) {
         // Dissect given <Link> or <a> component and rebuild it using original props
@@ -52,7 +50,7 @@ export default function Article({
 
     if (children) {
         // Check for <header> in children
-        React.Children.forEach(children, child => {
+        React.Children.forEach(children, (child) => {
             if (child && child.type === 'header') {
                 hasHeader = true
             }
@@ -63,7 +61,7 @@ export default function Article({
     if (!hasHeader) {
         header = (
             <header>
-                {dateString && <Date dateString={dateString} />}
+                {date && <Date date={date} />}
                 <h1>{title}</h1>
                 {description && <div className={classes.description}>{description}</div>}
                 {preface && <div className={classes.preface}>{preface}</div>}
@@ -83,23 +81,21 @@ export default function Article({
     )
 }
 
+type ArticleContentProps = {
+    htmlContent?: string // Static HTML to set as article content; Uses React's `dangerouslySetInnerHTML` inside an additional <div> element
+    children?: React.ReactElement // Article body
+}
+
 /**
- * Helper component to render the content of an article. Userful for rendering static HTML, eg.
+ * Helper component to render the content of an article. Useful for rendering static HTML, eg.
  * from parsed Markdown.
- *
- * @param {Object} props
- * @param {string=} props.htmlContent Static HTML to set as article content; Uses React's
- * `dangerouslySetInnerHTML` inside an additional <div> element
- * @param {JSX.Element|JSX.Element[]} [props.children] Article body
- *
- * @returns {JSX.Element}
  *
  * @note This component is merely a solution to render static HTML in React. Once we can
  * dangerouslySetInnerHTML to a fragment, this component can be removed or updated.
  * @see https://github.com/facebook/react/issues/12014
  * @see https://github.com/reactjs/rfcs/pull/129
  */
-export function ArticleContent({ htmlContent, children }) {
+export function ArticleContent({ htmlContent, children }: ArticleContentProps) {
     if (htmlContent) {
         return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
     }
