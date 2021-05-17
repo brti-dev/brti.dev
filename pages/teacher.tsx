@@ -20,7 +20,7 @@ function Teacher() {
                 <h2>Experience</h2>
                 <Timeline>
                     <TimelineItem
-                        dateText="2016&mdash;2021"
+                        label="2016&mdash;2021"
                     >
                         <h3>Ningbo Foreign Language School Advanced Placement Center</h3>
                         <p>Instructor of AP US History, AP European History, AP Human Geography, and AP Capstone/Seminar.</p>
@@ -28,7 +28,7 @@ function Teacher() {
                     </TimelineItem>
 
                     <TimelineItem
-                        dateText="2011&mdash;2016"
+                        label="2011&mdash;2016"
                     >
                         <h3>Sino-Canadian International College at Guangxi University</h3>
                         <p>ESL teacher, lecturer on British and American history and culture.</p>
@@ -36,14 +36,14 @@ function Teacher() {
                     </TimelineItem>
 
                     <TimelineItem
-                        dateText="2010&mdash;2011"
+                        label="2010&mdash;2011"
                     >
                         <h3>Hezhou College</h3>
                         <p>ESL teacher, lecturer on Intercultural Communication.</p>
                     </TimelineItem>
 
                     <TimelineItem
-                        dateText="2008&mdash;2009"
+                        label="2008&mdash;2009"
                     >
                         <h3>Xi’an Technological University</h3>
                         <p>ESL teacher, lecturer on British and American history and culture.</p>
