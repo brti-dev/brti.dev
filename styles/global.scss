@@ -225,6 +225,8 @@ button,
     border-radius: 0.13rem;
     background-color: var(--color-surface);
     transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none !important;
+
     &:hover {
         box-shadow: var(--color-comment) 0px 0px 0px 1px;
     }
