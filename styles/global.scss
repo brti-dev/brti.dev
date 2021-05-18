@@ -1,6 +1,7 @@
 @use 'sass:color';
 @use 'breakpoint' as *;
 @use 'theme' as *;
+@use 'fonts' as *;
 @use 'extensions' as *;
 
 // Spacing for outline margins
@@ -20,7 +21,9 @@ $spacing-large: 6rem;
     --color-comment: #{$color-comment-light};
     --spacing: #{$spacing-small};
 
-    font: normal 100% sans-serif;
+    font-size: normal;
+    line-height: 100%;
+    font-family: "Karla", sans-serif;
     font-size: calc(100vw / 22);
     @include breakpoint(screen) {
         font-size: calc(100vw / 50);
@@ -61,9 +64,9 @@ h4,
 h5,
 h6,
 .h {
+    // font-family: "Open Sans", sans-serif;
     text-rendering: optimizeLegibility;
     line-height: 1;
-    font-family: "Open Sans", sans-serif;
     letter-spacing: -0.05em;
     color: #282828;
     
@@ -179,7 +182,7 @@ tt {
 pre code,
 tt {
     font-size: 0.85em;
-    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
     white-space: pre;
     line-height: 1.2;
     background: unset;

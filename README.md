@@ -2,7 +2,15 @@ This is a starter for a Next.js app bootstrapped with TypeScript. It includes CS
 
 ## Getting Started
 
-First, run the development server:
+If using as a starter for a new app:
+
+```bash
+npx create-next-app nextjs-blog --use-npm --example "https://github.com/dr-spaceman/next.js-starter"
+```
+
+To merge config to an existing app, see section on merging below.
+
+After initializing the app run the development server:
 
 ```bash
 npm run dev
