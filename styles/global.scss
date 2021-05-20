@@ -16,6 +16,8 @@ $spacing-large: 6rem;
     --color-font-gray: #737373;
     --color-primary: #{$color-primary-light};
     --color-primary-hover: #{$color-primary-hover-light};
+    --color-secondary: #{$color-secondary};
+    --color-secondary-hover: #{$color-secondary-hover};
     --color-surface: #{$color-surface-light};
     --color-surface-hover: #{$color-surface-hover-light};
     --color-comment: #{$color-comment-light};
@@ -25,14 +27,17 @@ $spacing-large: 6rem;
     line-height: 100%;
     font-family: sans-serif;
     font-size: calc(100vw / 22);
+
     @include breakpoint(screen) {
         font-size: calc(100vw / 50);
         --spacing: #{$spacing-large};
     }
+
     @include breakpoint(omnivision) {
         // Computed size at 'omnivision'
         font-size: 25.58px;
     }
+    
     @include theme(dark) {
         --color-font: #{$color-font-dark};
         --color-primary: #{$color-primary-dark};
@@ -394,6 +399,7 @@ button,
     top: 0;
     right: var(--spacing);
     transition: transform 0.2s ease-in-out 0s;
+    
     &:hover {
         transform: translateY(-10px);
     }
