@@ -23,7 +23,7 @@ $spacing-large: 6rem;
 
     font-size: normal;
     line-height: 100%;
-    font-family: "Karla", sans-serif;
+    font-family: sans-serif;
     font-size: calc(100vw / 22);
     @include breakpoint(screen) {
         font-size: calc(100vw / 50);
