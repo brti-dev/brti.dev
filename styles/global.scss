@@ -1,9 +1,10 @@
 @use 'sass:color';
 @use 'breakpoint' as *;
 @use 'theme' as *;
+@use 'fonts' as *;
 @use 'extensions' as *;
 
-// Spacing for outline margins
+// Layout variables
 
 $spacing-small: 1rem;
 $spacing-large: 6rem;
@@ -16,6 +17,8 @@ $radius: 0.13rem;
     --color-font-gray: #737373;
     --color-primary: #{$color-primary-light};
     --color-primary-hover: #{$color-primary-hover-light};
+    --color-secondary: #{$color-secondary};
+    --color-secondary-hover: #{$color-secondary-hover};
     --color-surface: #{$color-surface-light};
     --color-surface-hover: #{$color-surface-hover-light};
     --color-comment: #{$color-comment-light};
@@ -187,7 +190,7 @@ tt {
 pre code,
 tt {
     font-size: 0.85em;
-    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
     white-space: pre;
     line-height: 1.2;
     background: unset;
@@ -228,6 +231,7 @@ button,
     line-height: 1.5;
     padding: 0 0.75rem;
     font-size: 1rem;
+    font-weight: 300;
     color: var(--color-font);
     border: 0;
     border-radius: var(--radius);
@@ -410,9 +414,17 @@ button,
 [data-reach-dialog-content] {
     width: 50vw;
     margin: 10vh auto;
-    background: var(--color-comment);
+    background: var(--color-surface);
     padding: 2rem;
     outline: none;
+
+    .close-button {
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        line-height: 0.6rem;
+        font-size: 2rem;
+    }
 }
 
 .overlay,
@@ -423,8 +435,12 @@ button,
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    background: hsla(0, 0%, 0%, 0.33);
+    background: hsla(0, 0%, 100%, 0.8);
     @extend .fade-in;
+
+    @include theme(dark) {
+        background: hsla(0, 0%, 0%, 0.8);
+    }
 
     &[hidden] {
         opacity: 0;
@@ -693,6 +709,7 @@ button,
     top: 0;
     right: var(--spacing);
     transition: transform 0.2s ease-in-out 0s;
+
     &:hover {
         transform: translateY(-10px);
     }
@@ -706,12 +723,6 @@ button,
         right: unset;
         left: $spacing-large / 2;
     }
-}
-
-.overlay,
-[data-reach-dialog-overlay] {
-    // This is kept especially dark because of header nav
-    background: hsla(0, 0%, 0%, 0.95);
 }
 
 // Animations

@@ -4,10 +4,10 @@ This is the complete code behind mattberti.com, a personal web site mostly focus
 
 ## Built With
 
-- Javascript
-- React
-- Next.js
-- Sass
+-   Javascript
+-   React
+-   Next.js
+-   Sass
 
 ## Launch
 

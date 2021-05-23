@@ -40,7 +40,7 @@ export default function Article({
                         <small className="text-label">Up Next</small>
                         <big>
                             <strong>{nextArticle.props.children}</strong>
-                            <ArrowRightIcon className="arrow"/>
+                            <ArrowRightIcon className="arrow" />
                         </big>
                     </a>
                 </Link>

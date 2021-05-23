@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import VisuallyHidden from '@reach/visually-hidden'
 import { Dialog } from '@reach/dialog'
-import Button from '../components/Button'
-import Layout from '../components/Layout'
+
+import Button from '@/components/Button'
+import IconButton from '@/components/IconButton'
+import Layout from '@/components/Layout'
 
 export default function TestPage() {
     const [opened, setOpened] = useState(false)
@@ -13,10 +15,10 @@ export default function TestPage() {
             <main>
                 <Button onClick={toggleOpen}>Open Dialog</Button>
                 <Dialog isOpen={opened} onDismiss={toggleOpen}>
-                    <button className="close-button" onClick={toggleOpen}>
+                    <IconButton className="close-button" onClick={toggleOpen}>
                         <VisuallyHidden>Close</VisuallyHidden>
-                        <span aria-hidden>×</span>
-                    </button>
+                        <span aria-hidden>&times;</span>
+                    </IconButton>
                     Hello world
                 </Dialog>
             </main>
