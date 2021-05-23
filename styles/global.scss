@@ -88,12 +88,14 @@ h6,
 h1,
 .h1 {
     font-size: 2.5em;
+    font-weight: 600;
     letter-spacing: -0.02em;
 }
 
 h2,
 .h2 {
-    font-weight: 200;
+    font-size: 2em;
+    font-weight: 300;
     letter-spacing: -0.5px;
 }
 
@@ -435,11 +437,13 @@ button,
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    background: hsla(0, 0%, 100%, 0.8);
+    // Make this especially dark because of header nav
+    background: hsla(0, 0%, 100%, 0.85);
     @extend .fade-in;
 
     @include theme(dark) {
-        background: hsla(0, 0%, 0%, 0.8);
+        // Make this especially dark because of header nav
+        background: hsla(0, 0%, 0%, 0.95);
     }
 
     &[hidden] {
@@ -504,10 +508,6 @@ button,
 
         .overlay {
             z-index: 2;
-
-            @include theme(light) {
-                background-color: #eee;
-            }
         }
 
         > picture {
@@ -769,7 +769,7 @@ button,
     text-transform: uppercase;
     font-size: 0.65em;
     letter-spacing: 0.08em;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .timeline {

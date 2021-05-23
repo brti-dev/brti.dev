@@ -28,21 +28,17 @@
         }
     }
 
-    h2 {
-        font-size: 1.5em;
-    }
-
     p {
         @extend %p;
     }
 
     figcaption::before {
         counter-increment: article;
-        content: "Figure " counter(article, decimal-leading-zero) ". ";
+        content: 'Figure ' counter(article, decimal-leading-zero) '. ';
         font-weight: bold;
     }
 
-    blockquote:not([class~=unstyled]) {
+    blockquote:not([class~='unstyled']) {
         padding: 0 0 0 5%;
         position: relative;
         &:before {
@@ -50,7 +46,7 @@
             position: absolute;
             left: -0.065em;
             top: -0.2em;
-            content: "\201C";
+            content: '\201C';
             font-size: 5em;
             font-family: Georgia;
             color: #7a7a7a;
@@ -68,7 +64,7 @@
             margin-top: -0.5em;
         }
         footer:before {
-            content: "\2014 \00A0";
+            content: '\2014 \00A0';
         }
     }
 
@@ -281,24 +277,24 @@
         text-decoration: none;
         padding: 0.5em 0;
         margin: 0.5em 0;
-        
+
         small {
             display: block;
         }
-    
+
         big {
             display: flex;
             align-items: center;
         }
-    
-        [class~=arrow] {
+
+        [class~='arrow'] {
             width: 1.5em;
             height: 1.5em;
             transition: transform 0.2s ease;
         }
 
         &:hover {
-            [class~=arrow] {
+            [class~='arrow'] {
                 transform: translateX(10px) scale(1.2);
             }
         }

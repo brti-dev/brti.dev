@@ -12,39 +12,88 @@ const WORKS = [
         slug: 'camval-produce',
         heading: 'Camval Produce',
         subheading: 'Project Lead',
-        description: 'An e-commerce app for a produce delivery business in San Diego.',
-        tags: ['Single Page App', 'Node and Express', 'MongoDB', 'GraphQL', 'React', 'Material UI', 'Webpack'],
-    }, {
+        description:
+            'An e-commerce app for a produce delivery business in San Diego.',
+        tags: [
+            'Single Page App',
+            'Node and Express',
+            'MongoDB',
+            'GraphQL',
+            'React',
+            'Material UI',
+            'Webpack',
+        ],
+    },
+    {
         label: 'Single-Page App',
         slug: 'mern-tracker',
         heading: 'MERN Issue Tracker',
-        description: 'A single-page app built to learn how to make single-page apps.',
-        tags: ['Single Page App', 'Node and Express', 'MongoDB', 'GraphQL', 'React', 'Material UI', 'Webpack'],
-    }, {
+        description:
+            'A single-page app built to learn how to make single-page apps.',
+        tags: [
+            'Single Page App',
+            'Node and Express',
+            'MongoDB',
+            'GraphQL',
+            'React',
+            'Material UI',
+            'Webpack',
+        ],
+    },
+    {
         heading: 'AXRN Animal Crossing Right Now',
         label: 'Web App',
         slug: 'axrn',
-        description: <>A web app for players of the Nintendo Switch game <i>Animal Crossing: New Horizons</i> to inform them what critters are available right now.</>,
-        tags: ['Mobile-first', 'Responsive design', 'Web Scraping', 'Python/Flask', 'CSS Grid'],
+        description: (
+            <>
+                A web app for players of the Nintendo Switch game{' '}
+                <i>Animal Crossing: New Horizons</i> to inform them what
+                critters are available right now.
+            </>
+        ),
+        tags: [
+            'Mobile-first',
+            'Responsive design',
+            'Web Scraping',
+            'Python/Flask',
+            'CSS Grid',
+        ],
         image: (
             <picture>
                 <source srcSet="/img/axrn.webp" type="image/webp" />
-                <img src="/img/axrn.png" alt="AXRN Animal Crossing Right Now screenshots" />
+                <img
+                    src="/img/axrn.png"
+                    alt="AXRN Animal Crossing Right Now screenshots"
+                />
             </picture>
         ),
-    }, {
+    },
+    {
         label: 'Web App',
         slug: 'chenglish-dict',
         heading: 'Chenglish Dictionary',
         description: 'Learn Chinese characters and phrases.',
-        tags: ['Test-Driven Development', 'Mobile-first', 'PHP', 'MySQL', 'Javascript and jQuery'],
+        tags: [
+            'Test-Driven Development',
+            'Mobile-first',
+            'PHP',
+            'MySQL',
+            'Javascript and jQuery',
+        ],
         image: (
             <picture>
-                <source srcSet="/img/chenglishdict_work.webp" type="image/webp" />
-                <img src="/img/chenglishdict_work.png" alt="Chenglish Dictionary screenshots" />
+                <source
+                    srcSet="/img/chenglishdict_work.webp"
+                    type="image/webp"
+                />
+                <img
+                    src="/img/chenglishdict_work.png"
+                    alt="Chenglish Dictionary screenshots"
+                />
             </picture>
         ),
-    }, {
+    },
+    {
         label: 'Web Portal',
         slug: 'videogamin',
         heading: 'Videogam.in',
@@ -52,43 +101,61 @@ const WORKS = [
         tags: ['Custom CMS', 'PHP', 'MySQL', 'jQuery', 'Photoshop'],
         image: (
             <picture>
-                <source srcSet="/img/videogamin_shel_sm.webp" type="image/webp" />
-                <img src="/img/videogamin_shel_sm.png" alt="Videogam.in game shelf mock" />
+                <source
+                    srcSet="/img/videogamin_shel_sm.webp"
+                    type="image/webp"
+                />
+                <img
+                    src="/img/videogamin_shel_sm.png"
+                    alt="Videogam.in game shelf mock"
+                />
             </picture>
         ),
-    }, {
+    },
+    {
         label: 'Web Portal',
         slug: 'square-haven',
         heading: 'Square Haven',
-        description: 'A community for fans of the videogame publisher Square Enix.',
+        description:
+            'A community for fans of the videogame publisher Square Enix.',
         tags: ['Community-Building', 'PHP', 'MySQL'],
     },
-];
+]
 
 function Work() {
     return (
         <Layout>
             <section>
-                <p>Full stack web developer focused on responsive, accessible design on top of clean code, React, and GraphQL. I love building apps that help people learn and stay informed. I am looking for a company that will allow me to express my creativity and utilize my experience as a teacher to mentor and learn from others.</p>
+                <p>
+                    Full stack web developer focused on responsive, minimalist
+                    design on top of clean code, React, and GraphQL. I love
+                    building apps that help people learn and stay informed.
+                </p>
                 <Button
                     to="https://www.dropbox.com/s/5z4xkdnf27tdimb/MathewBerti_resume_webdeveloper.pdf"
                     variant="outlined"
                 >
                     <DownloadIcon />
-                    Download Résumé
+                    <strong>Download Résumé</strong>
                 </Button>
             </section>
             <section className={classes.mywork}>
-                <h2>My Work</h2>
+                <h2 className="h1">My Work</h2>
                 <div className={classes.workItems}>
                     {WORKS.map(work => (
                         <div className={classes.workItem} key={work.slug}>
                             <Link href={`/developer/${work.slug}`}>
                                 <a title={work.heading}>
-                                    <small className="text-label">{work.label}</small>
-                                    <h3>{work.heading}</h3>
-                                    {work.subheading && <strong>{work.subheading}</strong>}
-                                    {work.description && <p>{work.description}</p>}
+                                    <small className="text-label">
+                                        {work.label}
+                                    </small>
+                                    <h3 className="h2">{work.heading}</h3>
+                                    {work.subheading && (
+                                        <strong>{work.subheading}</strong>
+                                    )}
+                                    {work.description && (
+                                        <p>{work.description}</p>
+                                    )}
                                     {work.image ? work.image : ''}
                                     {/* <ul className={classes.tags}>
                                         {work.tags.map(tag => <li key={tag}>{tag}</li>)}
