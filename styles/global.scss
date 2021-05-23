@@ -88,7 +88,7 @@ h6,
 h1,
 .h1 {
     font-size: 2.5em;
-
+    font-weight: 600;
     letter-spacing: -0.02em;
 }
 
@@ -128,7 +128,7 @@ img {
         // Recolorize photographic images in dark mode
         // @see https://web.dev/prefers-color-scheme/#re-colorize-and-darken-photographic-images
         &:not([src*='.svg']) {
-            filter: grayscale(25%);
+            filter: grayscale(15%);
         }
     }
 }
@@ -238,8 +238,7 @@ button,
     border: 0;
     border-radius: var(--radius);
     background-color: var(--color-surface);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease,
-        color 0.3s ease;
+    transition: all 0.3s ease;
     text-decoration: none !important;
 
     &:hover {
@@ -270,7 +269,7 @@ button,
 
     &:disabled {
         cursor: not-allowed;
-        opacity: 0.65;
+        opacity: 0.75;
     }
 
     &.size-small {
