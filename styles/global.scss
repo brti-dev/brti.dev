@@ -88,12 +88,14 @@ h6,
 h1,
 .h1 {
     font-size: 2.5em;
+
     letter-spacing: -0.02em;
 }
 
 h2,
 .h2 {
-    font-weight: 200;
+    font-size: 2em;
+    font-weight: 300;
     letter-spacing: -0.5px;
 }
 
@@ -600,5 +602,5 @@ button,
     text-transform: uppercase;
     font-size: 0.65em;
     letter-spacing: 0.08em;
-    font-weight: 300;
+    font-weight: 400;
 }
