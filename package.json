@@ -14,6 +14,7 @@
     "clean": "npx rimraf .next out"
   },
   "dependencies": {
+    "@reach/alert": "^0.15.0",
     "@reach/dialog": "^0.15.0",
     "@reach/skip-nav": "^0.15.0",
     "@reach/tooltip": "^0.13.2",
