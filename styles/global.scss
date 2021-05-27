@@ -29,16 +29,17 @@ $radius: 0.13rem;
     line-height: 100%;
     font-family: Roboto, sans-serif;
     font-size: calc(100vw / 22);
-    font-weight: 300;
+    font-weight: 400;
 
     @include breakpoint(screen) {
-        font-size: calc(100vw / 50);
+        font-size: calc(100vw / 60);
+        font-weight: 300;
         --spacing: #{$spacing-large};
     }
 
     @include breakpoint(omnivision) {
         // Computed size at 'omnivision'
-        font-size: 25.58px;
+        font-size: 22px;
     }
 
     @include theme(dark) {
@@ -88,7 +89,7 @@ h6,
 h1,
 .h1 {
     font-size: 2.5em;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
 }
 
@@ -119,6 +120,11 @@ a,
         color: var(--color-font) !important;
         text-decoration: none !important;
     }
+}
+
+b,
+strong {
+    font-weight: 600;
 }
 
 img {
