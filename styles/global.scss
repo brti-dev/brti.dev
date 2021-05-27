@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:math';
 @use 'breakpoint' as *;
 @use 'theme' as *;
 @use 'fonts' as *;
@@ -29,16 +30,17 @@ $radius: 0.13rem;
     line-height: 100%;
     font-family: Roboto, sans-serif;
     font-size: calc(100vw / 22);
-    font-weight: 300;
+    font-weight: 400;
 
     @include breakpoint(screen) {
-        font-size: calc(100vw / 50);
+        font-size: calc(100vw / 60);
+        font-weight: 300;
         --spacing: #{$spacing-large};
     }
 
     @include breakpoint(omnivision) {
         // Computed size at 'omnivision'
-        font-size: 25.58px;
+        font-size: 22px;
     }
 
     @include theme(dark) {
@@ -88,7 +90,7 @@ h6,
 h1,
 .h1 {
     font-size: 2.5em;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: -0.02em;
 }
 
@@ -121,6 +123,11 @@ a,
     }
 }
 
+b,
+strong {
+    font-weight: 600;
+}
+
 img {
     max-width: 100%;
 
@@ -128,7 +135,7 @@ img {
         // Recolorize photographic images in dark mode
         // @see https://web.dev/prefers-color-scheme/#re-colorize-and-darken-photographic-images
         &:not([src*='.svg']) {
-            filter: grayscale(25%);
+            filter: grayscale(15%);
         }
     }
 }
@@ -238,8 +245,7 @@ button,
     border: 0;
     border-radius: var(--radius);
     background-color: var(--color-surface);
-    transition: box-shadow 0.3s ease, background-color 0.3s ease,
-        color 0.3s ease;
+    transition: all 0.3s ease;
     text-decoration: none !important;
 
     &:hover {
@@ -270,7 +276,7 @@ button,
 
     &:disabled {
         cursor: not-allowed;
-        opacity: 0.65;
+        opacity: 0.75;
     }
 
     &.size-small {
@@ -355,6 +361,23 @@ button,
 }
 
 // Components
+
+.alert {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 6px 16px;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.43;
+    border-radius: var(--radius);
+    letter-spacing: 0.01071em;
+    background-color: var(--color-surface);
+}
+.alert__error {
+    color: $red;
+    background-color: $pink;
+}
 
 .card {
     @extend %card;
@@ -721,7 +744,7 @@ button,
 
     @include breakpoint(omnivision) {
         right: unset;
-        left: $spacing-large / 2;
+        left: math.div($spacing-large, 2);
     }
 }
 
