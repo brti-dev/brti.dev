@@ -1,20 +1,23 @@
 import React from 'react'
+import classes from '@/styles/components/timeline.module.scss'
 
-export const Timeline = ({ color = 'var(--color-comment)', children, ...rest }) => (
+export const Timeline = ({
+    color = 'var(--color-comment)',
+    children,
+    ...rest
+}) => (
     <div
-        className="timeline"
+        className={classes.timeline}
         style={{ '--color': color } as React.CSSProperties}
         {...rest}
     >
-        <ul>
-            {children}
-        </ul>
+        <dl>{children}</dl>
     </div>
 )
 
 export const TimelineItem = ({ label, children }) => (
-    <li>
-        {children}
-        <label>{label}</label>
-    </li>
+    <>
+        {label && <dt>{label}</dt>}
+        <dd>{children}</dd>
+    </>
 )
