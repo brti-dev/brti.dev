@@ -12,7 +12,12 @@ export default function Post({ post }: { post: PostType }) {
                 {post.customCss && (
                     <link href={post.customCss} rel="stylesheet" />
                 )}
-                {post.lede && <meta name="description" content={post.lede} />}
+                {post.lede && (
+                    <meta
+                        name="description"
+                        content={post.lede.replace(/(<([^>]+)>)/gi, '')}
+                    />
+                )}
                 <meta property="og:title" content={post.title} />
                 <meta property="og:type" content="blog" />
                 <meta property="og:site_name" content="Matt Berti" />
@@ -20,7 +25,10 @@ export default function Post({ post }: { post: PostType }) {
                     <meta property="og:image" content={post.image} />
                 )}
                 {post.lede && (
-                    <meta property="og:description" content={post.lede} />
+                    <meta
+                        property="og:description"
+                        content={post.lede.replace(/(<([^>]+)>)/gi, '')}
+                    />
                 )}
             </Head>
             <Article title={post.title} date={post.date}>

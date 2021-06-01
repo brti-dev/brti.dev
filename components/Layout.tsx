@@ -75,7 +75,10 @@ export default function Layout({ title = null, description = null, children }) {
                     crossOrigin="true"
                 />
                 {description && (
-                    <meta name="description" content={description} />
+                    <meta
+                        name="description"
+                        content={description.replace(/(<([^>]+)>)/gi, '')}
+                    />
                 )}
                 <meta
                     name="viewport"

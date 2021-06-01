@@ -13,6 +13,7 @@
     "newpost": "node ./scripts/new-post.js"
   },
   "dependencies": {
+    "@reach/alert": "^0.15.0",
     "@reach/dialog": "^0.15.0",
     "@reach/disclosure": "^0.15.0",
     "@reach/listbox": "^0.15.0",
