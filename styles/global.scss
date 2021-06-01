@@ -237,7 +237,7 @@ button,
 .input,
 .button {
     outline: none;
-    line-height: 1.5;
+    line-height: 2em;
     padding: 0 0.75rem;
     font-size: 1rem;
     font-weight: 300;
@@ -268,7 +268,7 @@ button,
     vertical-align: middle;
     align-items: center;
     cursor: pointer;
-    background-color: transparent;
+    background: transparent;
 
     svg {
         margin-right: 0.5em;
@@ -292,12 +292,12 @@ button,
     &.variant-outlined,
     &.variant-link {
         &:hover {
-            background-color: var(--color-surface);
+            background: var(--color-surface);
         }
     }
 
     &.variant-text {
-        &:hover {
+        &:hover:not(:focus) {
             box-shadow: none;
         }
     }
@@ -309,31 +309,42 @@ button,
 
     &.variant-contained {
         &.color-default {
-            background-color: var(--color-surface);
+            background: var(--color-surface);
             &:hover {
-                background-color: var(--color-surface-hover);
+                background: var(--color-surface-hover);
             }
         }
 
         &.color-primary {
-            background-color: $color-primary-light;
+            background: var(--color-primary);
             color: white;
             &:hover {
-                background-color: $color-primary-hover-light;
+                background: var(--color-primary-hover);
             }
         }
 
         &.color-secondary {
-            background-color: $color-secondary;
+            background: var(--color-secondary);
             color: white;
             &:hover {
-                background-color: $color-secondary-hover;
+                background: var(--color-secondary-hover);
             }
+        }
+
+        &.color-red {
+            background: $red;
+            color: white;
+        }
+
+        &.color-green {
+            background: $green;
+            color: white;
         }
     }
 
     &.variant-outlined {
-        box-shadow: var(--color-comment) 0px 0px 0px 1px;
+        line-height: calc(2em - 2px);
+        border: 1px solid var(--color-comment);
     }
 
     &[data-loading='true'] {
