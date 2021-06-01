@@ -34,6 +34,11 @@ export default function Layout({ title = SITE_TITLE, children }) {
                 />
                 <title>{title}</title>
                 <link rel="icon" href="/favicon.ico" />
+                <link
+                    rel="preconnect"
+                    href="https://fonts.googleapis.com"
+                    crossOrigin="true"
+                />
                 <meta
                     property="og:image"
                     content={`https://og-image.vercel.app/${encodeURI(
