@@ -94,7 +94,7 @@ const WORKS = [
         ),
     },
     {
-        label: 'Web Portal',
+        label: 'Web Community',
         slug: 'videogamin',
         heading: 'Videogam.in',
         description: 'Show off your videogame collection.',
@@ -113,7 +113,7 @@ const WORKS = [
         ),
     },
     {
-        label: 'Web Portal',
+        label: 'Web Community',
         slug: 'square-haven',
         heading: 'Square Haven',
         description:
@@ -131,9 +131,10 @@ function Work() {
         >
             <section>
                 <p>
-                    Full stack web developer focused on responsive, minimalist
-                    design on top of clean code, React, and GraphQL. I love
-                    building apps that help people learn and stay informed.
+                    I'm a full stack web developer focused on responsive,
+                    minimalist design on top of clean code, React, and GraphQL.
+                    I love building apps that help people learn and stay
+                    informed.
                 </p>
                 <Button
                     to="https://www.dropbox.com/s/5z4xkdnf27tdimb/MathewBerti_resume_webdeveloper.pdf"

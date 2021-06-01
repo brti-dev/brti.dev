@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import { BiArrowToTop as ArrowTopIcon } from 'react-icons/bi'
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
+import VisuallyHidden from '@reach/visually-hidden'
 
 import scrollToTop from '@/lib/scroll-to-top'
 import IconButton from './IconButton'
@@ -93,7 +94,7 @@ export default function Layout({ title = null, description = null, children }) {
                     <source srcSet="/img/mattberti.webp" type="image/webp" />
                     <img
                         src="/img/mattberti.png"
-                        alt="Matt Berti"
+                        alt="Matt Berti with students"
                         width={136}
                         height={136}
                     />
@@ -177,7 +178,12 @@ export default function Layout({ title = null, description = null, children }) {
                             </li>
                         </ul>
                     </nav>
-                    <IconButton id="scroll-top" onClick={scrollToTop}>
+                    <IconButton
+                        id="scroll-top"
+                        onClick={scrollToTop}
+                        title="Scroll to top"
+                    >
+                        <VisuallyHidden>Scroll to top</VisuallyHidden>
                         <ArrowTopIcon />
                     </IconButton>
                 </footer>
