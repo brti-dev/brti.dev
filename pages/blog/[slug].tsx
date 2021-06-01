@@ -9,14 +9,24 @@ export default function Post({ post }: { post: PostType }) {
         <Layout>
             <Head>
                 <title>{post.title} - Matt Berti Blog</title>
-                {post.image && <meta name="og:image" content={post.image} />}
-                {post.customCss && <link href={post.customCss} rel="stylesheet" />}
+                {post.customCss && (
+                    <link href={post.customCss} rel="stylesheet" />
+                )}
+                {post.lede && <meta name="description" content={post.lede} />}
+                <meta property="og:title" content={post.title} />
+                <meta property="og:type" content="blog" />
+                <meta property="og:site_name" content="Matt Berti" />
+                {post.image && (
+                    <meta property="og:image" content={post.image} />
+                )}
+                {post.lede && (
+                    <meta property="og:description" content={post.lede} />
+                )}
             </Head>
-            <Article
-                title={post.title}
-                date={post.date}
-            >
-                {post.header && <header dangerouslySetInnerHTML={{ __html: post.header }} />}
+            <Article title={post.title} date={post.date}>
+                {post.header && (
+                    <header dangerouslySetInnerHTML={{ __html: post.header }} />
+                )}
                 <ArticleContent htmlContent={post.contentHtml} />
             </Article>
         </Layout>
@@ -41,9 +51,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
     const post = await getPost(slug)
 
-    return ({
+    return {
         props: {
             post,
         },
-    })
+    }
 }

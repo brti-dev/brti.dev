@@ -12,7 +12,7 @@ import IconButton from './IconButton'
 import Button from './Button'
 import Overlay from './Overlay'
 
-export const siteTitle = 'Matt Berti'
+export const SITE_TITLE = 'Matt Berti'
 
 const PAGES = [
     { link: '/', title: 'someone' },
@@ -47,7 +47,7 @@ function getPageTitle(pathname: string) {
 /**
  * Wrapper component to render header, footer, and other layout components
  */
-export default function Layout({ title = null, children }) {
+export default function Layout({ title = null, description = null, children }) {
     const { pathname, query } = useRouter()
     const pathnameRoot = pathname.split('/', 2).join('/')
 
@@ -62,10 +62,6 @@ export default function Layout({ title = null, children }) {
     return (
         <>
             <Head>
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1.0"
-                />
                 <title>
                     Matt Berti
                     {title
@@ -73,13 +69,19 @@ export default function Layout({ title = null, children }) {
                         : ', full stack developer and history teacher'}
                 </title>
                 <link rel="icon" href="/favicon.ico" />
-                <meta
-                    property="og:image"
-                    content={`https://og-image.vercel.app/${encodeURI(
-                        siteTitle
-                    )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+                <link
+                    rel="preconnect"
+                    href="https://fonts.googleapis.com"
+                    crossOrigin="true"
                 />
-                <meta name="og:title" content={siteTitle} />
+                {description && (
+                    <meta name="description" content={description} />
+                )}
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <meta property="og:title" content={SITE_TITLE} />
                 <meta name="twitter:card" content="summary_large_image" />
             </Head>
             <SkipNavLink />

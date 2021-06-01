@@ -1,11 +1,11 @@
 import Link from 'next/link'
 
 import Layout from '@/components/Layout'
-import classes from './index.module.css'
+import classes from '@/styles/index.module.css'
 
 function HomePage() {
     return (
-        <Layout>
+        <Layout description="Official website and digital portfolio of Matt Berti, a professional full stack web developer and history teacher. Come meet me.">
             <div
                 style={{ display: 'none' }}
                 itemScope

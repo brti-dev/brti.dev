@@ -6,10 +6,15 @@ dl.social {
 dl.social dt {
     font-weight: bold;
     margin: 0 1em 0 0;
-    padding: 0;
+    padding: 12px 0;
 }
 
 dl.social dd {
     margin: 0 1em 0 0;
     padding: 0;
+}
+
+dl.social a {
+    display: block;
+    padding: 12px 0;
 }

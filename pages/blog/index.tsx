@@ -7,15 +7,24 @@ import Date from '@/components/Date'
 
 export default function Blog({ posts }) {
     return (
-        <Layout>
+        <Layout
+            title="Blogger"
+            description="Articles and blog posts about web development, teaching history, and travel."
+        >
             <section>
                 {posts.map((post: PostType) => (
                     <Article key={post.slug}>
                         <header>
                             <Date date={post.date} />
-                            <h2><Link href={`/blog/${post.slug}`}>{post.title}</Link></h2>
+                            <h2>
+                                <Link href={`/blog/${post.slug}`}>
+                                    {post.title}
+                                </Link>
+                            </h2>
                         </header>
-                        <ArticleContent htmlContent={post.lede ?? post.contentHtml} />
+                        <ArticleContent
+                            htmlContent={post.lede ?? post.contentHtml}
+                        />
                     </Article>
                 ))}
             </section>

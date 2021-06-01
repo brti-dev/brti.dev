@@ -4,7 +4,7 @@ import { FiDownload as DownloadIcon } from 'react-icons/fi'
 
 import Layout from '@/components/Layout'
 import Button from '@/components/Button'
-import classes from './index.module.scss'
+import classes from '@/styles/developer.module.scss'
 
 const WORKS = [
     {
@@ -124,7 +124,11 @@ const WORKS = [
 
 function Work() {
     return (
-        <Layout>
+        <Layout
+            title="Full Stack Web Developer"
+            description="Matt Berti is a full stack web developer focused on responsive, minimalist
+                    design on top of clean code, React, and GraphQL. Come see my full project portfolio."
+        >
             <section>
                 <p>
                     Full stack web developer focused on responsive, minimalist

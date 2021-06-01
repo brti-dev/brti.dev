@@ -5,7 +5,10 @@ import Layout from '../components/Layout'
 
 function Teacher() {
     return (
-        <Layout title="Teacher">
+        <Layout
+            title="Teacher"
+            description="Matt Berti is a certified teacher of Advanced Placement Histories and other AP subjects. He has experience preparing students for academic life abroad and is an expert on active learning techniques."
+        >
             <div>
                 <p>
                     I am a certified teacher of Advanced Placement Histories,

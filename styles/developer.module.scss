@@ -1,6 +1,6 @@
-@use '../../styles/breakpoint' as *;
-@use '../../styles/theme' as *;
 @use 'sass:color' as color;
+@use './breakpoint' as *;
+@use './theme' as *;
 
 .workItems {
     display: flex;
