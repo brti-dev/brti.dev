@@ -67,7 +67,7 @@ export default function Layout({ title = null, description = null, children }) {
                     Matt Berti
                     {title
                         ? `, ${title}`
-                        : ', full stack developer and history teacher'}
+                        : ', full stack web developer and history teacher'}
                 </title>
                 <link rel="icon" href="/favicon.ico" />
                 <link
