@@ -9,17 +9,47 @@ import '@reach/skip-nav/styles.css'
 import VisuallyHidden from '@reach/visually-hidden'
 
 import scrollToTop from '@/lib/scroll-to-top'
+import NavLink from './NavLink'
 import IconButton from './IconButton'
 import Button from './Button'
 import Overlay from './Overlay'
 
 export const SITE_TITLE = 'Matt Berti'
+export const IMG_DIR = '/img'
 
+/**
+ * Object to build nav and help router
+ *
+ * @prop link Link to index
+ * @prop title Label title that will be used on nav
+ * @prop imgSrc An optimized, preferred image thumbnail in .webp format
+ * @prop imgSrcFallback A fallback image in .png or .jpg format
+ */
 const PAGES = [
-    { link: '/', title: 'someone' },
-    { link: '/developer', title: 'web developer' },
-    { link: '/teacher', title: 'teacher' },
-    { link: '/blog', title: 'blogger' },
+    {
+        link: '/',
+        title: 'someone',
+        imgSrc: 'mattberti.webp',
+        imgSrcFallback: 'mattberti.jpg',
+    },
+    {
+        link: '/developer',
+        title: 'web developer',
+        imgSrc: 'mattberti-developer.webp',
+        imgSrcFallback: 'mattberti-developer.png',
+    },
+    {
+        link: '/teacher',
+        title: 'teacher',
+        imgSrc: 'mattberti-teacher.webp',
+        imgSrcFallback: 'mattberti-teacher.png',
+    },
+    {
+        link: '/blog',
+        title: 'blogger',
+        imgSrc: 'mattberti-blogger.webp',
+        imgSrcFallback: 'mattberti-blogger.png',
+    },
 ]
 
 // pathname-alias for source code link (@github)
@@ -90,15 +120,30 @@ export default function Layout({ title = null, description = null, children }) {
             </Head>
             <SkipNavLink />
             <header id="top">
-                <picture>
-                    <source srcSet="/img/mattberti.webp" type="image/webp" />
-                    <img
-                        src="/img/mattberti.png"
-                        alt="Matt Berti with students"
-                        width={136}
-                        height={136}
-                    />
-                </picture>
+                <div id="header-thumbnail">
+                    <div
+                        className="container"
+                        style={
+                            {
+                                '--yInitial': `calc(-${currentPageIndex} * var(--thumbnail-size))`,
+                                transform: `translateY(var(--yInitial))`,
+                            } as React.CSSProperties
+                        }
+                    >
+                        {PAGES.map(page => (
+                            <picture key={page.link}>
+                                <source
+                                    srcSet={`${IMG_DIR}/${page.imgSrc}`}
+                                    type="image/webp"
+                                />
+                                <img
+                                    src={`${IMG_DIR}/${page.imgSrcFallback}`}
+                                    alt="Matt Berti"
+                                />
+                            </picture>
+                        ))}
+                    </div>
+                </div>
                 <h1>Matt Berti</h1>
                 <nav
                     id="header-nav"
@@ -119,7 +164,7 @@ export default function Layout({ title = null, description = null, children }) {
                     </Button>
                     <div className="container" hidden={!nav.opened}>
                         <ul>
-                            {PAGES.map(({ link, title: pageTitle }) => (
+                            {PAGES.map(({ link, title: pageTitle }, index) => (
                                 <li
                                     key={link}
                                     className={
@@ -128,11 +173,14 @@ export default function Layout({ title = null, description = null, children }) {
                                             : undefined
                                     }
                                 >
-                                    <Link href={link}>
-                                        <a className="nav-item unstyled">
-                                            {pageTitle}
-                                        </a>
-                                    </Link>
+                                    <NavLink
+                                        href={link}
+                                        scroll={false}
+                                        navIndex={index}
+                                        className="nav-item unstyled"
+                                    >
+                                        {pageTitle}
+                                    </NavLink>
                                 </li>
                             ))}
                         </ul>

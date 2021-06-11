@@ -131,10 +131,10 @@ function Work() {
         >
             <section>
                 <p>
-                    I'm a full stack web developer focused on responsive,
-                    minimalist design on top of clean code, React, and GraphQL.
-                    I love building apps that help people learn and stay
-                    informed.
+                    Hi I'm Matt, a full stack web developer focused on
+                    responsive, accessible, minimalist design on top of clean
+                    code, React, and GraphQL. I love building apps that help
+                    people learn and stay informed.
                 </p>
                 <Button
                     to="https://www.dropbox.com/s/5z4xkdnf27tdimb/MathewBerti_resume_webdeveloper.pdf"

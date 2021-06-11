@@ -543,15 +543,38 @@ button,
             z-index: 2;
         }
 
-        > picture {
+        #header-thumbnail {
+            --thumbnail-size: 136px;
+
+            width: var(--thumbnail-size);
+            height: var(--thumbnail-size);
+            border-radius: 50%;
+            overflow: hidden;
             order: 1;
-            flex: 1 0 100px;
+            flex: 1 0 var(--thumbnail-size);
             margin-left: -36px;
             margin-top: -11px;
 
             @include breakpoint(screen) {
                 margin: unset;
                 flex: unset;
+            }
+
+            > .container {
+                width: var(--thumbnail-size);
+                transition: transform 0.3s ease-in-out;
+            }
+
+            picture {
+                display: block;
+                width: var(--thumbnail-size);
+                height: var(--thumbnail-size);
+            }
+
+            img {
+                border-radius: 50%;
+                width: var(--thumbnail-size);
+                height: var(--thumbnail-size);
             }
         }
 
@@ -607,7 +630,7 @@ button,
                 --t: rotate(var(--r)) scale(0.75);
 
                 margin-left: 0.5rem;
-                transition: transform 0.5s ease;
+                transition: transform 0.3s ease;
 
                 &:before,
                 &:after {

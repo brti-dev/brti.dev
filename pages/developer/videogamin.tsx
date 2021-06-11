@@ -9,16 +9,16 @@ function SquareHaven() {
             <Article
                 title="Videogam.in"
                 description="An app to show off your videogame collection."
-                preface={
-                    <ul>
-                        <li>
-                            In development at{' '}
-                            <a href="http://videogamin.squarehaven.com/">
-                                videogamin.squarehaven.com
-                            </a>
-                        </li>
-                    </ul>
-                }
+                // preface={
+                //     <ul>
+                //         <li>
+                //             In development at{' '}
+                //             <a href="http://videogamin.squarehaven.com/">
+                //                 videogamin.squarehaven.com
+                //             </a>
+                //         </li>
+                //     </ul>
+                // }
                 nextArticle={
                     <Link href="/developer/square-haven">Square Haven</Link>
                 }

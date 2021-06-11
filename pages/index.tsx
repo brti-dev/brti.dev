@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Layout from '@/components/Layout'
+import NavLink from '@/components/NavLink'
 import classes from '@/styles/index.module.css'
 
 function HomePage() {
@@ -29,24 +30,28 @@ function HomePage() {
             <section>
                 <p>
                     Hi I&apos;m Matt, a{' '}
-                    <Link href="/teacher">
-                        <a title="Matt Berti's teaching experience and CV">
-                            history teacher
-                        </a>
-                    </Link>{' '}
+                    <NavLink
+                        navIndex={2}
+                        href="/teacher"
+                        title="Matt Berti's teaching experience and CV"
+                    >
+                        history teacher
+                    </NavLink>{' '}
                     by day and{' '}
-                    <Link href="/developer">
-                        <a title="Matt Berti's portfolio of full stack web projects">
-                            full stack web developer
-                        </a>
-                    </Link>{' '}
+                    <NavLink
+                        navIndex={1}
+                        href="/developer"
+                        title="Matt Berti's portfolio of full stack web projects"
+                    >
+                        full stack web developer
+                    </NavLink>{' '}
                     by night. I&apos;m passionate about{' '}
                     <strong>videogames</strong>, <strong>history</strong>,{' '}
                     <strong>the outdoors</strong>, and the Oxford Comma.
                     Occasionally I{' '}
-                    <Link href="/blog">
-                        <a title="Blog index">write</a>
-                    </Link>{' '}
+                    <NavLink navIndex={3} href="/blog" title="Blog index">
+                        write
+                    </NavLink>{' '}
                     about the aforementioned topics.
                 </p>
                 <p>
