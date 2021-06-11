@@ -38,7 +38,7 @@ There is a trailhead at the village of Yangshan 羊山 north of Dongqian Lake, a
 <figcaption>Yangshan CCP headquarters</figcaption>
 </figure>
 
-The trail begins as a narrow cobblestone road that is part of the hundreds or perhaps thousads of miles of the huge mountain post network of old Ningbo. Much of this network was built by local governments in the Republic period or early CCP era to facilitate communication among the remote mountain villages of Eastern Zhejiang, though parts have been built by the parks department in recent years to promote exercise and provide outdoor activities for locals.
+The trail begins as a narrow cobblestone road that is part of the hundreds or perhaps thousands of miles of the huge mountain post network of old Ningbo. Much of this network was built by local governments in the Republic period or early CCP era to facilitate communication among the remote mountain villages of Eastern Zhejiang, though parts have been built by the parks department in recent years to promote exercise and provide outdoor activities for locals.
 
 <figure>
 
@@ -64,7 +64,7 @@ After a tough, steep climb, you'll know you're at the summit when you begin to s
 <figcaption>Wild berries grow along the trail in May</figcaption>
 </figure>
 
-The trail takes another lurch toward another peak as to not let the hiker get too complacent. This climb is through quiet forrested areas, though swarms of mosquitos may detract from the serenity of the forest. At the top of the mountain is a Buddhist temple. Down the path is a shrine and pavilion with a golden idol in a little cave.
+The trail takes another lurch toward another peak as to not let the hiker get too complacent. This climb is through quiet forested areas, though swarms of mosquitos may detract from the serenity of the forest. At the top of the mountain is a Buddhist temple. Down the path is a shrine and pavilion with a golden idol in a little cave.
 
 <figure>
 
@@ -72,7 +72,7 @@ The trail takes another lurch toward another peak as to not let the hiker get to
 
 <figcaption>A golden idol in the temple cave at the final summit.</figcaption>
 
-From here, you may get a spectacular view of Dongqian Lake and/or a sunset if you timed your journey well. Down this path lies the destination, the village of Hanling. This quaint old fishing hamlet on the banks of the lake has in recent years been renovated and rebranded as Hanling Old Street 韩岭老街. Here a tired hiker may reward themself with snacks, beers, Starbucks coffee, ice cream (try the cafe toward the end of the street on the right), restaurants (Tiegebi 贴阁碧 for tasty local food), or a car or bus back to the city.
+From here, you may get a spectacular view of Dongqian Lake and/or a sunset if you timed your journey well. Down this path lies the destination, the village of Hanling. This quaint old fishing hamlet on the banks of the lake has in recent years been renovated and rebranded as Hanling Old Street 韩岭老街. Here a tired hiker may reward themselves with snacks, beers, Starbucks coffee, ice cream (try the cafe toward the end of the street on the right), restaurants (Tiegebi 贴阁碧 for tasty local food), or a car or bus back to the city.
 
 <figure>
 
