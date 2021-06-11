@@ -13,8 +13,8 @@ A hike through the tea fields of Ningbo's Fuquan Shan, ending at picturesque Han
 
 <!-- more -->
 
-<aside style="display:flex">
-<div style="flex:1; gap:1em;">
+<aside style="display:flex; flex-wrap:wrap;">
+<div style="flex:1; gap:1em; min-width:300px;">
 This is one of the best hikes around Ningbo, Zhejiang, China, a good balance of challenge and scenery through diverse environments.
 
 -   ⚠️ This is a <strong>moderately challenging</strong> hike because of the distance and elevation.
@@ -26,7 +26,9 @@ This is one of the best hikes around Ningbo, Zhejiang, China, a good balance of 
 -   🚯 Bring your garbage with you and leave no trace on the trails.
 
 </div>
+<div>
 <img title="Hiking map Yangshan-Hanling" src="/img/posts/hike-ningbo-fuquan-shan/yangshan-hanling_map.jpg" style="width:300px;height:auto" />
+</div>
 </aside>
 
 There is a trailhead at the village of Yangshan 羊山 east of Dongqian Lake, accessible via car or public bus. I hailed a Didi from Yinzhou Wanda, which took about 45 minutes to arrive. On weekends you may hit traffic around Youngor Zoo.
