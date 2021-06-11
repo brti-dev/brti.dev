@@ -29,13 +29,25 @@ function HomePage() {
             <section>
                 <p>
                     Hi I&apos;m Matt, a{' '}
-                    <Link href="/teacher">history teacher</Link> by day and{' '}
-                    <Link href="/developer">full stack web developer</Link> by
-                    night. I&apos;m passionate about <strong>videogames</strong>
-                    , <strong>history</strong>, <strong>the outdoors</strong>,
-                    and the Oxford Comma. Occasionally I{' '}
-                    <Link href="/blog">write</Link> about the aforementioned
-                    topics.
+                    <Link href="/teacher">
+                        <a title="Matt Berti's teaching experience and CV">
+                            history teacher
+                        </a>
+                    </Link>{' '}
+                    by day and{' '}
+                    <Link href="/developer">
+                        <a title="Matt Berti's portfolio of full stack web projects">
+                            full stack web developer
+                        </a>
+                    </Link>{' '}
+                    by night. I&apos;m passionate about{' '}
+                    <strong>videogames</strong>, <strong>history</strong>,{' '}
+                    <strong>the outdoors</strong>, and the Oxford Comma.
+                    Occasionally I{' '}
+                    <Link href="/blog">
+                        <a title="Blog index">write</a>
+                    </Link>{' '}
+                    about the aforementioned topics.
                 </p>
                 <p>
                     This web project is{' '}
@@ -46,12 +58,12 @@ function HomePage() {
                         🔎open source
                     </a>{' '}
                     and can be modified for your own personal
-                    site/porfolio/blog. It served as the basis for{' '}
+                    site/porfolio/blog. It is the basis for a{' '}
                     <a
                         href="https://github.com/dr-spaceman/next.js-starter"
                         title="Github repo: Next.js starter with typescript"
                     >
-                        this Next.js app starter and UI component library
+                        Next.js app starter and UI component library
                     </a>
                     , which is also open source.
                 </p>
@@ -59,25 +71,44 @@ function HomePage() {
                     <dt>Find Me</dt>
                     {/* <dd><a href="https://twitter.com/bahamatt64">@bahamatt64</a></dd> */}
                     <dd>
-                        <a href="https://github.com/dr-spaceman">Github</a>
+                        <a
+                            href="https://github.com/dr-spaceman"
+                            title="Collaborate with Matt Berti (@dr-spaceman) on Github"
+                        >
+                            Github
+                        </a>
                     </dd>
                     <dd>
-                        <a href="https://www.linkedin.com/in/mrberti/">
+                        <a
+                            href="https://www.linkedin.com/in/mrberti/"
+                            title="Connect with Matt Berti on Linkedin"
+                        >
                             Linkedin
                         </a>
                     </dd>
                     <dd>
-                        <a href="https://steamcommunity.com/id/bahamatt/">
+                        <a
+                            href="https://steamcommunity.com/id/bahamatt/"
+                            title="Matt Berti's Steam profile and games library"
+                        >
                             Steam
                         </a>
                     </dd>
                     <dd>
-                        <a href="https://letterboxd.com/dr_spaceman/">
+                        <a
+                            href="https://letterboxd.com/dr_spaceman/"
+                            title="Matt Berti's film reviews on Letterboxd"
+                        >
                             Letterboxd
                         </a>
                     </dd>
                     <dd>
-                        <a href="mailto:me@mattberti.com">me@mattberti.com</a>
+                        <a
+                            href="mailto:me@mattberti.com"
+                            title="Email Matt Berti"
+                        >
+                            me@mattberti.com
+                        </a>
                     </dd>
                 </dl>
             </section>
