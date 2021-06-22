@@ -1,7 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Article from '@/components/Article'
+import { getNextArticle } from './index'
 
 function Axrn() {
     return (
@@ -31,11 +30,7 @@ function Axrn() {
                         </li>
                     </ul>
                 }
-                nextArticle={
-                    <Link href="/developer/chenglish-dict">
-                        Chenglish Dictionary
-                    </Link>
-                }
+                nextArticle={getNextArticle('axrn')}
             >
                 <p>
                     In what can only be described as exceptionally timely,

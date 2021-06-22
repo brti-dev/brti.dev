@@ -1,7 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Article from '@/components/Article'
+import { getNextArticle } from './index'
 
 function SquareHaven() {
     return (
@@ -19,9 +18,7 @@ function SquareHaven() {
                 //         </li>
                 //     </ul>
                 // }
-                nextArticle={
-                    <Link href="/developer/square-haven">Square Haven</Link>
-                }
+                nextArticle={getNextArticle('videogamin')}
             >
                 <h2>Design</h2>
                 <p>

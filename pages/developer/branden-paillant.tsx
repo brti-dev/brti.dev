@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Article from '@/components/Article'
 import { getNextArticle } from './index'

@@ -1,7 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Article from '@/components/Article'
+import { getNextArticle } from './index'
 
 function Camval() {
     return (
@@ -19,11 +18,7 @@ function Camval() {
                         </li>
                     </ul>
                 }
-                nextArticle={
-                    <Link href="/developer/mern-tracker">
-                        MERN Issue Tracker
-                    </Link>
-                }
+                nextArticle={getNextArticle('camval-produce')}
             >
                 <p>
                     I was excited to receive a contract to build this app

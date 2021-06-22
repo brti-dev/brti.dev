@@ -16,6 +16,7 @@ const WORKS = [
             'An e-commerce app for a produce delivery business in San Diego.',
         tags: [
             'Single Page App',
+            'E-commerce',
             'Node and Express',
             'MongoDB',
             'GraphQL',
@@ -25,20 +26,38 @@ const WORKS = [
         ],
     },
     {
-        label: 'Single-Page App',
-        slug: 'mern-tracker',
-        heading: 'MERN Issue Tracker',
+        label: 'Shopify App',
+        slug: 'branden-paillant',
+        heading: 'Branden Paillant',
+        subheading: 'Project Lead',
         description:
-            'A single-page app built to learn how to make single-page apps.',
+            'An online presence and e-commerce print shop for a photographer of urban industrial landscapes.',
+        tags: ['Single Page App', 'E-commerce', 'Next.js', 'Shopify'],
+    },
+    {
+        label: 'Web App',
+        slug: 'chenglish-dict',
+        heading: 'Chenglish Dictionary',
+        description: 'Learn Chinese characters and phrases.',
         tags: [
-            'Single Page App',
-            'Node and Express',
-            'MongoDB',
-            'GraphQL',
-            'React',
-            'Material UI',
-            'Webpack',
+            'Test-Driven Development',
+            'Mobile-first',
+            'PHP',
+            'MySQL',
+            'Javascript and jQuery',
         ],
+        image: (
+            <picture>
+                <source
+                    srcSet="/img/chenglishdict_work.webp"
+                    type="image/webp"
+                />
+                <img
+                    src="/img/chenglishdict_work.png"
+                    alt="Chenglish Dictionary screenshots"
+                />
+            </picture>
+        ),
     },
     {
         heading: 'AXRN Animal Crossing Right Now',
@@ -69,29 +88,20 @@ const WORKS = [
         ),
     },
     {
-        label: 'Web App',
-        slug: 'chenglish-dict',
-        heading: 'Chenglish Dictionary',
-        description: 'Learn Chinese characters and phrases.',
+        label: 'Single-Page App',
+        slug: 'mern-tracker',
+        heading: 'MERN Issue Tracker',
+        description:
+            'A single-page app built to learn how to make single-page apps.',
         tags: [
-            'Test-Driven Development',
-            'Mobile-first',
-            'PHP',
-            'MySQL',
-            'Javascript and jQuery',
+            'Single Page App',
+            'Node and Express',
+            'MongoDB',
+            'GraphQL',
+            'React',
+            'Material UI',
+            'Webpack',
         ],
-        image: (
-            <picture>
-                <source
-                    srcSet="/img/chenglishdict_work.webp"
-                    type="image/webp"
-                />
-                <img
-                    src="/img/chenglishdict_work.png"
-                    alt="Chenglish Dictionary screenshots"
-                />
-            </picture>
-        ),
     },
     {
         label: 'Web Community',
@@ -121,6 +131,26 @@ const WORKS = [
         tags: ['Community-Building', 'PHP', 'MySQL'],
     },
 ]
+
+export function getNextArticle(slug: string) {
+    const currentArticleIndex = WORKS.findIndex(work => work.slug === slug)
+    if (currentArticleIndex === -1) {
+        throw new Error(`Article slug ${slug} doesn't exist`)
+    }
+
+    let nextArticle
+    if (currentArticleIndex === WORKS.length - 1) {
+        nextArticle = WORKS[0]
+    } else {
+        nextArticle = WORKS[currentArticleIndex + 1]
+    }
+
+    return (
+        <Link href={`/developer/${nextArticle.slug}`}>
+            {nextArticle.heading}
+        </Link>
+    )
+}
 
 function Work() {
     return (

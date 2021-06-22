@@ -12,8 +12,9 @@ function Teacher() {
             <div>
                 <p>
                     I am a certified teacher of Advanced Placement Histories,
-                    Human Geography, and Capstone. As teacher and counselor, I
-                    have prepared hundreds of students for academic life abroad,
+                    Human Geography, and Capstone (an intensive university
+                    research prep course). As teacher and counselor, I have
+                    prepared hundreds of students for academic life abroad,
                     culminating in being appointed leader to launch the AP
                     Capstone research program in our school, one of the first
                     such programs introduced in China. I'm an expert on active

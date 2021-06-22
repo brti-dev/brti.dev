@@ -1,7 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Article from '@/components/Article'
+import { getNextArticle } from './index'
 
 function MernTracker() {
     return (
@@ -19,11 +18,7 @@ function MernTracker() {
                         </li>
                     </ul>
                 }
-                nextArticle={
-                    <Link href="/developer/axrn">
-                        AXRN Animal Crossing Right Now
-                    </Link>
-                }
+                nextArticle={getNextArticle('mern-tracker')}
             >
                 <p>
                     I previously started to learn React and wanted to enhance my

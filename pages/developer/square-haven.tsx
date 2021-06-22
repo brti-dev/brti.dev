@@ -1,7 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
 import Layout from '@/components/Layout'
 import Article from '@/components/Article'
+import { getNextArticle } from './index'
 
 function SquareHaven() {
     return (
@@ -19,9 +18,7 @@ function SquareHaven() {
                         </li>
                     </ul>
                 }
-                nextArticle={
-                    <Link href="/developer/camval-produce">Camval Produce</Link>
-                }
+                nextArticle={getNextArticle('square-haven')}
             >
                 <p>
                     I cut my digital teeth on Square Haven. I learned digital
