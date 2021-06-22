@@ -94,6 +94,15 @@ function BrandenPaillant() {
                     <li>
                         I designed a fully responsive, minimalist photo gallery
                         that can be accessed on any screen size.
+                        <ul>
+                            <li>
+                                Achieved{' '}
+                                <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=c5a254e96ea100d73378fc97cf7a5502">
+                                    Accessibility score of 100
+                                </a>{' '}
+                                on Lighthouse
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </Article>
