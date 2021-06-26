@@ -77,8 +77,6 @@ function getPageTitle(pathname: string) {
 
 /**
  * Keyboard navigation a11y
- *
- * @returns {boolean}
  */
 function keyboardNav(event: KeyboardEvent): boolean {
     const activeEl = document.activeElement as HTMLElement
