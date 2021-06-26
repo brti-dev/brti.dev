@@ -1,0 +1,68 @@
+blockquote[class*=demo] {
+  margin-left: 0;
+  padding: 0.5em 1em;
+  border-width: 1px 1px 1px 5px;
+  border-style: solid;
+  border-color: black;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+  line-height: 1;
+}
+blockquote[class*=demo]:before {
+  content: open-quote;
+}
+blockquote[class*=demo]:after {
+  content: close-quote;
+}
+
+.demo-css3--widthmaxcontent {
+  width: max-content;
+}
+
+.demo-css3--widthmincontent {
+  width: min-content;
+}
+
+.demo-css3--object {
+  margin-top: 0.5em;
+}
+.demo-css3--object > img {
+  background-color: #eee;
+  background-image: linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc), linear-gradient(45deg, #ccc 25%, transparent 25%, transparent 75%, #ccc 75%, #ccc);
+  background-size: 20px 20px;
+  background-position: 0 0, 30px 30px;
+  border: 3px solid black;
+  width: 80px;
+  height: 100px;
+  margin-right: 0.5em;
+}
+.demo-css3--object > img:nth-child(even) {
+  width: 200px;
+}
+.demo-css3--object.object-fit--fill > img {
+  object-fit: fill;
+}
+.demo-css3--object.object-fit--contain > img {
+  object-fit: contain;
+}
+.demo-css3--object.object-fit--cover > img {
+  object-fit: cover;
+}
+.demo-css3--object.object-fit--none > img {
+  object-fit: none;
+}
+.demo-css3--object.object-fit--scale-down > img {
+  object-fit: scale-down;
+}
+
+.demo-css3--crop-cover > img {
+  height: 200px;
+}
+
+.demo-css3--crop-cover > img + img {
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 1em;
+}
+
+/*# sourceMappingURL=css3...css.map */
