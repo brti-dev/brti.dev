@@ -45,9 +45,10 @@ function HomePage() {
                     >
                         full stack web developer
                     </NavLink>{' '}
-                    by night. I&apos;m passionate about <strong>history</strong>
-                    , <strong>the outdoors</strong>, <strong>videogames</strong>
-                    , and the Oxford Comma. Occasionally I{' '}
+                    by night. I&apos;m passionate about{' '}
+                    <strong>education</strong>, <strong>the outdoors</strong>,{' '}
+                    <strong>videogames</strong>, and the Oxford Comma.
+                    Occasionally I{' '}
                     <NavLink navIndex={3} href="/blog" title="Blog index">
                         write
                     </NavLink>{' '}

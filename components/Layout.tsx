@@ -1,5 +1,5 @@
 /* eslint-disable prefer-template */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -76,6 +76,67 @@ function getPageTitle(pathname: string) {
 }
 
 /**
+ * Keyboard navigation a11y
+ *
+ * @returns {boolean}
+ */
+function keyboardNav(event: KeyboardEvent): boolean {
+    const activeEl = document.activeElement as HTMLElement
+    let activeIndex = Number(activeEl.dataset.menuIndex)
+    if (!activeIndex) {
+        activeIndex = 0
+    }
+    let newActiveIndex: number
+    const numListboxOptions =
+        document.getElementById('header__nav__menu').childElementCount + 1 // Account for button
+
+    switch (event.key) {
+        case 'ArrowDown':
+            event.preventDefault()
+            newActiveIndex = activeIndex + 1
+            if (newActiveIndex >= numListboxOptions) {
+                newActiveIndex = 0
+            }
+            break
+
+        case 'ArrowUp':
+            event.preventDefault()
+            newActiveIndex = activeIndex - 1
+            if (newActiveIndex < 0) {
+                newActiveIndex = numListboxOptions - 1
+            }
+            break
+
+        case 'Home':
+            event.preventDefault()
+            newActiveIndex = 0
+            break
+
+        case 'End':
+            event.preventDefault()
+            newActiveIndex = numListboxOptions - 1
+            break
+
+        case 'Tab':
+        case 'Escape':
+            event.preventDefault()
+            document.getElementById('header__nav__trigger').click()
+            break
+    }
+
+    if (!!isNaN(newActiveIndex)) {
+        console.log('return')
+        return
+    }
+
+    let focusEl = document.querySelectorAll(
+        `[data-menu-index="${newActiveIndex}"]`
+    )[0] as HTMLElement
+    focusEl.tabIndex = 0
+    focusEl.focus()
+}
+
+/**
  * Wrapper component to render header, footer, and other layout components
  */
 export default function Layout({ title = null, description = null, children }) {
@@ -84,6 +145,16 @@ export default function Layout({ title = null, description = null, children }) {
 
     const [nav, setNav] = useState({ opened: false })
     const toggleNav = () => setNav({ opened: !nav.opened })
+
+    useEffect(() => {
+        if (nav.opened) {
+            document.addEventListener('keydown', keyboardNav)
+        } else {
+            document.removeEventListener('keydown', keyboardNav)
+        }
+
+        return () => document.removeEventListener('keydown', keyboardNav)
+    }, [nav])
 
     const currentPageIndex = PAGES.findIndex(page => page.link === pathnameRoot)
     const isHome = pathname === '/'
@@ -146,7 +217,7 @@ export default function Layout({ title = null, description = null, children }) {
                 </div>
                 <h1>Matt Berti</h1>
                 <nav
-                    id="header-nav"
+                    id="header__nav"
                     data-opened={nav.opened}
                     style={
                         {
@@ -155,29 +226,39 @@ export default function Layout({ title = null, description = null, children }) {
                     }
                 >
                     <Button
+                        id="header__nav__trigger"
                         variant="contained"
                         className="nav-item"
                         onClick={toggleNav}
+                        data-menu-index={0}
+                        aria-haspopup="menu"
+                        aria-controls="header__nav__menu"
+                        aria-expanded={nav.opened}
                     >
                         {getPageTitle(pathnameRoot)}
                         <div className="arrow" />
                     </Button>
-                    <div className="container" hidden={!nav.opened}>
-                        <ul>
-                            {PAGES.map(({ link, title: pageTitle }, index) => (
+                    <div className="container">
+                        <ul
+                            id="header__nav__menu"
+                            role="menu"
+                            aria-label="site navigation"
+                        >
+                            {PAGES.filter(
+                                page => !isCurrentPage(page.link)
+                            ).map(({ link, title: pageTitle }, index) => (
                                 <li
                                     key={link}
-                                    className={
-                                        isCurrentPage(link)
-                                            ? 'current'
-                                            : undefined
-                                    }
+                                    role="menuitem"
+                                    hidden={!nav.opened}
                                 >
                                     <NavLink
                                         href={link}
                                         scroll={false}
                                         navIndex={index}
                                         className="nav-item unstyled"
+                                        tabIndex={-1}
+                                        data-menu-index={index + 1}
                                     >
                                         {pageTitle}
                                     </NavLink>

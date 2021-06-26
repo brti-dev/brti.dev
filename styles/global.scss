@@ -591,7 +591,7 @@ button,
 
         nav {
             --nav-item-height: 2.55rem;
-            /** @var --current-index ul > li element index of the current page. Needed to translate Y axis of nav list. Set by React on render. */
+            /** @var --current-index index of the current page. Needed to translate Y axis of nav list. Set by React on render. */
 
             order: 3;
             position: relative;
@@ -696,18 +696,6 @@ button,
                 transform: translateY(var(--nav-item-height));
                 transition: opacity 0.3s ease,
                     transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-
-                @include breakpoint(screen) {
-                    transform: translateY(
-                        calc(var(--nav-item-height) * var(--current-index) * -1)
-                    );
-                }
-
-                @include breakpoint(mobile) {
-                    .current {
-                        display: none;
-                    }
-                }
 
                 .nav-item {
                     opacity: 0.6;
@@ -826,4 +814,8 @@ button,
     font-size: 0.65em;
     letter-spacing: 0.08em;
     font-weight: 400;
+}
+
+[data-reach-skip-nav-link]:focus {
+    z-index: 5 !important; // Overlap header
 }
