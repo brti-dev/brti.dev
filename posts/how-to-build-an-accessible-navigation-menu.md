@@ -2,12 +2,12 @@
 title: How to build an accessible navigation menu
 date: '2021-06-26'
 tags:
-    - accessibility
-    - a11y
-    - webdev
-    - frontend
-    - react
-    - javascript
+  - accessibility
+  - a11y
+  - webdev
+  - frontend
+  - react
+  - javascript
 ---
 
 The header navigation here on this site is built using a somewhat complex custom UI component that mimics the functionality of a native `select` component. Making this navigation component accessible and functional for screen readers and keyboard users posed a challenge. <!-- more -->
@@ -22,42 +22,44 @@ My first stop was to reference the [W3C docs](https://www.w3.org/TR/wai-aria-pra
 [Menu](https://www.w3.org/TR/wai-aria-practices-1.1/#menu)
 : A menu is a widget that offers a list of choices to the user, such as a set of actions or functions. A menu is usually opened, or made visible, by activating a menu button, choosing an item in a menu that opens a sub menu, or by invoking a command... that opens a context specific menu. When a user activates a choice in a menu, the menu usually closes unless the choice opened a submenu.
 
-Although I prototyped the navigation component to mimic a `select` component, and a Listbox sounds like exactly what I was looking for, I ultimately decided that my component was more Menu-like since I had a button that activated the menu dropdown and there would be only single options available. **In short, a listbox is for a selection of form-like items with the option of choosing one or more, while a menu is for navigation-like items with the option of only choosing one among a single menu or submenu(s).**
+Although I prototyped the navigation component to mimic a `select` component, and a Listbox sounds like exactly what I was looking for, I ultimately decided that my component was more Menu-like since I had a button that activated the menu dropdown and there would be only single options available.
+
+**In short, a listbox is for a selection of form-like items with the option of choosing one or more, while a menu is for navigation-like items with the option of only choosing one among a single menu or submenu(s).**
 
 ## Menu roles, states and properties
 
 The relevant ARIA specifications this particular menu are:
 
--   A menu is a container of items that represent choices. The element serving as the menu has a role of either `menu` or `menubar`.
--   The items contained in a menu are child elements of the containing menu or menubar and have any of the following roles: `menuitem`, `menuitemcheckbox`, `menuitemradio`
--   The following approach is used to enable scripts to move focus among items in a menu:
-    -   Each item in the menu has tabindex set to -1.
--   An element with role `menu` either has:
-    -   `aria-labelledby` set to a value that refers to the menuitem or button that controls its display.
-    -   A label provided by `aria-label`.
--   If a menu is horizontally oriented, it has `aria-orientation` set to `horizontal`. The default value of `aria-orientation` for a menu is `vertical`.
+- A menu is a container of items that represent choices. The element serving as the menu has a role of either `menu` or `menubar`.
+- The items contained in a menu are child elements of the containing menu or menubar and have any of the following roles: `menuitem`, `menuitemcheckbox`, `menuitemradio`
+- The following approach is used to enable scripts to move focus among items in a menu:
+  - Each item in the menu has tabindex set to -1.
+- An element with role `menu` either has:
+  - `aria-labelledby` set to a value that refers to the menuitem or button that controls its display.
+  - A label provided by `aria-label`.
+- If a menu is horizontally oriented, it has `aria-orientation` set to `horizontal`. The default value of `aria-orientation` for a menu is `vertical`.
 
 ## Menubutton roles, states, and properties
 
 Another component in my navigation widget is the [Menubutton](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton) controller that opens and closes the menu. The following ARIA implementations are relevant to this particular component:
 
--   The element that opens the menu has role `button`. (My Menubutton is a `<button>` so happily it is automatically given this role without explicitly coercing it into the role)
--   The element with role `button` has `aria-haspopup` set to either `menu` or `true`.
--   When the menu is displayed, the element with role `button` has `aria-expanded` set to true. When the menu is hidden, it is recommended that `aria-expanded` is not present. ...
--   The element that contains the menu items displayed by activating the button has role `menu`.
+- The element that opens the menu has role `button`. (My Menubutton is a `<button>` so happily it is automatically given this role without explicitly coercing it into the role)
+- The element with role `button` has `aria-haspopup` set to either `menu` or `true`.
+- When the menu is displayed, the element with role `button` has `aria-expanded` set to true. When the menu is hidden, it is recommended that `aria-expanded` is not present. ...
+- The element that contains the menu items displayed by activating the button has role `menu`.
 
 ## Putting it all together
 
 To put it all together, we need React to manage the state and effects of the menu and `keydown` listeners to implement the [keyboard interaction strategy](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-12) defined in the specs.
 
 ```javascript
-function keyboardNav(event: KeyboardEvent): boolean {
-  const activeEl = document.activeElement as HTMLElement
+function keyboardNav(event) {
+  const activeEl = document.activeElement
   let activeIndex = Number(activeEl.dataset.menuIndex)
   if (!activeIndex) {
     activeIndex = 0
   }
-  let newActiveIndex: number
+  let newActiveIndex
   const numListboxOptions =
     document.getElementById('header__nav__menu').childElementCount + 1 // Account for button
 
@@ -66,7 +68,7 @@ function keyboardNav(event: KeyboardEvent): boolean {
       event.preventDefault()
       newActiveIndex = activeIndex + 1
       if (newActiveIndex >= numListboxOptions) {
-          newActiveIndex = 0
+        newActiveIndex = 0
       }
       break
 
@@ -74,7 +76,7 @@ function keyboardNav(event: KeyboardEvent): boolean {
       event.preventDefault()
       newActiveIndex = activeIndex - 1
       if (newActiveIndex < 0) {
-          newActiveIndex = numListboxOptions - 1
+        newActiveIndex = numListboxOptions - 1
       }
       break
 
@@ -96,13 +98,12 @@ function keyboardNav(event: KeyboardEvent): boolean {
   }
 
   if (!!isNaN(newActiveIndex)) {
-    console.log('return')
     return
   }
 
   let focusEl = document.querySelectorAll(
     `[data-menu-index="${newActiveIndex}"]`
-  )[0] as HTMLElement
+  )[0]
   focusEl.tabIndex = 0
   focusEl.focus()
 }
@@ -112,13 +113,13 @@ function Header() {
   const toggleNav = () => setNav({ opened: !nav.opened })
 
   useEffect(() => {
-      if (nav.opened) {
-          document.addEventListener('keydown', keyboardNav)
-      } else {
-          document.removeEventListener('keydown', keyboardNav)
-      }
+    if (nav.opened) {
+      document.addEventListener('keydown', keyboardNav)
+    } else {
+      document.removeEventListener('keydown', keyboardNav)
+    }
 
-      return () => document.removeEventListener('keydown', keyboardNav)
+    return () => document.removeEventListener('keydown', keyboardNav)
   }, [nav])
 
   return (
@@ -133,17 +134,9 @@ function Header() {
       >
         {vaguelyGetPageTitle()}
       </Button>
-      <ul
-        id="header__nav__menu"
-        role="menu"
-        aria-label="site navigation"
-      >
+      <ul id="header__nav__menu" role="menu" aria-label="site navigation">
         {PAGES.map(({ link, title: pageTitle }, index) => (
-          <li
-            key={link}
-            role="menuitem"
-            hidden={!nav.opened}
-          >
+          <li key={link} role="menuitem" hidden={!nav.opened}>
             <NavLink
               href={link}
               scroll={false}
@@ -156,7 +149,7 @@ function Header() {
             </NavLink>
           </li>
         ))}
-    </ul>
+      </ul>
     </nav>
   )
 }
