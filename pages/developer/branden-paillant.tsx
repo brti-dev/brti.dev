@@ -93,8 +93,10 @@ function BrandenPaillant() {
           </ul>
         </p>
         <p>
-          Designed a fully responsive, minimalist photo gallery that can be
-          accessed on any screen size.
+          <strong>
+            Designed a fully responsive, minimalist photo gallery that can be
+            accessed on any screen size.
+          </strong>
           <ul>
             <li>
               I felt the author's trademark aesthetic (described as "deadpan," a

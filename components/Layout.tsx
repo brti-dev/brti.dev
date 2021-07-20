@@ -54,19 +54,18 @@ const PAGES = [
 
 // pathname-alias for source code link (@github)
 const ALIASES = {
-  '/developer': '/developer/index.js',
-  '/blog': '/blog/index.js',
+  '/developer': '/developer/index.tsx',
+  '/blog': '/blog/index.tsx',
 }
 
-const REPOSITORY_ROOT =
-  'https://github.com/dr-spaceman/mattberti.com/tree/master'
+const REPOSITORY_ROOT = 'https://github.com/dr-spaceman/mattberti.com/tree/main'
 
 function getSourceLink(pathname: string, query: any): string {
   if (pathname === '/blog/[slug]') {
     return `${REPOSITORY_ROOT}/posts/${query.slug}.md`
   }
 
-  return `${REPOSITORY_ROOT}/pages` + (ALIASES[pathname] ?? `${pathname}.js`)
+  return `${REPOSITORY_ROOT}/pages` + (ALIASES[pathname] ?? `${pathname}.tsx`)
 }
 function getPageTitle(pathname: string) {
   const foundPage = PAGES.find(page => page.link === pathname)
@@ -78,7 +77,7 @@ function getPageTitle(pathname: string) {
 /**
  * Keyboard navigation a11y
  */
-function keyboardNav(event: KeyboardEvent): boolean {
+function keyboardNav(event: KeyboardEvent) {
   const activeEl = document.activeElement as HTMLElement
   let activeIndex = Number(activeEl.dataset.menuIndex)
   if (!activeIndex) {
