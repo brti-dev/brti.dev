@@ -8,7 +8,7 @@ import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
 import VisuallyHidden from '@reach/visually-hidden'
 
-import scrollToTop from '@/lib/scroll-to-top'
+import scrollToTop from 'lib/scroll-to-top'
 import NavLink from './NavLink'
 import IconButton from './IconButton'
 import Button from './Button'
