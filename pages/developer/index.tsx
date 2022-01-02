@@ -9,6 +9,26 @@ import classes from 'styles/developer.module.scss'
 const WORKS = [
   {
     label: 'Single-Page App',
+    slug: 'boat-daddy',
+    heading: 'Boat Daddy',
+    subheading: 'Lead Developer & Product Designer',
+    description: 'The Uber of Boats',
+    tags: [
+      'Single Page App',
+      'Next.js',
+      'PostgreSQL',
+      'Prisma',
+      'GraphQL',
+      'React',
+      'Typescript',
+      'custom auth',
+      'Cloudinary API',
+      'Mapbpx API',
+      'SASS',
+    ],
+  },
+  {
+    label: 'Single-Page App',
     slug: 'camval-produce',
     heading: 'Camval Produce',
     subheading: 'Project Lead',
