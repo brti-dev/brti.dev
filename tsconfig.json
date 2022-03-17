@@ -1,7 +1,13 @@
 {
   "compilerOptions": {
     "target": "es2018",
-    "lib": ["dom", "dom.iterable", "esnext", "es2018", "esnext.asynciterable"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es2018",
+      "esnext.asynciterable"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -13,8 +19,18 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", ".next", "out"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out"
+  ],
+  "isolatedModules": true
 }

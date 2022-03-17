@@ -9,10 +9,9 @@ import '@reach/skip-nav/styles.css'
 import VisuallyHidden from '@reach/visually-hidden'
 
 import scrollToTop from 'lib/scroll-to-top'
-import NavLink from './NavLink'
-import IconButton from './IconButton'
-import Button from './Button'
-import Overlay from './Overlay'
+import NavLink from 'components/NavLink'
+import Button, { IconButton } from 'components/Button'
+import Overlay from 'components/Overlay'
 
 export const SITE_TITLE = 'Matt Berti'
 export const IMG_DIR = '/img'
@@ -165,7 +164,7 @@ export default function Layout({ title = null, description = null, children }) {
           Matt Berti
           {title
             ? `, ${title}`
-            : ', full stack web developer and history teacher'}
+            : ', full stack web developer and computer science teacher'}
         </title>
         <link rel="icon" href="/favicon.ico" />
         <link

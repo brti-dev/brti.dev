@@ -4,19 +4,38 @@
   "description": "A personal web site, portfolio, and blog",
   "license": "ISC",
   "main": "pages/_app.js",
+  "siteTitle": "✨My App",
+  "pages": [
+    {
+      "link": "/",
+      "title": "Home"
+    },
+    {
+      "link": "/components",
+      "title": "UI Components"
+    },
+    {
+      "link": "/foo",
+      "title": "Foo"
+    },
+    {
+      "link": "/sandbox",
+      "title": "Test Page"
+    }
+  ],
   "scripts": {
     "dev": "next dev",
+    "#build": "`next export` uses static export; Use only `next build` for other deploy options.",
     "build": "next build && next export",
     "start": "next start",
     "#clean": "Clean up dist files generated on dev, old builds, etc; Optimally done before new builds",
     "clean": "npx rimraf .next out",
-    "newpost": "node ./scripts/new-post.js"
+    "newpost": "node ./scripts/new-post.js",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@reach/alert": "^0.15.0",
     "@reach/dialog": "^0.15.0",
-    "@reach/disclosure": "^0.15.0",
-    "@reach/listbox": "^0.15.0",
     "@reach/skip-nav": "^0.15.0",
     "@reach/tooltip": "^0.13.2",
     "@reach/visually-hidden": "^0.15.0",
@@ -26,15 +45,13 @@
     "markdown-it": "^12.0.6",
     "markdown-it-deflist": "^2.1.0",
     "markdown-it-footnote": "^3.0.2",
-    "next": "^10.2.0",
+    "next": "^12.1.0",
     "normalize.css": "^8.0.1",
-    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
-    "react-visibility-sensor": "^5.1.1",
-    "sass": "^1.32.13",
-    "vertical-timeline-component-for-react": "^1.0.7"
+    "sass": "^1.43.4",
+    "source-map-support": "^0.5.21"
   },
   "repository": {
     "type": "git",
@@ -43,9 +60,20 @@
   "author": "Matt Berti",
   "homepage": "https://mattberti.com",
   "devDependencies": {
-    "@types/node": "^15.3.0",
-    "@types/react": "^17.0.5",
-    "open": "^8.0.9",
-    "typescript": "^4.2.4"
+    "@testing-library/dom": "^8.11.0",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.2",
+    "@types/next": "^9.0.0",
+    "@types/node": "^16.11.6",
+    "@types/react": "^17.0.8",
+    "@types/react-dom": "^17.0.5",
+    "@types/react-test-renderer": "^17.0.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.3.1",
+    "open": "^8.0.4",
+    "react-test-renderer": "^17.0.2",
+    "typescript": "^4.6.2"
   }
 }

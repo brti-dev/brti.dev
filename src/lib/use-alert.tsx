@@ -1,8 +1,21 @@
-import { useState, useCallback, createElement } from 'react'
-import Alert from '@reach/alert'
-import { BiError as ErrorIcon } from 'react-icons/bi'
+import { useCallback, useReducer } from 'react'
 
-type InitialState = null | string | Error
+import Alert, { AlertDispatch } from 'components/Alert'
+
+export function reducer(
+  state: null | AlertDispatch,
+  action: null | string | AlertDispatch
+): null | AlertDispatch {
+  if (typeof action === 'string') {
+    return { message: action }
+  }
+
+  if (action == null) {
+    return { message: null }
+  }
+
+  return action
+}
 
 /**
  * Hook to manage alert state.
@@ -13,28 +26,18 @@ type InitialState = null | string | Error
  * @returns {JSX.Element} Alert component to render
  * @returns {function} Function to set alert message
  */
-function useAlert<S>(
-    initialState: S | (() => S)
-): [React.ComponentType, React.Dispatch<React.SetStateAction<S>>] {
-    const [message, setMessage] = useState(initialState)
+function useAlert(
+  initialState?: string | AlertDispatch
+): [React.ComponentType, any] {
+  const [alert, setAlert] = useReducer(reducer, reducer(null, initialState))
 
-    const component = useCallback(() => {
-        const isError = message instanceof Error
+  const component = useCallback(() => {
+    if (!alert.message) return null
 
-        if (!message) return null
+    return <Alert {...{ ...alert }} />
+  }, [alert])
 
-        return (
-            <Alert
-                hidden={!message}
-                className={`alert${isError ? ' alert__error' : ''}`}
-            >
-                {isError && <ErrorIcon />}
-                {message && <span>{message.toString()}</span>}
-            </Alert>
-        )
-    }, [message])
-
-    return [component, setMessage]
+  return [component, setAlert]
 }
 
 export default useAlert

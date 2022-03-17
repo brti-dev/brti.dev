@@ -2,16 +2,16 @@ import Link from 'next/link'
 import React from 'react'
 import { BiRightArrowAlt as ArrowRightIcon } from 'react-icons/bi'
 
-import classes from 'styles/article.module.scss'
+import classes from './article.module.scss'
 import Date from 'components/Date'
 
-type ArticleProps = {
+export type ArticleProps = {
   title?: string
   description?: string | React.ReactElement
   preface?: string | React.ReactElement
   date?: string | Date
   nextArticle?: React.ReactElement
-  children: React.ReactElement | React.ReactElement[]
+  children: React.ReactNode
 }
 
 /**

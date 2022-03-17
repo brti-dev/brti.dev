@@ -1,0 +1,423 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+Array [
+  <a
+    data-reach-skip-link=""
+    data-reach-skip-nav-link=""
+    href="#reach-skip-nav"
+  >
+    Skip to content
+  </a>,
+  <header
+    id="top"
+  >
+    <div
+      id="header-thumbnail"
+    >
+      <h1>
+        ✨My App
+      </h1>
+      <button
+        className="button color--default shape--circle size--medium variant--default"
+        onClick={[Function]}
+        style={Object {}}
+        type="button"
+      >
+        <span
+          className="main-content"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M4 6H20V8H4zM4 11H20V13H4zM4 16H20V18H4z"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <h1>
+      Matt Berti
+    </h1>
+    <nav
+      data-opened={false}
+      id="header__nav"
+      style={
+        Object {
+          "--current-index": -1,
+        }
+      }
+    >
+      <button
+        aria-controls="header__nav__menu"
+        aria-expanded={false}
+        aria-haspopup="menu"
+        className="button variant-contained color-default size-medium nav-item"
+        data-menu-index={0}
+        id="header__nav__trigger"
+        onClick={[Function]}
+        type="button"
+      >
+        [unknown page]
+        <div
+          className="arrow"
+        />
+      </button>
+      <div
+        className="container"
+      >
+        <ul
+          aria-label="site navigation"
+          hidden={true}
+          id="header__nav__menu"
+          role="menu"
+        >
+          <li
+            role="menuitem"
+          >
+            <a
+              className="nav-item unstyled"
+              data-menu-index={1}
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={-1}
+            >
+              someone
+            </a>
+          </li>
+          <li
+            role="menuitem"
+          >
+            <a
+              className="nav-item unstyled"
+              data-menu-index={2}
+              href="/developer"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={-1}
+            >
+              web developer
+            </a>
+          </li>
+          <li
+            role="menuitem"
+          >
+            <a
+              className="nav-item unstyled"
+              data-menu-index={3}
+              href="/teacher"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={-1}
+            >
+              teacher
+            </a>
+          </li>
+          <li
+            role="menuitem"
+          >
+            <a
+              className="nav-item unstyled"
+              data-menu-index={4}
+              href="/blog"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              tabIndex={-1}
+            >
+              blogger
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div
+      aria-hidden={true}
+      aria-label="close"
+      className="overlay"
+      hidden={true}
+      onClick={[Function]}
+      role="button"
+    />
+  </header>,
+  <div
+    data-reach-skip-nav-content=""
+    id="reach-skip-nav"
+  />,
+  <main>
+    <div
+      itemScope={true}
+      itemType="http://schema.org/Person"
+      style={
+        Object {
+          "display": "none",
+        }
+      }
+    >
+      <span
+        itemProp="name"
+      >
+        Matt Berti
+      </span>
+      <span
+        itemProp="additionalName"
+      >
+        Mathew Berti
+      </span>
+      <span
+        itemProp="additionalName"
+      >
+        Matthew Berti
+      </span>
+      <span
+        itemProp="additionalName"
+      >
+        Mathew Ryan Berti
+      </span>
+      <span
+        itemProp="additionalName"
+      >
+        BahaMatt
+      </span>
+      <span
+        itemProp="additionalName"
+      >
+        DrSpaceman
+      </span>
+      <a
+        href="mailto:me@mattberti.com"
+        itemProp="email"
+      >
+        Matt Berti
+      </a>
+      <img
+        alt="Matt Berti"
+        itemProp="image"
+        src="/img/mattberti.png"
+      />
+    </div>
+    <section>
+      <p>
+        Hi I'm Matt, a
+         
+        <a
+          href="/teacher"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          title="Matt Berti's teaching experience and CV"
+        >
+          computer science teacher
+        </a>
+         
+        by day and
+         
+        <a
+          href="/developer"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          title="Matt Berti's portfolio of full stack web projects"
+        >
+          full stack web developer
+        </a>
+         
+        by night. I'm passionate about 
+        <strong>
+          education
+        </strong>
+        ,
+         
+        <strong>
+          the outdoors
+        </strong>
+        , 
+        <strong>
+          videogames
+        </strong>
+        , and the Oxford Comma. Occasionally I
+         
+        <a
+          href="/blog"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          title="Blog index"
+        >
+          write
+        </a>
+         
+        about the aforementioned topics.
+      </p>
+      <p>
+        This web project is
+         
+        <a
+          href="https://github.com/dr-spaceman/mattberti.com"
+          title="Open source Github repo codebase for mattberti.com"
+        >
+          🔎open source
+        </a>
+         
+        and can be modified for your own personal site/porfolio/blog. It is the basis for a
+         
+        <a
+          href="https://github.com/dr-spaceman/next.js-starter"
+          title="Github repo: Next.js starter with typescript"
+        >
+          Next.js app starter and UI component library
+        </a>
+        , which is also open source.
+      </p>
+      <dl
+        className="social"
+      >
+        <dt>
+          Find Me
+        </dt>
+        <dd>
+          <a
+            href="https://github.com/dr-spaceman"
+            title="Collaborate with Matt Berti (@dr-spaceman) on Github"
+          >
+            Github
+          </a>
+        </dd>
+        <dd>
+          <a
+            href="https://www.linkedin.com/in/mrberti/"
+            title="Connect with Matt Berti on Linkedin"
+          >
+            Linkedin
+          </a>
+        </dd>
+        <dd>
+          <a
+            href="https://steamcommunity.com/id/bahamatt/"
+            title="Matt Berti's Steam profile and games library"
+          >
+            Steam
+          </a>
+        </dd>
+        <dd>
+          <a
+            href="https://letterboxd.com/dr_spaceman/"
+            title="Matt Berti's film reviews on Letterboxd"
+          >
+            Letterboxd
+          </a>
+        </dd>
+        <dd>
+          <a
+            href="mailto:me@mattberti.com"
+            title="Email Matt Berti"
+          >
+            me@mattberti.com
+          </a>
+        </dd>
+      </dl>
+    </section>
+  </main>,
+  <footer>
+    <nav>
+      <ul>
+        <li>
+          <a
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Matt Berti
+          </a>
+        </li>
+        <li>
+          <a
+            href="/developer"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            title="Matt Berti, Web Developer"
+          >
+            Work
+          </a>
+        </li>
+        <li>
+          <a
+            href="/blog"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            title="Matt Berti Blog"
+          >
+            Blog
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:me@mattberti.com"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Email
+          </a>
+        </li>
+        <li>
+          <a
+            className="sourcecode"
+            href="https://github.com/dr-spaceman/mattberti.com/tree/main/pages.tsx"
+            title="View or edit the source code for this page"
+          >
+            🔎
+            <span>
+              source code
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <button
+      className="button color--default shape--circle size--medium variant--default scrollToTop"
+      onClick={[Function]}
+      style={Object {}}
+      type="button"
+    >
+      <span
+        className="main-content"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 4H18V6H6zM6.707 15.707L11 11.414 11 20 13 20 13 11.414 17.293 15.707 18.707 14.293 12 7.586 5.293 14.293z"
+          />
+        </svg>
+      </span>
+    </button>
+  </footer>,
+]
+`;

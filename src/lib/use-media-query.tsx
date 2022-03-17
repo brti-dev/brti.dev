@@ -9,27 +9,27 @@ import { useState, useEffect } from 'react'
  * @returns {boolean} True if the query conditions are present, false otherwise
  * @example
  * function App() {
- *   const isScreenMobile = useMediaQuery('(min-width: 800px)')
+ *   const isScreenMobile = useMediaQuery('(max-width: 640px)')
  *   return isScreenMobile ? <SmallComponent /> : <LargeComponent />
  * }
  */
 function useMediaQuery(query: string): boolean {
-    const [matches, setMatches] = useState(false)
+  const [matches, setMatches] = useState(false)
 
-    useEffect(() => {
-        const media = window.matchMedia(query)
-        if (media.matches !== matches) {
-            setMatches(media.matches)
-        }
-        const listener = (e) => {
-            setMatches(e.matches)
-        }
-        // Not 100% sure about the following
-        media.addEventListener('change', listener)
-        return () => media.removeEventListener('change', listener)
-    }, [matches, query])
+  useEffect(() => {
+    const media = window.matchMedia(query)
+    if (media.matches !== matches) {
+      setMatches(media.matches)
+    }
+    const listener = e => {
+      setMatches(e.matches)
+    }
+    // Not 100% sure about the following
+    media.addEventListener('change', listener)
+    return () => media.removeEventListener('change', listener)
+  }, [matches, query])
 
-    return matches
+  return matches
 }
 
 export default useMediaQuery

@@ -9,6 +9,7 @@ $red: #dd3333;
 $green: #00a264;
 $purple: #6b3ea8;
 $pink: #ffcfd8;
+$yellow: #f5a623;
 $darkpink: color.scale($pink, $lightness: -10%);
 $darkerpink: color.scale($pink, $lightness: -20%);
 $darkestpink: color.scale($pink, $lightness: -30%);
@@ -24,27 +25,26 @@ $color-primary-light: $darkblue;
 $color-primary-hover-light: $blue;
 
 $color-font-dark: white;
-$color-body-dark: rgb(24, 26, 27);
-$color-surface-dark: rgb(36, 37, 38);
+$color-body-dark: rgb(24, 25, 26);
+$color-surface-dark: rgb(40, 41, 42);
 $color-surface-hover-dark: color.scale($color-surface-dark, $lightness: 2%);
-$color-comment-dark: rgb(58, 59, 60);
+$color-comment-dark: rgb(52, 53, 54);
 $color-primary-dark: $blue;
 $color-primary-hover-dark: $lightblue;
 
 $color-secondary: $purple;
 $color-secondary-hover: color.scale($color-secondary, $lightness: 30%);
 
-
 // Media query based on client preference
 
 @mixin theme($theme) {
-    @if $theme == dark {
-        @media (prefers-color-scheme: dark) {
-            @content;
-        }
-    } @else {
-        @media (prefers-color-scheme: light) {
-            @content;
-        }
+  @if $theme == dark {
+    @media (prefers-color-scheme: dark) {
+      @content;
     }
+  } @else {
+    @media (prefers-color-scheme: light) {
+      @content;
+    }
+  }
 }
