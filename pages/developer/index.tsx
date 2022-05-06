@@ -1,9 +1,8 @@
 import Link from 'next/link'
-import React from 'react'
+import { Button } from 'matterial'
 import { FiDownload as DownloadIcon } from 'react-icons/fi'
 
 import Layout from 'components/Layout'
-import Button from 'components/Button'
 import classes from 'styles/developer.module.scss'
 
 const WORKS = [
@@ -19,7 +18,6 @@ const WORKS = [
       'PostgreSQL',
       'Prisma',
       'GraphQL',
-      'React',
       'Typescript',
       'custom auth',
       'Cloudinary API',
@@ -40,7 +38,6 @@ const WORKS = [
       'Node and Express',
       'MongoDB',
       'GraphQL',
-      'React',
       'Material UI',
       'Webpack',
     ],
@@ -115,7 +112,6 @@ const WORKS = [
       'Node and Express',
       'MongoDB',
       'GraphQL',
-      'React',
       'Material UI',
       'Webpack',
     ],
@@ -167,28 +163,25 @@ function Work() {
   return (
     <Layout
       title="Full Stack Web Developer"
-      description="Matt Berti is a full stack web developer focused on responsive, minimalist
-                    design on top of clean code, React, and GraphQL. Come see my full project portfolio."
+      description="Matt Berti is a full stack web developer focused on responsive, minimalist design on top of clean code, React, and GraphQL."
     >
       <section>
         <p>
           Hi I'm Matt, a full stack web developer focused on responsive,
-          accessible, minimalist design on top of clean code, React, and
           GraphQL. I love building apps that help people learn and stay
           informed.
         </p>
         <Button
           to="https://www.dropbox.com/s/5z4xkdnf27tdimb/MathewBerti_resume_webdeveloper.pdf"
           variant="outlined"
+          prepend={<DownloadIcon />}
         >
-          <DownloadIcon />
           <strong>Download Résumé</strong>
         </Button>
       </section>
       <section className={classes.techList}>
         <h2>I enjoy working with</h2>
         <ul>
-          <li>React</li>
           <li>Next.js</li>
           <li>JavaScript</li>
           <li>TypeScript</li>

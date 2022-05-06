@@ -2,14 +2,14 @@ import React from 'react'
 import Link, { LinkProps } from 'next/link'
 
 function flipThumb(index: number | null) {
-    const yPos =
-        index === null
-            ? `var(--yInitial)`
-            : `calc(-${index} * var(--thumbnail-size))`
-    const el = document.querySelector(
-        '#header-thumbnail .container'
-    ) as HTMLElement
-    el.style.transform = `translateY(${yPos})`
+  const yPos =
+    index === null
+      ? `var(--yInitial)`
+      : `calc(-${index} * var(--thumbnail-size))`
+  const el = document.querySelector(
+    '#header-thumbnail .container'
+  ) as HTMLElement
+  el.style.transform = `translateY(${yPos})`
 }
 
 /**
@@ -21,24 +21,24 @@ function flipThumb(index: number | null) {
  * @prop scroll Next/Link scroll prop; If true keeps scroll position upon navigation
  */
 function NavLink({
-    navIndex,
-    href,
-    scroll = true,
-    children,
-    ...rest
+  navIndex,
+  href,
+  scroll = true,
+  children,
+  ...rest
 }: { navIndex: number } & React.PropsWithChildren<LinkProps> &
-    React.HTMLAttributes<HTMLAnchorElement>) {
-    return (
-        <Link href={href} scroll={scroll}>
-            <a
-                onMouseEnter={() => flipThumb(navIndex)}
-                onMouseLeave={() => flipThumb(null)}
-                {...rest}
-            >
-                {children}
-            </a>
-        </Link>
-    )
+  React.HTMLAttributes<HTMLAnchorElement>) {
+  return (
+    <Link href={href} scroll={scroll}>
+      <a
+        onMouseEnter={() => flipThumb(navIndex)}
+        onMouseLeave={() => flipThumb(null)}
+        {...rest}
+      >
+        {children}
+      </a>
+    </Link>
+  )
 }
 
 export default NavLink

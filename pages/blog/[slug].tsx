@@ -1,7 +1,7 @@
-/* eslint-disable react/no-danger */
+import { Article, ArticleContent } from 'matterial'
 import Head from 'next/head'
+
 import Layout from 'components/Layout'
-import Article, { ArticleContent } from 'components/Article'
 import { getPostSlugs, getPost, PostType } from 'lib/posts'
 
 export default function Post({ post }: { post: PostType }) {

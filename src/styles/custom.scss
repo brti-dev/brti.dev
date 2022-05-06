@@ -3,3 +3,266 @@
  *
  * Overwrites global.scss
  */
+
+@use 'breakpoint' as *;
+@use 'theme' as *;
+@use 'fonts' as *;
+
+:root {
+  --spacing: var(--space-small);
+
+  @include breakpoint(screen) {
+    --spacing: var(--space-large);
+  }
+}
+
+[data-reach-skip-nav-link]:focus {
+  z-index: 5 !important; // Overlap header
+}
+
+#__next {
+  > header,
+  > section,
+  > main,
+  > footer {
+    box-sizing: border-box;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-right: var(--spacing);
+    padding-left: var(--spacing);
+  }
+
+  > header {
+    width: 100%;
+    max-height: 144px;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    @include breakpoint(screen) {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    > * {
+      z-index: 3;
+    }
+
+    .overlay {
+      z-index: 2;
+    }
+
+    #header-thumbnail {
+      --thumbnail-size: 136px;
+
+      width: var(--thumbnail-size);
+      height: var(--thumbnail-size);
+      border-radius: 50%;
+      overflow: hidden;
+      order: 1;
+      flex: 1 0 var(--thumbnail-size);
+      margin-left: -36px;
+      margin-top: -11px;
+
+      @include breakpoint(screen) {
+        margin: unset;
+        flex: unset;
+      }
+
+      > .container {
+        width: var(--thumbnail-size);
+        transition: transform 0.3s ease-in-out;
+      }
+
+      picture {
+        display: block;
+        width: var(--thumbnail-size);
+        height: var(--thumbnail-size);
+      }
+
+      img {
+        border-radius: 50%;
+        width: var(--thumbnail-size);
+        height: var(--thumbnail-size);
+      }
+    }
+
+    > h1 {
+      order: 2;
+      margin: 0 0 0 var(--space-small);
+      padding: 0;
+      line-height: normal;
+      &::after {
+        content: ',';
+        opacity: 0.3;
+      }
+    }
+
+    nav {
+      --nav-item-height: 2.55rem;
+      /** @var --current-index index of the current page. Needed to translate Y axis of nav list. Set by React on render. */
+
+      order: 3;
+      position: relative;
+      margin: var(--space-small) 0 0 var(--space-small);
+
+      @include breakpoint(screen) {
+        margin-top: unset;
+      }
+
+      & * {
+        // @extend .h;
+        text-rendering: optimizeLegibility;
+        color: #282828;
+
+        @include theme(dark) {
+          color: #d6d6d6;
+        }
+
+        // @extend .h2;
+        letter-spacing: -0.5px;
+
+        margin: 0;
+        padding: 0;
+        font-weight: 500;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        text-decoration: none;
+      }
+
+      > button {
+        position: relative;
+        z-index: 2;
+
+        &:hover .arrow {
+          &:before,
+          &:after {
+            transform: var(--t) translate(0, 0);
+          }
+        }
+      }
+
+      .arrow {
+        --r: 45deg;
+        --o: 0.4;
+        --t: rotate(var(--r)) scale(0.75);
+
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+
+        &:before,
+        &:after {
+          content: '';
+          width: 0.35em;
+          height: 0.35em;
+          opacity: var(--o);
+          display: block;
+          border-color: var(--color-font);
+          border-style: solid;
+          transition: transform 0.3s ease;
+        }
+        &:before {
+          transform: var(--t) translate(0.1em, 0.1em);
+          border-width: 2px 0 0 2px;
+        }
+        &:after {
+          transform: var(--t) translate(-0.1em, -0.1em);
+          border-width: 0 2px 2px 0;
+        }
+      }
+
+      &[data-opened='true'] .arrow {
+        transform: rotate(0.75turn);
+      }
+
+      .container {
+        width: 100%;
+        height: auto;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0;
+        z-index: 1;
+        display: block;
+        opacity: 1;
+        transition: opacity 0.2s ease-in-out;
+
+        &[hidden] {
+          opacity: 0;
+          height: 0;
+          overflow: hidden;
+        }
+      }
+
+      // hidden spacer h2, list item a
+      .nav-item {
+        display: flex;
+        padding: 0 0.8em;
+        white-space: nowrap;
+        height: var(--nav-item-height);
+        align-items: center;
+      }
+
+      ul {
+        list-style: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        transform: translateY(var(--nav-item-height));
+        transition: opacity 0.3s ease,
+          transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+
+        .nav-item {
+          opacity: 0.6;
+          transition: opacity 0.3s ease;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  > main {
+    line-height: 1.6;
+  }
+
+  > footer {
+    position: relative;
+    margin-top: var(--space-large);
+    margin-bottom: var(--space-large);
+    line-height: 1.6;
+
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+
+      li {
+        margin: 0 1em 0 0;
+        padding: 0;
+
+        &:first-child {
+          font-weight: bold;
+        }
+      }
+    }
+
+    a.sourcecode {
+      text-decoration: none;
+      span {
+        display: none;
+        @include breakpoint(screen) {
+          display: unset;
+        }
+      }
+    }
+  }
+}

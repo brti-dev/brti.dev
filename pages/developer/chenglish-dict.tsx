@@ -1,6 +1,7 @@
-import Link from 'next/link'
+import { Article } from 'matterial'
+
 import Layout from 'components/Layout'
-import Article from 'components/Article'
+import { getNextArticle } from '.'
 
 function ChenglishDict() {
   return (
@@ -22,7 +23,7 @@ function ChenglishDict() {
             </li>
           </ul>
         }
-        nextArticle={<Link href="/developer/videogamin">Videogam.in</Link>}
+        nextArticle={getNextArticle('chenglish-dict')}
       >
         <p>
           As any learner of Chinese soon discovers, there are <i>a lot</i> of

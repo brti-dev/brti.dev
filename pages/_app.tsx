@@ -2,11 +2,13 @@
 import type { AppProps /*, AppContext */ } from 'next/app'
 
 import 'normalize.css'
-import 'styles/global.scss'
+import 'matterial/styles/global.scss'
+import 'matterial/styles/main.css'
 import 'styles/custom.scss'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const AnyComponent = Component as any
+  return <AnyComponent {...pageProps} />
 }
 
 // Only uncomment this method if you have blocking data requirements for

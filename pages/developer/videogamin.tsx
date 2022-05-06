@@ -1,6 +1,7 @@
+import { Article } from 'matterial'
+
 import Layout from 'components/Layout'
-import Article from 'components/Article'
-import { getNextArticle } from './index'
+import { getNextArticle } from '.'
 
 function SquareHaven() {
   return (
