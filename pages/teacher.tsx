@@ -1,5 +1,3 @@
-import { FiDownload as DownloadIcon } from 'react-icons/fi'
-
 import { Timeline, TimelineItem } from 'components/Timeline'
 import Layout from 'components/Layout'
 
@@ -28,17 +26,18 @@ function Teacher() {
               <strong>Instructor of AP Computer Sciences</strong>
             </p>
             <p>
-              Developed a school curriculum in line with international standards
-              established by College Board.
+              Introduced modern computing concepts, including data structures,
+              networks, development and testing processes
             </p>
             <p>
-              Provided direct instruction on the app development process,
-              including design, debugging, and testing.
+              Set standards for UX and code design based on WCAG, Google
+              JavaScript Style Guide, and other industry standards for students
+              to produce accessible, consistent, quality interfaces and code.
             </p>
             <p>
-              Prepared students for the AP Computer Science Principles exam, a
-              college-level exam for high school students to earn university
-              credit.
+              Learned how to communicate complex ideas in a simple manner,
+              mentor young people, provide constructive feedback, and manage
+              complex intercultural issues.
             </p>
           </TimelineItem>
           <TimelineItem label="2016&mdash;2021">
