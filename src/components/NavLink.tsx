@@ -7,7 +7,7 @@ function flipThumb(index: number | null) {
       ? `var(--yInitial)`
       : `calc(-${index} * var(--thumbnail-size))`
   const el = document.querySelector(
-    '#header-thumbnail .container'
+    '#header-thumbnail-container'
   ) as HTMLElement
   el.style.transform = `translateY(${yPos})`
 }

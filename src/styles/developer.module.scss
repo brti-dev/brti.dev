@@ -4,14 +4,14 @@
 
 .techList {
   margin-top: 2em;
-  border: 3px solid var(--color-comment);
+  border: 3px solid var(--color-accent-2);
 
   h2 {
     display: inline-block;
     font-size: inherit;
     margin: 0;
     padding: 0 0.5em;
-    background-color: var(--color-body);
+    background-color: var(--color-background);
     line-height: 1em;
     transform: translate(0.5em, -0.75em);
   }
@@ -33,7 +33,7 @@
   li {
     padding: 0 1em;
     line-height: 2em;
-    background-color: var(--color-surface);
+    background-color: var(--color-accent-2);
     font-size: smaller;
   }
 }
@@ -57,7 +57,7 @@
     overflow: hidden;
     flex-direction: column;
     padding: var(--p);
-    text-decoration: none;
+    text-decoration: none !important;
     background-color: var(--color-surface);
     transition: background-color 0.3s ease;
 
@@ -84,7 +84,7 @@
   }
   p,
   strong {
-    color: var(--color-font);
+    color: var(--color-foreground);
   }
 
   h3 {

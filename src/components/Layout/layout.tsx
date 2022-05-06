@@ -1,14 +1,13 @@
-/* eslint-disable prefer-template */
-import { useEffect, useState } from 'react'
+import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
+import '@reach/skip-nav/styles.css'
+import { ArrowTopIcon, Button, Overlay, VisuallyHidden, Link } from 'matterial'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
-import '@reach/skip-nav/styles.css'
+import { useEffect, useState } from 'react'
 
 import scrollToTop from 'lib/scroll-to-top'
 import NavLink from 'components/NavLink'
-import { ArrowTopIcon, Button, Overlay, VisuallyHidden, Link } from 'matterial'
 
 export const SITE_TITLE = 'Matt Berti'
 export const IMG_DIR = '/img'
@@ -192,8 +191,9 @@ export default function Layout({
       </Head>
       <SkipNavLink />
       <header id="top">
-        <div id="header-thumbnail">
+        <div className="header__thumbnail">
           <div
+            id="header-thumbnail-container"
             className="container"
             style={
               {
@@ -216,59 +216,61 @@ export default function Layout({
             ))}
           </div>
         </div>
-        <h1>Matt Berti</h1>
-        <nav
-          id="header__nav"
-          data-opened={nav.opened}
-          style={
-            {
-              '--current-index': currentPageIndex,
-            } as React.CSSProperties
-          }
-        >
-          <Button
-            id="header__nav__trigger"
-            variant="contained"
-            className="nav-item"
-            onClick={toggleNav}
-            data-menu-index={0}
-            aria-haspopup="menu"
-            aria-controls="header__nav__menu"
-            aria-expanded={nav.opened}
-            append={<div className="arrow" />}
+        <div className="header__wrapper">
+          <h1>Matt Berti</h1>
+          <nav
+            id="header__nav"
+            data-opened={nav.opened}
+            style={
+              {
+                '--current-index': currentPageIndex,
+              } as React.CSSProperties
+            }
           >
-            {getPageTitle(pathnameRoot)}
-          </Button>
-          <div className="container">
-            <ul
-              id="header__nav__menu"
-              hidden={!nav.opened}
-              role="menu"
-              aria-label="site navigation"
+            <Button
+              id="header__nav__trigger"
+              variant="contained"
+              className="nav-item"
+              onClick={toggleNav}
+              data-menu-index={0}
+              aria-haspopup="menu"
+              aria-controls="header__nav__menu"
+              aria-expanded={nav.opened}
+              append={<div className="arrow" />}
             >
-              {PAGES.map(({ link, title: pageTitle }, index) =>
-                !isCurrentPage(link) ? (
-                  <li key={link} role="menuitem">
-                    <NavLink
-                      href={link}
-                      scroll={false}
-                      navIndex={index}
-                      className="nav-item unstyled"
-                      tabIndex={-1}
-                      data-menu-index={index + 1}
-                    >
+              {getPageTitle(pathnameRoot)}
+            </Button>
+            <div className="container">
+              <ul
+                id="header__nav__menu"
+                hidden={!nav.opened}
+                role="menu"
+                aria-label="site navigation"
+              >
+                {PAGES.map(({ link, title: pageTitle }, index) =>
+                  !isCurrentPage(link) ? (
+                    <li key={link} role="menuitem">
+                      <NavLink
+                        href={link}
+                        scroll={false}
+                        navIndex={index}
+                        className="nav-item unstyled"
+                        tabIndex={-1}
+                        data-menu-index={index + 1}
+                      >
+                        {pageTitle}
+                      </NavLink>
+                    </li>
+                  ) : (
+                    <li key={link} hidden>
                       {pageTitle}
-                    </NavLink>
-                  </li>
-                ) : (
-                  <li key={link} hidden>
-                    {pageTitle}
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
-        </nav>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          </nav>
+        </div>
         <Overlay active={nav.opened} onClose={toggleNav} />
       </header>
       <SkipNavContent />

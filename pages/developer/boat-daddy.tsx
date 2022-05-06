@@ -8,7 +8,7 @@ function BoatDaddy() {
     <Layout title="Web App Project: Boat Daddy">
       <Article
         title="Boat Daddy"
-        description={<>The Uber of boats. Hail your boat daddy right now.</>}
+        description="The Uber of boats. Hail your boat daddy right now."
         preface={
           <ul>
             <li>

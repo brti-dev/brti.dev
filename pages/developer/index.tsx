@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { Button } from 'matterial'
+import Link from 'next/link'
 import { FiDownload as DownloadIcon } from 'react-icons/fi'
 
 import Layout from 'components/Layout'
@@ -167,16 +167,17 @@ function Work() {
     >
       <section>
         <p>
-          Hi I'm Matt, a full stack web developer focused on responsive,
+          Hi I'm Matt Berti, a full stack web developer focused on responsive,
+          accessible, minimalist design on top of clean code, React, and
           GraphQL. I love building apps that help people learn and stay
           informed.
         </p>
         <Button
-          to="https://www.dropbox.com/s/5z4xkdnf27tdimb/MathewBerti_resume_webdeveloper.pdf"
+          to="https://www.dropbox.com/s/ncbdr2qfvzh4qyk/MathewBerti_resume_frontenddev.pdf?dl=0"
           variant="outlined"
           prepend={<DownloadIcon />}
         >
-          <strong>Download Résumé</strong>
+          <strong>Download Resume</strong>
         </Button>
       </section>
       <section className={classes.techList}>
