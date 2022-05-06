@@ -159,4 +159,4 @@ Hello, everyone! Our menu is fully accessible to you!
 
 <div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/2auZhSgFn714e9CrFO" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><small style="display:flex;justify-content:flex-end;"><a href="https://giphy.com/gifs/hello-all-helloall-2auZhSgFn714e9CrFO">via GIPHY</a></small>
 
-🕵️ [See the source code on Github](https://github.com/dr-spaceman/mattberti.com/blob/main/components/Layout.tsx)
+🕵️ [See the source code on Github](https://github.com/dr-spaceman/mattberti.com/blob/main/src/components/Layout.tsx)
