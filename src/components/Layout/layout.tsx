@@ -298,14 +298,15 @@ export default function Layout({
                 </NextLink>
               </li>
               <li>
-                🔎
-                {/* <Link
-                  href={sourceLink}
+                <Button
+                  to={sourceLink}
+                  shape="circle"
                   title="View or edit the source code for this page"
                   className="sourcecode"
                 >
-                  source code
-                </Link> */}
+                  🔎
+                  <VisuallyHidden>source code</VisuallyHidden>
+                </Button>
               </li>
             </ul>
           </nav>
