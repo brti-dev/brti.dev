@@ -1,81 +1,74 @@
-@use '../extensions' as *;
-@use '../breakpoint' as *;
+@use 'styles/extensions' as *;
+@use 'styles/breakpoint' as *;
 
 .timeline {
-    position: relative;
-    // @var --color Line and bullet color; Set by <Timeline> component
+  position: relative;
+  // @var --color Line and bullet color; Set by <Timeline> component
 
-    @include breakpoint(omnivision) {
-        margin-left: -7em;
+  &::before {
+    background-color: var(--color);
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0.1rem;
+    height: 100%;
+
+    @include breakpoint(screen) {
+      left: 7em;
+    }
+  }
+
+  dl {
+    display: grid;
+    grid-row-gap: 2em;
+    grid-column-gap: 2em;
+    grid-auto-flow: row;
+    justify-items: start;
+    align-items: start;
+    padding-left: 1em;
+
+    @include breakpoint(screen) {
+      padding: 0;
+      grid-template-columns: 5em auto;
     }
 
-    &::before {
-        background-color: var(--color);
+    dt {
+      @extend %surface;
+      margin: 0;
+      padding: 0.5em;
+      font-weight: normal;
+
+      // Point
+      &::before {
         content: '';
+        transform: translate(calc(-0.25em + -0.5em + -1em + 0.05rem), 0.5em);
+        background-color: var(--color);
+        outline: 10px solid var(--color-body);
+        display: block;
         position: absolute;
-        top: 0;
-        width: 0.1rem;
-        height: 100%;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 0.5em;
 
         @include breakpoint(screen) {
-            left: 7em;
+          transform: translate(6.3em, -0.3em);
         }
+      }
     }
 
-    dl {
-        display: grid;
-        grid-row-gap: 2em;
-        grid-column-gap: 2em;
-        grid-auto-flow: row;
-        justify-items: start;
-        align-items: start;
-        padding-left: 1em;
+    dd {
+      margin: 0;
+      padding: 0;
 
-        @include breakpoint(screen) {
-            padding: 0;
-            grid-template-columns: 5em auto;
-        }
+      & > *:first-child {
+        margin-top: 0;
+      }
 
-        dt {
-            @extend %surface;
-            margin: 0;
-            padding: 0.5em;
-            font-weight: normal;
-
-            // Point
-            &::before {
-                content: '';
-                transform: translate(
-                    calc(-0.25em + -0.5em + -1em + 0.05rem),
-                    0.5em
-                );
-                background-color: var(--color);
-                outline: 10px solid var(--color-body);
-                display: block;
-                position: absolute;
-                width: 0.5em;
-                height: 0.5em;
-                border-radius: 0.5em;
-
-                @include breakpoint(screen) {
-                    transform: translate(6.3em, -0.3em);
-                }
-            }
-        }
-
-        dd {
-            margin: 0;
-            padding: 0;
-
-            & > *:first-child {
-                margin-top: 0;
-            }
-
-            @include breakpoint(screen) {
-                padding: 0 0 0 2em;
-            }
-        }
+      @include breakpoint(screen) {
+        padding: 0 0 0 2em;
+      }
     }
+  }
 }
 // .timeline__wrapper {
 //   width: 100%;

@@ -1,5 +1,5 @@
 import React from 'react'
-import classes from 'styles/components/timeline.module.scss'
+import classes from './timeline.module.scss'
 
 export const Timeline = ({
   color = 'var(--color-comment)',
