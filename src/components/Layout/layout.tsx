@@ -1,6 +1,13 @@
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
-import { ArrowTopIcon, Button, Overlay, VisuallyHidden, Link } from 'matterial'
+import {
+  ArrowTopIcon,
+  Button,
+  Link,
+  Overlay,
+  Tooltip,
+  VisuallyHidden,
+} from 'matterial'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
@@ -300,15 +307,18 @@ export default function Layout({
                 </NextLink>
               </li>
               <li>
-                <Button
-                  to={sourceLink}
-                  shape="circle"
-                  title="View or edit the source code for this page"
-                  className="sourcecode"
-                >
-                  🔎
-                  <VisuallyHidden>source code</VisuallyHidden>
-                </Button>
+                <Tooltip label="View source code">
+                  <Button
+                    to={sourceLink}
+                    shape="circle"
+                    title="View or edit the source code for this page"
+                    className="sourcecode"
+                    style={{ fontSize: '1em' }}
+                  >
+                    🔎
+                    <VisuallyHidden>source code</VisuallyHidden>
+                  </Button>
+                </Tooltip>
               </li>
             </ul>
           </nav>
