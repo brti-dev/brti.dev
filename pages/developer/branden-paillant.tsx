@@ -56,74 +56,74 @@ function BrandenPaillant() {
             Helped the client save over $500 a year, eliminating a large cost
             hurdle to starting his business and promoting his works.
           </strong>
-          <ul>
-            <li>
-              Set up an account for the client as a{' '}
-              <a href="https://www.shopify.com/partners">Shopify Partner</a>,
-              then leveraged Shopify’s GraphQL API to build a website.
-            </li>
-            <li>
-              This allowed the client to eliminate Shopify's online store
-              altogether and use the cheapest pricing tier. The client paid less
-              than 1/3 of the service fees had he used Shopify's full-featured
-              service.
-            </li>
-            <li>
-              Utilizing Shopify's CDN for static assets allowed the client to
-              eliminate any additional costs besides the minimal hosting of the
-              source code.
-            </li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            Set up an account for the client as a{' '}
+            <a href="https://www.shopify.com/partners">Shopify Partner</a>, then
+            leveraged Shopify’s GraphQL API to build a website.
+          </li>
+          <li>
+            This allowed the client to eliminate Shopify's online store
+            altogether and use the cheapest pricing tier. The client paid less
+            than 1/3 of the service fees had he used Shopify's full-featured
+            service.
+          </li>
+          <li>
+            Utilizing Shopify's CDN for static assets allowed the client to
+            eliminate any additional costs besides the minimal hosting of the
+            source code.
+          </li>
+        </ul>
         <p>
           <strong>
             Developed and deployed a fast, performant, static photo gallery.
           </strong>
-          <ul>
-            <li>
-              Deployed Next.js static export builds to provide fast user
-              experience.
-            </li>
-            <li>
-              Set up continuous integration processes using webhooks, pushing
-              deployments automatically upon the client’s modifications to the
-              Shopify backend. This removed the need for me to push updates
-              manually when changes are made to the product database and
-              preserved the fast, ultralight speed of a static website.
-            </li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            Deployed Next.js static export builds to provide fast user
+            experience.
+          </li>
+          <li>
+            Set up continuous integration processes using webhooks, pushing
+            deployments automatically upon the client's modifications to the
+            Shopify backend. This removed the need for me to push updates
+            manually when changes are made to the product database and preserved
+            the fast, ultralight speed of a static website.
+          </li>
+        </ul>
         <p>
           <strong>
             Designed a fully responsive, minimalist photo gallery that can be
             accessed on any screen size.
           </strong>
-          <ul>
-            <li>
-              I felt the author's trademark aesthetic (described as "deadpan," a
-              cool, detached, and unemotional presentation of a subject) could
-              best be presented in a minimalist design absent of lines, buttons,
-              graphics, and other common baubles.
-            </li>
-            <li>
-              Achieved{' '}
-              <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=c5a254e96ea100d73378fc97cf7a5502">
-                Accessibility score of 100
-              </a>{' '}
-              on Lighthouse
-            </li>
-          </ul>
-          <picture>
-            <source
-              srcSet="/img/branden-paillant_design.webp"
-              type="image/webp"
-            />
-            <img
-              src="/img/branden-paillant_design.png"
-              alt="Design choices on brandenpaillant.com"
-            />
-          </picture>
         </p>
+        <ul>
+          <li>
+            I felt the author's trademark aesthetic (described as "deadpan," a
+            cool, detached, and unemotional presentation of a subject) could
+            best be presented in a minimalist design absent of lines, buttons,
+            graphics, and other common baubles.
+          </li>
+          <li>
+            Achieved{' '}
+            <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=c5a254e96ea100d73378fc97cf7a5502">
+              Accessibility score of 100
+            </a>{' '}
+            on Lighthouse
+          </li>
+        </ul>
+        <picture>
+          <source
+            srcSet="/img/branden-paillant_design.webp"
+            type="image/webp"
+          />
+          <img
+            src="/img/branden-paillant_design.png"
+            alt="Design choices on brandenpaillant.com"
+          />
+        </picture>
       </Article>
     </Layout>
   )
