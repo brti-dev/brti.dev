@@ -1,6 +1,6 @@
 {
   "name": "mattberti.com",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "A personal web site, portfolio, and blog",
   "license": "ISC",
   "main": "pages/_app.js",
