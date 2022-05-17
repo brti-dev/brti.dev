@@ -10,3 +10,5 @@ export const COLORS: Color[] = [
   'dark',
   'light',
 ]
+
+export const TITLE = 'Matt Berti'

@@ -4,25 +4,6 @@
   "description": "A personal web site, portfolio, and blog",
   "license": "ISC",
   "main": "pages/_app.js",
-  "siteTitle": "✨My App",
-  "pages": [
-    {
-      "link": "/",
-      "title": "Home"
-    },
-    {
-      "link": "/components",
-      "title": "UI Components"
-    },
-    {
-      "link": "/foo",
-      "title": "Foo"
-    },
-    {
-      "link": "/sandbox",
-      "title": "Test Page"
-    }
-  ],
   "scripts": {
     "dev": "next dev",
     "#build": "`next export` uses static export; Use only `next build` for other deploy options.",
