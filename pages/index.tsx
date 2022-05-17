@@ -1,26 +1,35 @@
+import { TITLE, BIO, EMAIL, PAGES } from 'lib/constants'
 import Layout from 'components/Layout'
 import NavLink from 'components/NavLink'
 import classes from 'styles/index.module.css'
 
 function HomePage() {
   return (
-    <Layout description="Official website and digital portfolio of Mathew Berti, a professional full stack web developer and history teacher. Come meet me.">
+    <Layout description={`Official website of ${TITLE}, ${BIO}. Come meet me.`}>
       <div
         style={{ display: 'none' }}
         itemScope
         itemType="http://schema.org/Person"
       >
+        {/* Update the following lines with your alternate spellings, nicknames, aliases, alter-egos, etc. */}
         <span itemProp="name">Matt Berti</span>
         <span itemProp="additionalName">Mathew Berti</span>
         <span itemProp="additionalName">Matthew Berti</span>
         <span itemProp="additionalName">Mathew Ryan Berti</span>
         <span itemProp="additionalName">BahaMatt</span>
         <span itemProp="additionalName">DrSpaceman</span>
-        <a href="mailto:me@mattberti.com" itemProp="email">
-          Matt Berti
-        </a>
-        <img src="/img/mattberti.png" alt="Matt Berti" itemProp="image" />
+        {EMAIL && (
+          <a href={`mailto:${EMAIL}`} itemProp="email">
+            {TITLE}
+          </a>
+        )}
+        <img
+          src={`/img/${PAGES[0]['imgSrcFallback']}`}
+          alt={TITLE}
+          itemProp="image"
+        />
       </div>
+      {/* Customize the following component with your desired layout */}
       <section>
         <p>
           Hi I&apos;m Matt, a{' '}

@@ -26,8 +26,8 @@ export const BIO = 'full stack web developer and computer science teacher'
  *
  * @prop link Link to index
  * @prop title Label title that will be used on nav
- * @prop imgSrc An optimized, preferred image thumbnail in .webp format
- * @prop imgSrcFallback A fallback image in .png or .jpg format
+ * @prop imgSrc An optimized, preferred image thumbnail in .webp format located in `public/img` folder
+ * @prop imgSrcFallback A fallback image in .png or .jpg format located in `public/img` folder
  */
 export const PAGES = [
   {
