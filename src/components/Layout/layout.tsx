@@ -13,60 +13,24 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 
+import {
+  ALIASES,
+  BIO,
+  EMAIL,
+  PAGES,
+  REPOSITORY_ROOT,
+  TITLE,
+} from 'lib/constants'
 import scrollToTop from 'lib/scroll-to-top'
 import NavLink from 'components/NavLink'
 
-export const SITE_TITLE = 'Matt Berti'
-export const IMG_DIR = '/img'
+const IMG_DIR = '/img'
 
 export type LayoutProps = {
   title?: string
   description?: string
   children: React.ReactNode
 }
-
-/**
- * Object to build nav and help router
- *
- * @prop link Link to index
- * @prop title Label title that will be used on nav
- * @prop imgSrc An optimized, preferred image thumbnail in .webp format
- * @prop imgSrcFallback A fallback image in .png or .jpg format
- */
-const PAGES = [
-  {
-    link: '/',
-    title: 'someone',
-    imgSrc: 'mattberti.webp',
-    imgSrcFallback: 'mattberti.jpg',
-  },
-  {
-    link: '/developer',
-    title: 'web developer',
-    imgSrc: 'mattberti-developer.webp',
-    imgSrcFallback: 'mattberti-developer.png',
-  },
-  {
-    link: '/teacher',
-    title: 'teacher',
-    imgSrc: 'mattberti-teacher.webp',
-    imgSrcFallback: 'mattberti-teacher.png',
-  },
-  {
-    link: '/blog',
-    title: 'blogger',
-    imgSrc: 'mattberti-blogger.webp',
-    imgSrcFallback: 'mattberti-blogger.png',
-  },
-]
-
-// pathname-alias for source code link (@github)
-const ALIASES = {
-  '/developer': '/developer/index.tsx',
-  '/blog': '/blog/index.tsx',
-}
-
-const REPOSITORY_ROOT = 'https://github.com/dr-spaceman/mattberti.com/tree/main'
 
 function getSourceLink(pathname: string, query: any): string {
   if (pathname === '/blog/[slug]') {
@@ -145,11 +109,7 @@ function keyboardNav(event: KeyboardEvent) {
 /**
  * Wrapper component to render header, footer, and other layout components
  */
-export default function Layout({
-  title = null,
-  description = null,
-  children,
-}: LayoutProps) {
+export default function Layout({ title, description, children }: LayoutProps) {
   const { pathname, query } = useRouter()
   const pathnameRoot = pathname.split('/', 2).join('/')
 
@@ -175,10 +135,8 @@ export default function Layout({
     <>
       <Head>
         <title>
-          Matt Berti
-          {title
-            ? `, ${title}`
-            : ', full stack web developer and computer science teacher'}
+          {TITLE}
+          {`, ${title || BIO}`}
         </title>
         <link rel="icon" href="/favicon.ico" />
         <link
@@ -193,7 +151,7 @@ export default function Layout({
           />
         )}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta property="og:title" content={SITE_TITLE} />
+        <meta property="og:title" content={TITLE} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <SkipNavLink />
@@ -215,16 +173,13 @@ export default function Layout({
                   srcSet={`${IMG_DIR}/${page.imgSrc}`}
                   type="image/webp"
                 />
-                <img
-                  src={`${IMG_DIR}/${page.imgSrcFallback}`}
-                  alt="Matt Berti"
-                />
+                <img src={`${IMG_DIR}/${page.imgSrcFallback}`} alt={TITLE} />
               </picture>
             ))}
           </div>
         </div>
         <div className="header__wrapper">
-          <h1>Matt Berti</h1>
+          <h1>{TITLE}</h1>
           <nav
             id="header__nav"
             data-opened={nav.opened}
@@ -286,26 +241,20 @@ export default function Layout({
         <footer>
           <nav>
             <ul>
-              <li>
-                <NextLink href="/">
-                  <a>Matt Berti</a>
-                </NextLink>
-              </li>
-              <li>
-                <NextLink href="/developer">
-                  <a title="Matt Berti, Web Developer">Work</a>
-                </NextLink>
-              </li>
-              <li>
-                <NextLink href="/blog">
-                  <Link title="Matt Berti Blog">Blog</Link>
-                </NextLink>
-              </li>
-              <li>
-                <NextLink href="mailto:me@mattberti.com">
-                  <Link>Email</Link>
-                </NextLink>
-              </li>
+              {PAGES.map(page => (
+                <li key={page.title}>
+                  <NextLink href={page.link}>
+                    <a title={`${TITLE}, ${page.title}`}>{page.title}</a>
+                  </NextLink>
+                </li>
+              ))}
+              {EMAIL && (
+                <li>
+                  <NextLink href={`mailto:${EMAIL}`}>
+                    <Link>Email</Link>
+                  </NextLink>
+                </li>
+              )}
               <li>
                 <Tooltip label="View source code">
                   <Button
