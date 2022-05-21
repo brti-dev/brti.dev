@@ -1,6 +1,6 @@
 # Mattberti.com
 
-This is the complete code behind mattberti.com, a personal web site mostly focused on a portfolio and blog. I am providing this as open source because I wanted to share my code to others.
+This is the complete code behind brti.dev, a personal web site mostly focused on a portfolio and blog. I am providing this as open source because I wanted to share my code to others.
 
 ## Built With
 

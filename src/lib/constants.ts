@@ -60,7 +60,7 @@ export const PAGES = [
  * Your forked repository root directory; Used to build source URL on page footers
  */
 export const REPOSITORY_ROOT =
-  'https://github.com/dr-spaceman/mattberti.com/tree/main'
+  'https://github.com/dr-spaceman/brti.dev/tree/main'
 
 /**
  * Pathname-alias for source code link (@github)

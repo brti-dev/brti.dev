@@ -1,5 +1,5 @@
 {
-  "name": "mattberti.com",
+  "name": "brti.dev",
   "version": "2.2.0",
   "description": "A personal web site, portfolio, and blog",
   "license": "ISC",
@@ -36,7 +36,7 @@
     "url": "git+https://github.com/dr-spaceman/Matt-Berti-Portfolio.git"
   },
   "author": "Matt Berti",
-  "homepage": "https://mattberti.com",
+  "homepage": "https://brti.dev",
   "devDependencies": {
     "@testing-library/dom": "^8.11.0",
     "@testing-library/jest-dom": "^5.15.0",

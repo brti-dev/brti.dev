@@ -59,8 +59,8 @@ function HomePage() {
         <p>
           This web project is{' '}
           <a
-            href="https://github.com/dr-spaceman/mattberti.com"
-            title="Open source Github repo codebase for mattberti.com"
+            href="https://github.com/dr-spaceman/brti.dev"
+            title="Open source Github repo codebase for brti.dev"
           >
             🔎open source
           </a>{' '}
@@ -110,8 +110,8 @@ function HomePage() {
             </a>
           </dd>
           <dd>
-            <a href="mailto:me@mattberti.com" title="Email Matt Berti">
-              me@mattberti.com
+            <a href={`mailto:${EMAIL}`} title="Email Matt Berti">
+              {EMAIL}
             </a>
           </dd>
         </dl>
