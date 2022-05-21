@@ -154,9 +154,7 @@ export function getNextArticle(slug: string) {
     nextArticle = WORKS[currentArticleIndex + 1]
   }
 
-  return (
-    <Link href={`/developer/${nextArticle.slug}`}>{nextArticle.heading}</Link>
-  )
+  return <Link href={`/work/${nextArticle.slug}`}>{nextArticle.heading}</Link>
 }
 
 function Work() {
@@ -204,7 +202,7 @@ function Work() {
         <div className={classes.workItems}>
           {WORKS.map(work => (
             <div className={classes.workItem} key={work.slug}>
-              <Link href={`/developer/${work.slug}`}>
+              <Link href={`/work/${work.slug}`}>
                 <a title={work.heading}>
                   <small className="text-label">{work.label}</small>
                   <h3 className="h2">{work.heading}</h3>

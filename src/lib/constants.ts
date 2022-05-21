@@ -37,7 +37,7 @@ export const PAGES = [
     imgSrcFallback: 'mattberti.jpg',
   },
   {
-    link: '/developer',
+    link: '/work',
     title: 'web developer',
     imgSrc: 'mattberti-developer.webp',
     imgSrcFallback: 'mattberti-developer.png',
@@ -66,7 +66,7 @@ export const REPOSITORY_ROOT =
  * Pathname-alias for source code link (@github)
  */
 export const ALIASES = {
-  '/developer': '/developer/index.tsx',
+  '/work': '/work/index.tsx',
   '/blog': '/blog/index.tsx',
 }
 

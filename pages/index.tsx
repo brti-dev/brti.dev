@@ -43,7 +43,7 @@ function HomePage() {
           by day and{' '}
           <NavLink
             navIndex={1}
-            href="/developer"
+            href="/work"
             title="Matt Berti's portfolio of full stack web projects"
           >
             full stack web developer
