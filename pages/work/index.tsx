@@ -7,6 +7,15 @@ import classes from 'styles/developer.module.scss'
 
 const WORKS = [
   {
+    label: 'Design System',
+    slug: 'matterial-ui',
+    heading: 'Matterial UI',
+    subheading: 'Designer & Developer',
+    description:
+      'A React component library for building user interfaces, fully typed, tested, and documented',
+    tags: ['React', 'typescript', 'design system', 'monoreopo', 'unit testing'],
+  },
+  {
     label: 'Single-Page App',
     slug: 'boat-daddy',
     heading: 'Boat Daddy',
