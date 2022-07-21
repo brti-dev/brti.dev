@@ -6,7 +6,7 @@ tags:
   - es6
 ---
 
-This article highlights the quirks of JavaScript's `var` statement, and the clarity that [ES6's `let` and `const` declarations](https://262.ecma-international.org/6.0/#sec-let-and-const-declarations) provide.<!-- LET me in -->
+This article highlights the quirks of JavaScript's `var` statement, and the clarity that [ES6's `let` and `const` declarations](https://262.ecma-international.org/6.0/#sec-let-and-const-declarations) provide.<!-- more-LET me in -->
 
 ## Var
 
