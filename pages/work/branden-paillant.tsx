@@ -13,7 +13,9 @@ function BrandenPaillant() {
           <ul>
             <li>
               In production at{' '}
-              <a href="https://brandenpaillant.com">brandenpaillant.com</a>
+              <a href="https://branden-paillant.vercel.app/">
+                branden-paillant.vercel.app/
+              </a>
             </li>
           </ul>
         }
@@ -121,7 +123,7 @@ function BrandenPaillant() {
           />
           <img
             src="/img/branden-paillant_design.png"
-            alt="Design choices on brandenpaillant.com"
+            alt="Design choices on Branden Paillant"
           />
         </picture>
       </Article>
