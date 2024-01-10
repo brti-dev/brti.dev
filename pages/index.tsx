@@ -32,29 +32,27 @@ function HomePage() {
       {/* Customize the following component with your desired layout */}
       <section>
         <p>
-          Hi I&apos;m Matt, a{' '}
+          Hi I&apos;m Berti, a self-taught{' '}
+          <NavLink
+            navIndex={1}
+            href="/work"
+            title="Matt Berti's portfolio of full-stack web projects"
+          >
+            software engineer
+          </NavLink>{' '}
+          and former{' '}
           <NavLink
             navIndex={2}
             href="/teacher"
             title="Matt Berti's teaching experience and CV"
           >
-            computer science teacher
+            high school computer science teacher
+          </NavLink>
+          . I built{' '}
+          <NavLink navIndex={1} href="/work/boat-daddy" title="Boat Daddy app">
+            Boat Daddy
           </NavLink>{' '}
-          by day and{' '}
-          <NavLink
-            navIndex={1}
-            href="/work"
-            title="Matt Berti's portfolio of full stack web projects"
-          >
-            full stack web developer
-          </NavLink>{' '}
-          by night. I&apos;m passionate about <strong>education</strong>,{' '}
-          <strong>the outdoors</strong>, <strong>videogames</strong>, and the
-          Oxford Comma. Occasionally I{' '}
-          <NavLink navIndex={3} href="/blog" title="Blog index">
-            write
-          </NavLink>{' '}
-          about the aforementioned topics.
+          and I love to collaborate with other devs to build other cool stuff.
         </p>
         <p>
           This web project is{' '}
