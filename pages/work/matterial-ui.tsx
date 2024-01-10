@@ -2,7 +2,7 @@ import { Article } from 'matterial'
 
 import Layout from 'components/Layout'
 import { getNextArticle } from '.'
-import Code, { CodeBlock } from 'components/Code'
+import { CodeBlock } from 'components/Code'
 
 function Mtui() {
   return (
@@ -22,7 +22,7 @@ function Mtui() {
         }
         nextArticle={getNextArticle('boat-daddy')}
       >
-        <h2>Motivation</h2>
+        <h2>Motivations</h2>
 
         <h3>Build a System</h3>
 
@@ -50,25 +50,33 @@ function Mtui() {
           but the vast majority of them ticks at least one of the boxes:
         </p>
         <dl>
-          <dt>Incomplete accessibility support</dt>
+          <dt>
+            <b>Incomplete accessibility support</b>
+          </dt>
           <dd>
-            As of 2021, proper a11y support in applications is a widely accepted
-            bare minimum of a successful project and a design system is the
-            right place to take care of it.
+            Proper a11y support in applications is a bare minimum of a
+            successful project and a design system is the right place to take
+            care of it.
           </dd>
-          <dt>Branded systems</dt>
+          <dt>
+            <b>Branded systems</b>
+          </dt>
           <dd>
             There are many beautiful, well-thought and otherwise perfect design
             systems that suffer from one problem: they were created by a
             product, for a product. Using it makes any app look like it belongs
-            to, or is affiliated with said brand.
+            to, or is affiliated with the brand.
           </dd>
-          <dt>Not really a design system</dt>
+          <dt>
+            <b>Not really a design system</b>
+          </dt>
           <dd>
             Small, modular and customizable design systems are not design
             systems but component libraries.
           </dd>
-          <dt>Lack of public design files</dt>
+          <dt>
+            <b>Lack of public design files</b>
+          </dt>
           <dd>
             Due to the often dynamic nature of design system development and not
             always perfect communication between developers and designers, it is
@@ -88,8 +96,8 @@ function Mtui() {
         <p>
           Fortunately, solutions for accessibility problems exist, such as{' '}
           <a href="https://react-spectrum.adobe.com/react-aria">React Aria</a>{' '}
-          and <a href="https://reach.tech/">Reach UI</a> (using the latter
-          here).
+          and <a href="https://ariakit.org/">Ariakit</a> (my personal
+          preference).
         </p>
 
         <h3>No compromises</h3>

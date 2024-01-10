@@ -14,7 +14,7 @@ function BrandenPaillant() {
             <li>
               In production at{' '}
               <a href="https://branden-paillant.vercel.app/">
-                branden-paillant.vercel.app/
+                branden-paillant.vercel.app
               </a>
             </li>
           </ul>

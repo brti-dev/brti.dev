@@ -103,7 +103,7 @@ function MernTracker() {
 
         <h3>Use of Material UI instead of Bootstrap</h3>
         <p>
-          Subramanian made the case for Bootstrap over Meterial UI in his book:
+          Subramanian made the case for Bootstrap over Material UI in his book:
         </p>
         <blockquote>
           <p>
