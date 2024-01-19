@@ -49,10 +49,23 @@ function HomePage() {
             high school computer science teacher
           </NavLink>
           . I built{' '}
-          <NavLink navIndex={1} href="/work/boat-daddy" title="Boat Daddy app">
+          <NavLink
+            navIndex={1}
+            href="/work/boat-daddy"
+            title="Boat Daddy, the uber of boats"
+          >
             Boat Daddy
           </NavLink>{' '}
-          and I love to collaborate with other devs to build other cool stuff.
+          and{' '}
+          <NavLink
+            navIndex={1}
+            href="/work/matterial-ui"
+            title="Matterial UI, a design system by Matt Berti"
+          >
+            Matterial UI
+          </NavLink>
+          . I love to collaborate with other devs to build compelling user
+          experiences.
         </p>
         <p>
           This web project is{' '}
