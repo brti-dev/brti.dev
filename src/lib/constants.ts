@@ -19,7 +19,7 @@ export const TITLE = 'Matt Berti'
 /**
  * One-line bio, a short description
  */
-export const BIO = 'full stack web developer and computer science teacher'
+export const BIO = 'full stack software engineer and computer science teacher'
 
 /**
  * Object to build nav and help router
@@ -38,7 +38,7 @@ export const PAGES = [
   },
   {
     link: '/work',
-    title: 'web developer',
+    title: 'software engineer',
     imgSrc: 'mattberti-developer.webp',
     imgSrcFallback: 'mattberti-developer.png',
   },
