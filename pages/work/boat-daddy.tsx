@@ -8,7 +8,7 @@ function BoatDaddy() {
     <Layout title="Web App Project: Boat Daddy">
       <Article
         title="Boat Daddy"
-        description="The Uber of boats. Hail your boat daddy right now."
+        description="The Uber of boats. Hail your boat daddy now."
         preface={
           <ul>
             <li>
@@ -24,9 +24,8 @@ function BoatDaddy() {
         nextArticle={getNextArticle('boat-daddy')}
       >
         <p>
-          This app is a prototype of a product that combines boat-hailing (à la
-          Uber) and finding dates, making new friends, and meeting new people (à
-          la Bumble).
+          This app is a prototype of a product that combines boat-hailing,
+          making new friends, and summer adventures.
         </p>
         <p>
           The purpose of the app was to learn and use some of the tech an
@@ -35,15 +34,14 @@ function BoatDaddy() {
             Leigh Halliday's Next Level Next.js course
           </a>{' '}
           as a basis for the app, with some notable changes. The app leverages
-          several libraries and frameworks that are new to me and completely
-          unnecessary for this scale of the app, some of which I stuck with and
-          others I abandoned throughout the course of development. For example,
-          while Prisma ORM is overkill, I stuck with it. However I have
-          TypeGraphQL the axe in favor of my own type definitions and
-          configurations.
+          several libraries and frameworks that are new to me and unnecessary
+          for this scale of the app, some of which I stuck with and others I
+          abandoned throughout the course of development. For example, while
+          Prisma ORM is overkill, I stuck with it. However I have TypeGraphQL
+          the axe in favor of my own type definitions and configurations.
         </p>
 
-        <h2>Custom Authentication</h2>
+        <h2>Custom Authentication: Challenges and Solutions</h2>
         <p>
           Leigh uses Firebase for auth providers, but I used AWS Amplify because
           I have been wanting to give it a try. After setting up an auth
@@ -68,9 +66,6 @@ function BoatDaddy() {
           I used JWT with credentials attached as a bearer token to all API
           calls to authorize the user. In addition, there are third-party auth
           providers like Google, and a password sign in.
-        </p>
-        <p>
-          <em>More to come as this app approaches production..</em>
         </p>
       </Article>
     </Layout>
