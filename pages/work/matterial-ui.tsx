@@ -170,7 +170,7 @@ function Mtui() {
           addition to the native props.
         </p>
 
-        <CodeBlock>{`type User = {
+        <CodeBlock language="ts">{`type User = {
   username: string
   id: number
   image: string
