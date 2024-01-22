@@ -248,13 +248,6 @@ export default function Layout({ title, description, children }: LayoutProps) {
                   </NextLink>
                 </li>
               ))}
-              {EMAIL && (
-                <li>
-                  <NextLink href={`mailto:${EMAIL}`}>
-                    <Link>Email</Link>
-                  </NextLink>
-                </li>
-              )}
               <li>
                 <Tooltip label="View source code">
                   <Button
