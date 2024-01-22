@@ -292,3 +292,34 @@
     height: 1.5em;
   }
 }
+
+.codeblock {
+  overflow: auto;
+  counter-reset: linenumbers;
+  font-size: 0.7em !important;
+  line-height: 1.4em !important;
+}
+
+pre {
+  color: var(--color-accent-6) !important;
+}
+
+.hljs-keyword,
+.hljs-link,
+.hljs-literal,
+.hljs-section,
+.hljs-selector-tag {
+  color: var(--color-accent-8) !important;
+}
+
+.hljs-attr {
+  color: var(--color-primary-hover);
+}
+
+.hljs-number {
+  color: var(--color-secondary);
+}
+
+.hljs-comment {
+  color: var(--color-accent-4);
+}

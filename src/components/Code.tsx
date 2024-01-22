@@ -47,19 +47,7 @@ export function CodeBlock({ children, language }: CodeBlockProps): JSX.Element {
     children
   )
 
-  return (
-    <pre
-      className="surface"
-      style={{
-        overflow: 'auto',
-        counterReset: 'linenumbers',
-        fontSize: '0.7em',
-        lineHeight: '1.4em',
-      }}
-    >
-      {sourceCode}
-    </pre>
-  )
+  return <pre className="codeblock">{sourceCode}</pre>
 }
 
 export default function Code({
