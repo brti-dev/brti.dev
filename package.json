@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@reach/skip-nav": "^0.17.0",
+    "@vercel/edge-config": "^0.1.8",
     "date-fns": "^2.21.3",
     "gray-matter": "^4.0.3",
     "highlight.js": "^10.7.2",
