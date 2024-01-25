@@ -113,14 +113,6 @@ function HomePage() {
             </a>
           </dd>
           <dd>
-            <a
-              href="https://letterboxd.com/dr_spaceman/"
-              title="Matt Berti's film reviews on Letterboxd"
-            >
-              Letterboxd
-            </a>
-          </dd>
-          <dd>
             <a href={`mailto:${EMAIL}`} title="Email Matt Berti">
               {EMAIL}
             </a>

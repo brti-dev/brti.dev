@@ -13,7 +13,9 @@ function ChenglishDict() {
           <ul>
             <li>
               In production at{' '}
-              <a href="http://chenglishdict.com/">chenglishdict.com</a>
+              <a href="https://cn-en.dreamhosters.com/">
+                cn-en.dreamhosters.com
+              </a>
             </li>
             <li>
               Code at{' '}

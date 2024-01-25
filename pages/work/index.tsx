@@ -170,11 +170,11 @@ function Work() {
   return (
     <Layout
       title="Full Stack Web Developer"
-      description="Matt Berti is a full stack web developer focused on responsive, minimalist design on top of clean code, React, and GraphQL."
+      description="Matt Berti is a full stack software engineer focused on responsive, minimalist design on top of clean code, React, and GraphQL."
     >
       <section>
         <p>
-          Hi I'm Matt Berti, a full stack web developer focused on responsive,
+          Hi I'm Matt Berti, a software engineer focused on responsive,
           accessible, minimalist design on top of clean code, React, and
           GraphQL. I love building apps that help people learn and stay
           informed.
@@ -190,17 +190,19 @@ function Work() {
       <section className={classes.techList}>
         <h2>I enjoy working with</h2>
         <ul>
-          <li>Next.js</li>
           <li>JavaScript</li>
           <li>TypeScript</li>
+          <li>React</li>
+          <li>Next.js</li>
+          <li>a11y</li>
           <li>Jest</li>
           <li>HTML</li>
           <li>CSS</li>
-          <li>a11y</li>
           <li>GraphQL</li>
           <li>REST API</li>
           <li>SQL</li>
           <li>PHP</li>
+          <li>Vue</li>
           <li>Python</li>
           <li>VS Code</li>
           <li>People ❤️</li>
