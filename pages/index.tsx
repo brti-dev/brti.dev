@@ -32,40 +32,25 @@ function HomePage() {
       {/* Customize the following component with your desired layout */}
       <section>
         <p>
-          Hi I&apos;m Berti, a self-taught{' '}
-          <NavLink
-            navIndex={1}
-            href="/work"
-            title="Matt Berti's portfolio of full-stack web projects"
-          >
-            software engineer
-          </NavLink>{' '}
-          and former{' '}
+          Hi I&apos;m Berti, a{' '}
           <NavLink
             navIndex={2}
             href="/teacher"
             title="Matt Berti's teaching experience and CV"
           >
             high school computer science teacher
-          </NavLink>
-          . I built{' '}
-          <NavLink
-            navIndex={1}
-            href="/work/boat-daddy"
-            title="Boat Daddy, the uber of boats"
-          >
-            Boat Daddy
           </NavLink>{' '}
-          and{' '}
+          by day and{' '}
           <NavLink
             navIndex={1}
-            href="/work/matterial-ui"
-            title="Matterial UI, a design system by Matt Berti"
+            href="/work"
+            title="Matt Berti's portfolio of full-stack web projects"
           >
-            Matterial UI
-          </NavLink>
-          . I love to collaborate with other devs to build compelling user
-          experiences.
+            frontend software engineer
+          </NavLink>{' '}
+          by night. I build lovable user interfaces, design systems, and
+          frontend architecture. I love to collaborate with other devs to make
+          products for the web that help people learn and stay informed.
         </p>
         <p>
           This web project is{' '}
