@@ -8,7 +8,7 @@ export const Timeline = ({
 }) => (
   <div
     className={classes.timeline}
-    style={{ '--color': color } as React.CSSProperties}
+    style={{ '--timeline-color': color } as React.CSSProperties}
     {...rest}
   >
     <dl>{children}</dl>

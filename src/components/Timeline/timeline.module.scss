@@ -3,10 +3,10 @@
 
 .timeline {
   position: relative;
-  // @var --color Line and bullet color; Set by <Timeline> component
+  // @var --timeline-color Line and bullet color; Set by <Timeline> component
 
   &::before {
-    background-color: var(--color);
+    background-color: var(--timeline-color);
     content: '';
     position: absolute;
     top: 0;
@@ -42,7 +42,7 @@
       &::before {
         content: '';
         transform: translate(calc(-0.25em + -0.5em + -1em + 0.05rem), 0.5em);
-        background-color: var(--color);
+        background-color: var(--timeline-color);
         outline: 10px solid var(--color-body);
         display: block;
         position: absolute;
@@ -66,6 +66,10 @@
 
       @include breakpoint(screen) {
         padding: 0 0 0 2em;
+      }
+
+      a {
+        text-decoration: underline;
       }
     }
   }
