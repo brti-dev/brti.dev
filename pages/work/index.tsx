@@ -1,6 +1,10 @@
-import { Button } from 'matterial'
+import { Button, Container } from 'matterial'
 import Link from 'next/link'
 import { FiDownload as DownloadIcon } from 'react-icons/fi'
+import {
+  FaLinkedin as LinkedinIcon,
+  FaGithub as GithubIcon,
+} from 'react-icons/fa'
 
 import Layout from 'components/Layout'
 import classes from 'styles/developer.module.scss'
@@ -174,18 +178,34 @@ function Work() {
     >
       <section>
         <p>
-          Hi I'm Matt Berti, a software engineer focused on responsive,
-          accessible, minimalist design on top of clean code, React, and
-          GraphQL. I love building apps that help people learn and stay
-          informed.
+          Hi I'm Berti, a software engineer laser-focused on responsive,
+          accessible, and lovable user experiences. I love building apps that
+          help people learn and stay informed. I'm an expert in building
+          Frontend Architecture and Design Systems.
         </p>
-        <Button
-          to="https://www.dropbox.com/s/ncbdr2qfvzh4qyk/MathewBerti_resume_frontenddev.pdf?dl=0"
-          variant="outlined"
-          prepend={<DownloadIcon />}
-        >
-          <strong>Download Resume</strong>
-        </Button>
+        <Container row>
+          <Button
+            to="https://www.linkedin.com/in/mrberti/"
+            variant="outlined"
+            prepend={<LinkedinIcon />}
+          >
+            Connect with Me
+          </Button>
+          <Button
+            to="https://github.com/dr-spaceman"
+            variant="outlined"
+            prepend={<GithubIcon />}
+          >
+            My Code
+          </Button>
+          <Button
+            to="https://www.dropbox.com/s/ncbdr2qfvzh4qyk/MathewBerti_resume_frontenddev.pdf?dl=0"
+            variant="outlined"
+            prepend={<DownloadIcon />}
+          >
+            Resume
+          </Button>
+        </Container>
       </section>
       <section className={classes.techList}>
         <h2>I enjoy working with</h2>
