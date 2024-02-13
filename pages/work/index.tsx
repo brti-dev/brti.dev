@@ -11,6 +11,7 @@ import Layout from 'components/Layout'
 import classes from 'styles/developer.module.scss'
 
 const WORKS = [
+  // WORKS[0] must be showable!!!
   {
     label: 'Design System',
     slug: 'matterial-ui',
@@ -231,12 +232,11 @@ export function getNextArticle(slug: string) {
     let indexOffset = 0
     while (!nextArticle) {
       indexOffset++
-      if (WORKS[currentArticleIndex + indexOffset].show !== false) {
+      if (WORKS[currentArticleIndex + indexOffset]?.show !== false) {
         nextArticle = WORKS[currentArticleIndex + indexOffset]
       }
       if (currentArticleIndex + indexOffset >= WORKS.length) {
-        const firstWorkShowable = WORKS.find(work => work.show !== false)
-        nextArticle = firstWorkShowable
+        nextArticle = WORKS[0]
       }
     }
   }

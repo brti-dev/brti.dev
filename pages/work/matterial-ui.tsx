@@ -20,7 +20,7 @@ function Mtui() {
             </li>
           </ul>
         }
-        nextArticle={getNextArticle('boat-daddy')}
+        nextArticle={getNextArticle('matterial-ui')}
       >
         <h2>Motivations</h2>
 
