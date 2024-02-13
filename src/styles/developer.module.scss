@@ -42,15 +42,12 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 2em;
 }
 
 .workItem {
   width: 100%;
   --p: 5vw;
-
-  & + [class*='workItem'] {
-    margin-top: 2em;
-  }
 
   a {
     display: flex;
@@ -110,5 +107,119 @@ ul.tags {
     &::before {
       content: '#';
     }
+  }
+}
+
+.appsItems {
+  --section-padding-x: 1rem;
+
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.appsItem {
+  position: relative;
+  width: 25%;
+  min-width: 17em;
+  overflow: hidden;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  scroll-snap-align: start;
+  transition: background-color 0.2s ease-in;
+
+  &:has(a:hover) {
+    background: var(--color-surface-hover);
+
+    img {
+      opacity: 1;
+      filter: grayscale(0%);
+    }
+
+    footer svg {
+      transform: scale(1.3);
+      opacity: 1;
+    }
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1em;
+    padding: 1em;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 30vh;
+    filter: grayscale(10%);
+    opacity: 0.8;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: var(--color-primary) !important;
+
+    &:after {
+      bottom: 0;
+      content: '';
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  h5 {
+    font-size: 0.8em;
+  }
+
+  [class='description'] {
+    flex-grow: 1;
+    font-size: 0.8em;
+    min-height: 13ch;
+  }
+
+  footer {
+    min-height: 5.8ch;
+    font-size: 0.7em;
+    color: var(--color-secondary);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 1em;
+    align-items: flex-end;
+
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+  }
+
+  small {
+    font-size: 0.6em;
+    font-weight: 800;
+    opacity: 0.4;
+  }
+
+  hr {
+    margin: 0 -1em;
+    border-width: 1px 0 0;
+    border-style: solid;
+    opacity: 0.1;
   }
 }

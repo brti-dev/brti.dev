@@ -4,6 +4,7 @@ import { FiDownload as DownloadIcon } from 'react-icons/fi'
 import {
   FaLinkedin as LinkedinIcon,
   FaGithub as GithubIcon,
+  FaExpand as ExpandIcon,
 } from 'react-icons/fa'
 
 import Layout from 'components/Layout'
@@ -39,6 +40,7 @@ const WORKS = [
     ],
   },
   {
+    show: false,
     label: 'Single-Page App',
     slug: 'camval-produce',
     heading: 'Camval Produce',
@@ -65,6 +67,7 @@ const WORKS = [
     tags: ['Single Page App', 'E-commerce', 'Next.js', 'Shopify'],
   },
   {
+    show: false,
     label: 'Web App',
     slug: 'chenglish-dict',
     heading: 'Chenglish Dictionary',
@@ -87,6 +90,7 @@ const WORKS = [
     ),
   },
   {
+    show: false,
     heading: 'AXRN Animal Crossing Right Now',
     label: 'Web App',
     slug: 'axrn',
@@ -115,9 +119,10 @@ const WORKS = [
     ),
   },
   {
+    show: false,
+    heading: 'MERN Issue Tracker',
     label: 'Single-Page App',
     slug: 'mern-tracker',
-    heading: 'MERN Issue Tracker',
     description:
       'A single-page app built to learn how to make single-page apps.',
     tags: [
@@ -146,11 +151,70 @@ const WORKS = [
     ),
   },
   {
+    show: false,
     label: 'Web Community',
     slug: 'square-haven',
     heading: 'Square Haven',
     description: 'A community for fans of the videogame publisher Square Enix.',
     tags: ['Community-Building', 'PHP', 'MySQL'],
+  },
+]
+
+const APPS = [
+  {
+    label: 'Vanilla Javascript',
+    link: 'https://github.com/dr-spaceman/ascii-emoji-scrapbook',
+    heading: 'ASCII Emoji Scrapbook',
+    description:
+      'A web app to save and share your favorite ASCII art. Actually you can save and share almost anything.',
+    image: (
+      <img src="/img/ascii-emoji.webp" alt="ASCII Emoji Scrapbook web app" />
+    ),
+    footer: <b>¯\_(ツ)_/¯</b>,
+  },
+  {
+    label: 'Web App',
+    link: '/work/chenglish-dict/',
+    heading: 'Chenglish Dictionary',
+    description: 'A mobile-first app to learn Chinese characters and phrases.',
+    image: (
+      <img
+        src="/img/chenglishdict_work.png"
+        alt="Chenglish Dictionary screenshots"
+      />
+    ),
+    footer: <>你好，你看得懂妈？如果看得懂的话你不需要这件软件</>,
+  },
+  {
+    heading: 'AXRN Animal Crossing Right Now',
+    label: 'Python',
+    link: '/work/axrn/',
+    description: (
+      <>
+        A web app for players of the Nintendo Switch game{' '}
+        <i>Animal Crossing: New Horizons</i> to inform them what critters are
+        available right now.
+      </>
+    ),
+    footer: (
+      <>
+        Helped <b>1,359 users</b> clear debts totaling <b>1.6 trillion bells</b>
+      </>
+    ),
+    image: (
+      <img
+        src="/img/axrn.png"
+        alt="AXRN Animal Crossing Right Now screenshots"
+      />
+    ),
+  },
+  {
+    label: 'Vanilla Javascript',
+    link: 'https://github.com/dr-spaceman/nato-alphabet',
+    heading: 'NATO Alphabet',
+    description: 'A web app to convert text to the NATO phonetic alphabet.',
+    image: <img src="/img/nato-alphabet.png" alt="NATO Alphabet web app" />,
+    footer: <b>India Lima Oscar Victor Echo Uniform</b>,
   },
 ]
 
@@ -164,7 +228,17 @@ export function getNextArticle(slug: string) {
   if (currentArticleIndex === WORKS.length - 1) {
     nextArticle = WORKS[0]
   } else {
-    nextArticle = WORKS[currentArticleIndex + 1]
+    let indexOffset = 0
+    while (!nextArticle) {
+      indexOffset++
+      if (WORKS[currentArticleIndex + indexOffset].show !== false) {
+        nextArticle = WORKS[currentArticleIndex + indexOffset]
+      }
+      if (currentArticleIndex + indexOffset >= WORKS.length) {
+        const firstWorkShowable = WORKS.find(work => work.show !== false)
+        nextArticle = firstWorkShowable
+      }
+    }
   }
 
   return <Link href={`/work/${nextArticle.slug}`}>{nextArticle.heading}</Link>
@@ -231,8 +305,8 @@ function Work() {
       <section className={classes.mywork}>
         <h2 className="h1">My Work</h2>
         <div className={classes.workItems}>
-          {WORKS.map(work => (
-            <div className={classes.workItem} key={work.slug}>
+          {WORKS.filter(work => work.show !== false).map(work => (
+            <div key={work.slug} className={classes.workItem}>
               <Link href={`/work/${work.slug}`}>
                 <a title={work.heading}>
                   <small className="text-label">{work.label}</small>
@@ -245,6 +319,27 @@ function Work() {
                                     </ul> */}
                 </a>
               </Link>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="h1">My Apps</h2>
+        <div className={classes.appsItems}>
+          {APPS.map(app => (
+            <div key={app.link} className={classes.appsItem}>
+              {app.image}
+              <div>
+                <small className="label">{app.label}</small>
+                <h5>
+                  <Link href={app.link}>{app.heading}</Link>
+                </h5>
+                <div className="description">{app.description}</div>
+                <hr />
+                <footer>
+                  <span>{app.footer}</span>
+                  <ExpandIcon className="action" aria-hidden="true" />
+                </footer>
+              </div>
             </div>
           ))}
         </div>
