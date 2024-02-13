@@ -18,8 +18,7 @@ function Axrn() {
         preface={
           <ul>
             <li>
-              In production at{' '}
-              <a href="https://axnh.herokuapp.com/">axnh.herokuapp.com</a>
+              <b>Archived</b>
             </li>
             <li>
               Code at <a href="https://github.com/dr-spaceman/axnh">Github</a>

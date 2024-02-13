@@ -46,7 +46,7 @@ function HomePage() {
             href="/work"
             title="Matt Berti's portfolio of full-stack web projects"
           >
-            frontend software engineer
+            full-stack software engineer
           </NavLink>{' '}
           by night. I build lovable user interfaces, design systems, and
           frontend architecture. I love to collaborate with other devs to make
