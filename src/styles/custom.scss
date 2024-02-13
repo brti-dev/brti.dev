@@ -10,6 +10,7 @@
 
 :root {
   --spacing: var(--space-small);
+  --color-secondary: var(--color-success);
 
   @include breakpoint(screen) {
     --spacing: var(--space-large);
