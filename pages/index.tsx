@@ -98,6 +98,14 @@ function HomePage() {
             </a>
           </dd>
           <dd>
+            <a
+              href="https://discordapp.com/users/brti.dev"
+              title="brti.dev @ discord"
+            >
+              Discord
+            </a>
+          </dd>
+          <dd>
             <a href={`mailto:${EMAIL}`} title="Email Matt Berti">
               {EMAIL}
             </a>
